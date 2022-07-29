@@ -1,0 +1,1209 @@
+-----------  Configuration Arguments -----------
+anti_weight: 1e-05
+att_dropout: 0.2
+auto_lr: 1
+aux_round: 1
+batch_size: 8
+begin_epoch: 0
+bert_for_sentence: 0
+bert_from: pre_model/laptop
+bert_lr: 1e-05
+bert_out_dim: 256
+clip: 1
+data_dir: dataset/Biaffine/glove/Laptops
+dataset_size: laptop_10k
+de_lr: 0.0001
+debug: 0
+decay_patience: 3
+dep_dim: 100
+direct: False
+en_lr: 0.0005
+hidden_dim: 768
+input_dropout: 0.3
+l2: 0.0
+layer_dropout: 0
+log_step: 16
+loop: True
+lower: True
+max_len: 90
+model: RGAT
+num_class: 3
+num_epoch: 30
+num_layer: 6
+optim: adam
+output_merge: gate
+pos_dim: 0
+post_dim: 0
+pre_train: 0
+pseudo_label: 1
+pseudo_weight: 0.5
+reset_pooling: True
+save_dir: experiment/log/Laptops/best_result/33
+seed: 33
+sentence_weight: 0.1
+step_long: 2
+vocab_dir: dataset/Biaffine/glove/Laptops
+------------------------------------------------
+Loading vocab...
+Loading vocab from: dataset/Biaffine/glove/Laptops/vocab_tok.vocab
+Loading vocab from: dataset/Biaffine/glove/Laptops/vocab_dep.vocab
+Loading vocab from: dataset/Biaffine/glove/Laptops/vocab_pol.vocab
+token_vocab: 3158, dep_vocab: 46, pol_vocab: 3
+Loading data from dataset/Biaffine/glove/Laptops with batch size 8...
+286 batches created for dataset/Biaffine/glove/Laptops/laptop_10k/train.json
+79 batches created for dataset/Biaffine/glove/Laptops/laptop_10k/test.json
+79 batches created for dataset/Biaffine/glove/Laptops/laptop_10k/test.json
+2555 batches created for dataset/Biaffine/glove/Laptops/laptop_10k/auxiliary.json
+# parameters: 114108926
+Training Set: 286
+Valid/Test Set: 79
+Epoch 1------------------------------------------------------------
+15/286 aspect_loss: 1.048777, aspect_acc: 42.187500 Pseudo aspect_loss: 0.479884, aspect_acc: 50.781250 
+15/286 sentence_acc: 51.562500 Pseudo sentence_acc: 49.218750 noise prob: [0.5145151177421212, 0.46439058892428875, 0.5672941524535418] G_loss: -0.000007, D_loss: 0.000007
+31/286 aspect_loss: 0.956321, aspect_acc: 62.500000 Pseudo aspect_loss: 0.455355, aspect_acc: 56.250000 
+31/286 sentence_acc: 68.750000 Pseudo sentence_acc: 48.437500 noise prob: [0.4917517574504018, 0.4674424659460783, 0.5996499061584473] G_loss: -0.000007, D_loss: 0.000007
+47/286 aspect_loss: 0.754862, aspect_acc: 75.781250 Pseudo aspect_loss: 0.513995, aspect_acc: 54.687500 
+47/286 sentence_acc: 82.031250 Pseudo sentence_acc: 50.000000 noise prob: [0.49088322278112173, 0.470993391238153, 0.5686392011120915] G_loss: -0.000007, D_loss: 0.000007
+63/286 aspect_loss: 0.857208, aspect_acc: 67.187500 Pseudo aspect_loss: 0.449096, aspect_acc: 57.031250 
+63/286 sentence_acc: 89.062500 Pseudo sentence_acc: 54.687500 noise prob: [0.487720450386405, 0.46519060246646404, 0.5642416663467884] G_loss: -0.000006, D_loss: 0.000006
+79/286 aspect_loss: 0.634655, aspect_acc: 82.031250 Pseudo aspect_loss: 0.474162, aspect_acc: 55.468750 
+79/286 sentence_acc: 83.593750 Pseudo sentence_acc: 47.656250 noise prob: [0.4919322906062007, 0.4940277999266982, 0.539829988963902] G_loss: -0.000007, D_loss: 0.000007
+95/286 aspect_loss: 0.647355, aspect_acc: 71.093750 Pseudo aspect_loss: 0.478177, aspect_acc: 57.031250 
+95/286 sentence_acc: 87.500000 Pseudo sentence_acc: 62.500000 noise prob: [0.5321791619062424, 0.5085039716213942, 0.4905235907062888] G_loss: -0.000007, D_loss: 0.000007
+111/286 aspect_loss: 0.633870, aspect_acc: 72.656250 Pseudo aspect_loss: 0.454481, aspect_acc: 55.468750 
+111/286 sentence_acc: 91.406250 Pseudo sentence_acc: 50.000000 noise prob: [0.4828588105738163, 0.5813921699300408, 0.4988796580582857] G_loss: -0.000007, D_loss: 0.000007
+127/286 aspect_loss: 0.728121, aspect_acc: 74.218750 Pseudo aspect_loss: 0.518755, aspect_acc: 48.437500 
+127/286 sentence_acc: 85.937500 Pseudo sentence_acc: 51.562500 noise prob: [0.46266661118716, 0.526039176620543, 0.5619121408089995] G_loss: -0.000007, D_loss: 0.000007
+143/286 aspect_loss: 0.615042, aspect_acc: 76.562500 Pseudo aspect_loss: 0.508875, aspect_acc: 48.437500 
+143/286 sentence_acc: 92.187500 Pseudo sentence_acc: 55.468750 noise prob: [0.49159618373960257, 0.5692200716584921, 0.5029572723433375] G_loss: -0.000007, D_loss: 0.000007
+159/286 aspect_loss: 0.611064, aspect_acc: 80.468750 Pseudo aspect_loss: 0.493149, aspect_acc: 49.218750 
+159/286 sentence_acc: 89.062500 Pseudo sentence_acc: 53.906250 noise prob: [0.5107392901554704, 0.5296703735366464, 0.5349843455478549] G_loss: -0.000007, D_loss: 0.000008
+175/286 aspect_loss: 0.476335, aspect_acc: 84.375000 Pseudo aspect_loss: 0.521844, aspect_acc: 44.531250 
+175/286 sentence_acc: 92.968750 Pseudo sentence_acc: 42.187500 noise prob: [0.478422618471086, 0.5238041691482067, 0.55892154853791] G_loss: -0.000007, D_loss: 0.000008
+191/286 aspect_loss: 0.627589, aspect_acc: 75.781250 Pseudo aspect_loss: 0.478060, aspect_acc: 50.000000 
+191/286 sentence_acc: 89.843750 Pseudo sentence_acc: 53.125000 noise prob: [0.46695208828896284, 0.49511080235242844, 0.5772003792226315] G_loss: -0.000007, D_loss: 0.000008
+207/286 aspect_loss: 0.624704, aspect_acc: 75.000000 Pseudo aspect_loss: 0.496908, aspect_acc: 46.875000 
+207/286 sentence_acc: 83.593750 Pseudo sentence_acc: 55.468750 noise prob: [0.4672181075438857, 0.5144399171695113, 0.5695768604055047] G_loss: -0.000008, D_loss: 0.000008
+223/286 aspect_loss: 0.543115, aspect_acc: 83.593750 Pseudo aspect_loss: 0.466677, aspect_acc: 59.375000 
+223/286 sentence_acc: 90.625000 Pseudo sentence_acc: 54.687500 noise prob: [0.5023401034995914, 0.5326665434986353, 0.5082693500444293] G_loss: -0.000008, D_loss: 0.000008
+239/286 aspect_loss: 0.533737, aspect_acc: 78.906250 Pseudo aspect_loss: 0.486420, aspect_acc: 48.437500 
+239/286 sentence_acc: 86.718750 Pseudo sentence_acc: 53.125000 noise prob: [0.5244225459173322, 0.5309019507840276, 0.47796592861413956] G_loss: -0.000008, D_loss: 0.000008
+255/286 aspect_loss: 0.650465, aspect_acc: 75.781250 Pseudo aspect_loss: 0.500203, aspect_acc: 47.656250 
+255/286 sentence_acc: 91.406250 Pseudo sentence_acc: 53.906250 noise prob: [0.5280433418229222, 0.5553342700004578, 0.4564627008512616] G_loss: -0.000008, D_loss: 0.000008
+271/286 aspect_loss: 0.480050, aspect_acc: 82.031250 Pseudo aspect_loss: 0.471664, aspect_acc: 53.906250 
+271/286 sentence_acc: 92.968750 Pseudo sentence_acc: 54.687500 noise prob: [0.46616815915331244, 0.6011478314176202, 0.48223620280623436] G_loss: -0.000008, D_loss: 0.000008
+End of 1 train_loss: 0.6686, train_acc: 74.4755, val_loss: 0.0673, val_acc: 79.1139, f1_score: 0.7610
+sentence acc: 51.4241
+noise distribution: [0.2607225943916725, 0.25934379973708166, 0.47993360550873737]
+new best model saved.
+Epoch 2------------------------------------------------------------
+15/286 aspect_loss: 0.586178, aspect_acc: 79.687500 Pseudo aspect_loss: 0.439887, aspect_acc: 44.531250 
+15/286 sentence_acc: 89.843750 Pseudo sentence_acc: 51.562500 noise prob: [0.3571104253642261, 0.6588801071047783, 0.4976826049387455] G_loss: -0.000009, D_loss: 0.000010
+31/286 aspect_loss: 0.463366, aspect_acc: 83.593750 Pseudo aspect_loss: 0.531183, aspect_acc: 44.531250 
+31/286 sentence_acc: 86.718750 Pseudo sentence_acc: 55.468750 noise prob: [0.37410038337111473, 0.61953404545784, 0.5259829564020038] G_loss: -0.000009, D_loss: 0.000010
+47/286 aspect_loss: 0.493192, aspect_acc: 81.250000 Pseudo aspect_loss: 0.435766, aspect_acc: 57.812500 
+47/286 sentence_acc: 87.500000 Pseudo sentence_acc: 56.250000 noise prob: [0.4193739958573133, 0.5344743970781565, 0.5457516834139824] G_loss: -0.000008, D_loss: 0.000008
+63/286 aspect_loss: 0.698737, aspect_acc: 67.968750 Pseudo aspect_loss: 0.462524, aspect_acc: 52.343750 
+63/286 sentence_acc: 92.187500 Pseudo sentence_acc: 53.125000 noise prob: [0.4263844178058207, 0.5390223553404212, 0.5380100384354591] G_loss: -0.000008, D_loss: 0.000008
+79/286 aspect_loss: 0.470156, aspect_acc: 81.250000 Pseudo aspect_loss: 0.494675, aspect_acc: 49.218750 
+79/286 sentence_acc: 85.937500 Pseudo sentence_acc: 50.000000 noise prob: [0.41525185061618686, 0.5475382097065449, 0.545197144150734] G_loss: -0.000008, D_loss: 0.000008
+95/286 aspect_loss: 0.438308, aspect_acc: 85.156250 Pseudo aspect_loss: 0.546162, aspect_acc: 49.218750 
+95/286 sentence_acc: 92.968750 Pseudo sentence_acc: 59.375000 noise prob: [0.44427447440102696, 0.5296665281057358, 0.5252359602600336] G_loss: -0.000008, D_loss: 0.000008
+111/286 aspect_loss: 0.382063, aspect_acc: 82.812500 Pseudo aspect_loss: 0.488978, aspect_acc: 55.468750 
+111/286 sentence_acc: 89.062500 Pseudo sentence_acc: 51.562500 noise prob: [0.4160423440625891, 0.5649336520582438, 0.5344438441097736] G_loss: -0.000009, D_loss: 0.000009
+127/286 aspect_loss: 0.540323, aspect_acc: 81.250000 Pseudo aspect_loss: 0.469371, aspect_acc: 51.562500 
+127/286 sentence_acc: 86.718750 Pseudo sentence_acc: 57.812500 noise prob: [0.37133829528465867, 0.5211782231926918, 0.5963622936978936] G_loss: -0.000008, D_loss: 0.000009
+143/286 aspect_loss: 0.463638, aspect_acc: 84.375000 Pseudo aspect_loss: 0.475052, aspect_acc: 46.093750 
+143/286 sentence_acc: 88.281250 Pseudo sentence_acc: 53.906250 noise prob: [0.40057146502658725, 0.562582422979176, 0.5645456872880459] G_loss: -0.000009, D_loss: 0.000009
+159/286 aspect_loss: 0.453773, aspect_acc: 79.687500 Pseudo aspect_loss: 0.476215, aspect_acc: 46.093750 
+159/286 sentence_acc: 89.843750 Pseudo sentence_acc: 55.468750 noise prob: [0.4088773070834577, 0.4952265936881304, 0.5902734464034438] G_loss: -0.000009, D_loss: 0.000009
+175/286 aspect_loss: 0.320183, aspect_acc: 87.500000 Pseudo aspect_loss: 0.492081, aspect_acc: 56.250000 
+175/286 sentence_acc: 95.312500 Pseudo sentence_acc: 45.312500 noise prob: [0.41694123204797506, 0.5213179998099804, 0.5613442552275956] G_loss: -0.000009, D_loss: 0.000009
+191/286 aspect_loss: 0.397541, aspect_acc: 81.250000 Pseudo aspect_loss: 0.443960, aspect_acc: 54.687500 
+191/286 sentence_acc: 88.281250 Pseudo sentence_acc: 50.000000 noise prob: [0.4318406735546887, 0.4752884954214096, 0.572655520401895] G_loss: -0.000009, D_loss: 0.000009
+207/286 aspect_loss: 0.412379, aspect_acc: 82.031250 Pseudo aspect_loss: 0.467823, aspect_acc: 46.875000 
+207/286 sentence_acc: 87.500000 Pseudo sentence_acc: 53.906250 noise prob: [0.41051492979750037, 0.4681821884587407, 0.5966000976040959] G_loss: -0.000009, D_loss: 0.000010
+223/286 aspect_loss: 0.325252, aspect_acc: 89.843750 Pseudo aspect_loss: 0.461845, aspect_acc: 50.000000 
+223/286 sentence_acc: 91.406250 Pseudo sentence_acc: 60.937500 noise prob: [0.44221487268805504, 0.4789868351072073, 0.5484522972255945] G_loss: -0.000009, D_loss: 0.000010
+239/286 aspect_loss: 0.309948, aspect_acc: 89.062500 Pseudo aspect_loss: 0.493620, aspect_acc: 50.000000 
+239/286 sentence_acc: 89.062500 Pseudo sentence_acc: 57.812500 noise prob: [0.519584006164223, 0.47448874544352293, 0.5052053276449442] G_loss: -0.000009, D_loss: 0.000009
+255/286 aspect_loss: 0.502090, aspect_acc: 82.031250 Pseudo aspect_loss: 0.469521, aspect_acc: 53.125000 
+255/286 sentence_acc: 88.281250 Pseudo sentence_acc: 50.000000 noise prob: [0.543926440179348, 0.504782309755683, 0.48544636834412813] G_loss: -0.000009, D_loss: 0.000009
+271/286 aspect_loss: 0.256561, aspect_acc: 89.843750 Pseudo aspect_loss: 0.484531, aspect_acc: 50.000000 
+271/286 sentence_acc: 92.968750 Pseudo sentence_acc: 55.468750 noise prob: [0.48244029376655817, 0.5110919317230582, 0.5274270623922348] G_loss: -0.000009, D_loss: 0.000009
+End of 2 train_loss: 0.4360, train_acc: 83.1731, val_loss: 0.0672, val_acc: 80.8544, f1_score: 0.7675
+sentence acc: 45.7278
+noise distribution: [0.24044387654771238, 0.2220094933944881, 0.5375466284314848]
+new best model saved.
+Epoch 3------------------------------------------------------------
+15/286 aspect_loss: 0.432271, aspect_acc: 84.375000 Pseudo aspect_loss: 0.431280, aspect_acc: 50.000000 
+15/286 sentence_acc: 92.187500 Pseudo sentence_acc: 57.031250 noise prob: [0.46774987736716866, 0.5086491275578737, 0.5414141742512584] G_loss: -0.000010, D_loss: 0.000010
+31/286 aspect_loss: 0.319486, aspect_acc: 89.843750 Pseudo aspect_loss: 0.495991, aspect_acc: 51.562500 
+31/286 sentence_acc: 83.593750 Pseudo sentence_acc: 55.468750 noise prob: [0.46464578015729785, 0.4943497208878398, 0.5580241866409779] G_loss: -0.000010, D_loss: 0.000010
+47/286 aspect_loss: 0.308260, aspect_acc: 88.281250 Pseudo aspect_loss: 0.436926, aspect_acc: 57.812500 
+47/286 sentence_acc: 91.406250 Pseudo sentence_acc: 57.812500 noise prob: [0.48191661038435996, 0.45898592192679644, 0.5368504165671766] G_loss: -0.000009, D_loss: 0.000010
+63/286 aspect_loss: 0.483043, aspect_acc: 79.687500 Pseudo aspect_loss: 0.467834, aspect_acc: 55.468750 
+63/286 sentence_acc: 90.625000 Pseudo sentence_acc: 50.000000 noise prob: [0.43662352045066655, 0.5198492985218763, 0.5625457614660263] G_loss: -0.000009, D_loss: 0.000009
+79/286 aspect_loss: 0.231426, aspect_acc: 92.187500 Pseudo aspect_loss: 0.482194, aspect_acc: 52.343750 
+79/286 sentence_acc: 92.187500 Pseudo sentence_acc: 47.656250 noise prob: [0.429992335382849, 0.5265558362007141, 0.5693242149427533] G_loss: -0.000010, D_loss: 0.000010
+95/286 aspect_loss: 0.276554, aspect_acc: 90.625000 Pseudo aspect_loss: 0.445339, aspect_acc: 47.656250 
+95/286 sentence_acc: 87.500000 Pseudo sentence_acc: 60.156250 noise prob: [0.4589543524198234, 0.4780598860234022, 0.5576428500935435] G_loss: -0.000009, D_loss: 0.000009
+111/286 aspect_loss: 0.253449, aspect_acc: 90.625000 Pseudo aspect_loss: 0.486975, aspect_acc: 44.531250 
+111/286 sentence_acc: 86.718750 Pseudo sentence_acc: 43.750000 noise prob: [0.4163300068466924, 0.47628583386540413, 0.6092541441321373] G_loss: -0.000010, D_loss: 0.000010
+127/286 aspect_loss: 0.401158, aspect_acc: 90.625000 Pseudo aspect_loss: 0.395839, aspect_acc: 63.281250 
+127/286 sentence_acc: 90.625000 Pseudo sentence_acc: 50.781250 noise prob: [0.367947053629905, 0.45368180703371763, 0.6705525815486908] G_loss: -0.000010, D_loss: 0.000010
+143/286 aspect_loss: 0.306548, aspect_acc: 86.718750 Pseudo aspect_loss: 0.524123, aspect_acc: 44.531250 
+143/286 sentence_acc: 92.187500 Pseudo sentence_acc: 46.875000 noise prob: [0.4056748249568045, 0.5146449813619256, 0.6097954027354717] G_loss: -0.000010, D_loss: 0.000010
+159/286 aspect_loss: 0.357481, aspect_acc: 83.593750 Pseudo aspect_loss: 0.456306, aspect_acc: 52.343750 
+159/286 sentence_acc: 94.531250 Pseudo sentence_acc: 54.687500 noise prob: [0.4290828756056726, 0.41716177575290203, 0.6203624382615089] G_loss: -0.000010, D_loss: 0.000010
+175/286 aspect_loss: 0.182586, aspect_acc: 95.312500 Pseudo aspect_loss: 0.467557, aspect_acc: 56.250000 
+175/286 sentence_acc: 92.187500 Pseudo sentence_acc: 53.125000 noise prob: [0.41044748201966286, 0.491244176402688, 0.5814432892948389] G_loss: -0.000010, D_loss: 0.000011
+191/286 aspect_loss: 0.233460, aspect_acc: 89.843750 Pseudo aspect_loss: 0.432527, aspect_acc: 54.687500 
+191/286 sentence_acc: 94.531250 Pseudo sentence_acc: 50.000000 noise prob: [0.420416354725603, 0.4394150450825691, 0.5943696568720043] G_loss: -0.000010, D_loss: 0.000010
+207/286 aspect_loss: 0.204339, aspect_acc: 94.531250 Pseudo aspect_loss: 0.485096, aspect_acc: 52.343750 
+207/286 sentence_acc: 82.812500 Pseudo sentence_acc: 55.468750 noise prob: [0.39909500582143664, 0.3804921484552324, 0.6303739049471915] G_loss: -0.000011, D_loss: 0.000012
+223/286 aspect_loss: 0.219683, aspect_acc: 90.625000 Pseudo aspect_loss: 0.479789, aspect_acc: 49.218750 
+223/286 sentence_acc: 92.968750 Pseudo sentence_acc: 57.812500 noise prob: [0.4133232217282057, 0.4116096277721226, 0.5926716639660299] G_loss: -0.000010, D_loss: 0.000010
+239/286 aspect_loss: 0.146301, aspect_acc: 95.312500 Pseudo aspect_loss: 0.461678, aspect_acc: 45.312500 
+239/286 sentence_acc: 92.968750 Pseudo sentence_acc: 56.250000 noise prob: [0.4225925958890002, 0.4094156585633755, 0.5867469795048237] G_loss: -0.000011, D_loss: 0.000011
+255/286 aspect_loss: 0.289788, aspect_acc: 90.625000 Pseudo aspect_loss: 0.497022, aspect_acc: 52.343750 
+255/286 sentence_acc: 89.843750 Pseudo sentence_acc: 54.687500 noise prob: [0.43151461938396096, 0.43949918169528246, 0.5726175792515278] G_loss: -0.000010, D_loss: 0.000011
+271/286 aspect_loss: 0.163364, aspect_acc: 92.968750 Pseudo aspect_loss: 0.448465, aspect_acc: 50.781250 
+271/286 sentence_acc: 93.750000 Pseudo sentence_acc: 56.250000 noise prob: [0.4223889629356563, 0.39639987982809544, 0.6050119427964091] G_loss: -0.000010, D_loss: 0.000011
+End of 3 train_loss: 0.2787, train_acc: 89.9476, val_loss: 0.0847, val_acc: 79.1139, f1_score: 0.7470
+sentence acc: 45.0949
+noise distribution: [0.2385291349839457, 0.21531788080652473, 0.5461529826034972]
+Epoch 4------------------------------------------------------------
+15/286 aspect_loss: 0.319082, aspect_acc: 91.406250 Pseudo aspect_loss: 0.493333, aspect_acc: 50.781250 
+15/286 sentence_acc: 91.406250 Pseudo sentence_acc: 58.593750 noise prob: [0.4149119287612848, 0.44682159274816513, 0.6111961817368865] G_loss: -0.000012, D_loss: 0.000013
+31/286 aspect_loss: 0.254672, aspect_acc: 91.406250 Pseudo aspect_loss: 0.463893, aspect_acc: 49.218750 
+31/286 sentence_acc: 93.750000 Pseudo sentence_acc: 53.906250 noise prob: [0.4284320631995797, 0.46411191020160913, 0.6166930207982659] G_loss: -0.000011, D_loss: 0.000012
+47/286 aspect_loss: 0.242812, aspect_acc: 91.406250 Pseudo aspect_loss: 0.516465, aspect_acc: 45.312500 
+47/286 sentence_acc: 95.312500 Pseudo sentence_acc: 53.125000 noise prob: [0.44408353156177327, 0.4553426494821906, 0.5943560595624149] G_loss: -0.000011, D_loss: 0.000011
+63/286 aspect_loss: 0.368033, aspect_acc: 86.718750 Pseudo aspect_loss: 0.461799, aspect_acc: 53.906250 
+63/286 sentence_acc: 90.625000 Pseudo sentence_acc: 48.437500 noise prob: [0.42011550089227967, 0.5054231649264693, 0.601222244091332] G_loss: -0.000011, D_loss: 0.000011
+79/286 aspect_loss: 0.184438, aspect_acc: 91.406250 Pseudo aspect_loss: 0.460279, aspect_acc: 51.562500 
+79/286 sentence_acc: 86.718750 Pseudo sentence_acc: 52.343750 noise prob: [0.3974576108157635, 0.5123982941731811, 0.6287594018504024] G_loss: -0.000012, D_loss: 0.000012
+95/286 aspect_loss: 0.208169, aspect_acc: 92.968750 Pseudo aspect_loss: 0.470510, aspect_acc: 50.781250 
+95/286 sentence_acc: 92.187500 Pseudo sentence_acc: 60.156250 noise prob: [0.4577907370403409, 0.49351107608526945, 0.5530918254517019] G_loss: -0.000010, D_loss: 0.000011
+111/286 aspect_loss: 0.247614, aspect_acc: 92.187500 Pseudo aspect_loss: 0.450113, aspect_acc: 53.906250 
+111/286 sentence_acc: 89.062500 Pseudo sentence_acc: 50.781250 noise prob: [0.4191606432432309, 0.4680832871235907, 0.5881148474290967] G_loss: -0.000011, D_loss: 0.000011
+127/286 aspect_loss: 0.200934, aspect_acc: 91.406250 Pseudo aspect_loss: 0.485412, aspect_acc: 46.875000 
+127/286 sentence_acc: 88.281250 Pseudo sentence_acc: 48.437500 noise prob: [0.3767890091985464, 0.4116112841293216, 0.6637980910018086] G_loss: -0.000011, D_loss: 0.000011
+143/286 aspect_loss: 0.164063, aspect_acc: 93.750000 Pseudo aspect_loss: 0.460432, aspect_acc: 57.031250 
+143/286 sentence_acc: 93.750000 Pseudo sentence_acc: 50.000000 noise prob: [0.38023032899945974, 0.45369675289839506, 0.6272843712940812] G_loss: -0.000012, D_loss: 0.000012
+159/286 aspect_loss: 0.183140, aspect_acc: 92.187500 Pseudo aspect_loss: 0.510801, aspect_acc: 45.312500 
+159/286 sentence_acc: 92.968750 Pseudo sentence_acc: 51.562500 noise prob: [0.4165612901560962, 0.3964852960780263, 0.596690672216937] G_loss: -0.000012, D_loss: 0.000012
+175/286 aspect_loss: 0.188179, aspect_acc: 93.750000 Pseudo aspect_loss: 0.456816, aspect_acc: 52.343750 
+175/286 sentence_acc: 96.093750 Pseudo sentence_acc: 53.906250 noise prob: [0.4396196873858571, 0.4722970053553581, 0.5483026434667408] G_loss: -0.000012, D_loss: 0.000012
+191/286 aspect_loss: 0.244585, aspect_acc: 90.625000 Pseudo aspect_loss: 0.478289, aspect_acc: 51.562500 
+191/286 sentence_acc: 95.312500 Pseudo sentence_acc: 47.656250 noise prob: [0.4469034679350443, 0.437305117957294, 0.5610719826072454] G_loss: -0.000011, D_loss: 0.000011
+207/286 aspect_loss: 0.128969, aspect_acc: 96.093750 Pseudo aspect_loss: 0.491996, aspect_acc: 46.093750 
+207/286 sentence_acc: 91.406250 Pseudo sentence_acc: 59.375000 noise prob: [0.4400863815099001, 0.40609979117289186, 0.5804011267609894] G_loss: -0.000012, D_loss: 0.000012
+223/286 aspect_loss: 0.132765, aspect_acc: 94.531250 Pseudo aspect_loss: 0.478139, aspect_acc: 57.812500 
+223/286 sentence_acc: 86.718750 Pseudo sentence_acc: 46.875000 noise prob: [0.4518167651258409, 0.3832789836451411, 0.5497544631361961] G_loss: -0.000012, D_loss: 0.000012
+239/286 aspect_loss: 0.032221, aspect_acc: 99.218750 Pseudo aspect_loss: 0.471281, aspect_acc: 57.812500 
+239/286 sentence_acc: 93.750000 Pseudo sentence_acc: 55.468750 noise prob: [0.43048522219760343, 0.3655239143408835, 0.5693234163336456] G_loss: -0.000012, D_loss: 0.000013
+255/286 aspect_loss: 0.151124, aspect_acc: 93.750000 Pseudo aspect_loss: 0.495340, aspect_acc: 55.468750 
+255/286 sentence_acc: 91.406250 Pseudo sentence_acc: 55.468750 noise prob: [0.4648274574428797, 0.39828571397811174, 0.5423188335262239] G_loss: -0.000012, D_loss: 0.000013
+271/286 aspect_loss: 0.086401, aspect_acc: 98.437500 Pseudo aspect_loss: 0.498485, aspect_acc: 51.562500 
+271/286 sentence_acc: 93.750000 Pseudo sentence_acc: 53.906250 noise prob: [0.44471088610589504, 0.37557632150128484, 0.5499957781285048] G_loss: -0.000012, D_loss: 0.000012
+End of 4 train_loss: 0.1928, train_acc: 93.0507, val_loss: 0.1143, val_acc: 80.0633, f1_score: 0.7639
+sentence acc: 45.0949
+noise distribution: [0.2339912955876873, 0.24668689405714475, 0.5193218079835339]
+Epoch 5------------------------------------------------------------
+15/286 aspect_loss: 0.216262, aspect_acc: 92.968750 Pseudo aspect_loss: 0.484785, aspect_acc: 51.562500 
+15/286 sentence_acc: 91.406250 Pseudo sentence_acc: 53.125000 noise prob: [0.39415238371293526, 0.5514963548630476, 0.49411306297406554] G_loss: -0.000014, D_loss: 0.000014
+31/286 aspect_loss: 0.197715, aspect_acc: 94.531250 Pseudo aspect_loss: 0.491220, aspect_acc: 45.312500 
+31/286 sentence_acc: 94.531250 Pseudo sentence_acc: 53.906250 noise prob: [0.415810018312186, 0.5604869844391942, 0.4810296045616269] G_loss: -0.000014, D_loss: 0.000015
+47/286 aspect_loss: 0.191786, aspect_acc: 96.875000 Pseudo aspect_loss: 0.483267, aspect_acc: 46.875000 
+47/286 sentence_acc: 92.968750 Pseudo sentence_acc: 48.437500 noise prob: [0.5294159869663417, 0.44920845283195376, 0.44432226987555623] G_loss: -0.000011, D_loss: 0.000012
+63/286 aspect_loss: 0.185173, aspect_acc: 92.968750 Pseudo aspect_loss: 0.483573, aspect_acc: 53.125000 
+63/286 sentence_acc: 94.531250 Pseudo sentence_acc: 49.218750 noise prob: [0.4826704985462129, 0.566213795915246, 0.4394327253103256] G_loss: -0.000012, D_loss: 0.000013
+79/286 aspect_loss: 0.105471, aspect_acc: 96.875000 Pseudo aspect_loss: 0.458853, aspect_acc: 52.343750 
+79/286 sentence_acc: 95.312500 Pseudo sentence_acc: 50.000000 noise prob: [0.45809463458135724, 0.45446810126304626, 0.5527694057673216] G_loss: -0.000012, D_loss: 0.000013
+95/286 aspect_loss: 0.157659, aspect_acc: 96.093750 Pseudo aspect_loss: 0.445902, aspect_acc: 49.218750 
+95/286 sentence_acc: 89.062500 Pseudo sentence_acc: 56.250000 noise prob: [0.4280919302254915, 0.43244815059006214, 0.5749223660677671] G_loss: -0.000011, D_loss: 0.000011
+111/286 aspect_loss: 0.247969, aspect_acc: 92.968750 Pseudo aspect_loss: 0.477011, aspect_acc: 53.906250 
+111/286 sentence_acc: 92.968750 Pseudo sentence_acc: 57.812500 noise prob: [0.4423795005423017, 0.4534092852845788, 0.5639967997558415] G_loss: -0.000011, D_loss: 0.000011
+127/286 aspect_loss: 0.280121, aspect_acc: 90.625000 Pseudo aspect_loss: 0.428248, aspect_acc: 58.593750 
+127/286 sentence_acc: 89.843750 Pseudo sentence_acc: 56.250000 noise prob: [0.4336919104680419, 0.424597536213696, 0.5918118758127093] G_loss: -0.000011, D_loss: 0.000012
+143/286 aspect_loss: 0.151647, aspect_acc: 96.093750 Pseudo aspect_loss: 0.461987, aspect_acc: 58.593750 
+143/286 sentence_acc: 95.312500 Pseudo sentence_acc: 52.343750 noise prob: [0.47566934302449226, 0.40389600303024054, 0.5751483282074332] G_loss: -0.000010, D_loss: 0.000011
+159/286 aspect_loss: 0.103730, aspect_acc: 94.531250 Pseudo aspect_loss: 0.465633, aspect_acc: 51.562500 
+159/286 sentence_acc: 92.187500 Pseudo sentence_acc: 50.781250 noise prob: [0.5251455036923289, 0.3422930589877069, 0.5416772812604904] G_loss: -0.000011, D_loss: 0.000012
+175/286 aspect_loss: 0.157868, aspect_acc: 92.187500 Pseudo aspect_loss: 0.448773, aspect_acc: 53.906250 
+175/286 sentence_acc: 93.750000 Pseudo sentence_acc: 52.343750 noise prob: [0.498863588552922, 0.3818827085196972, 0.5297871166840196] G_loss: -0.000012, D_loss: 0.000012
+191/286 aspect_loss: 0.168350, aspect_acc: 92.187500 Pseudo aspect_loss: 0.487503, aspect_acc: 50.000000 
+191/286 sentence_acc: 96.093750 Pseudo sentence_acc: 51.562500 noise prob: [0.5226411679177545, 0.3556177420541644, 0.5237658899277449] G_loss: -0.000011, D_loss: 0.000011
+207/286 aspect_loss: 0.118334, aspect_acc: 96.875000 Pseudo aspect_loss: 0.476894, aspect_acc: 51.562500 
+207/286 sentence_acc: 92.968750 Pseudo sentence_acc: 51.562500 noise prob: [0.4716775733977556, 0.353900664485991, 0.5667627481743693] G_loss: -0.000013, D_loss: 0.000014
+223/286 aspect_loss: 0.127486, aspect_acc: 95.312500 Pseudo aspect_loss: 0.473659, aspect_acc: 60.156250 
+223/286 sentence_acc: 96.093750 Pseudo sentence_acc: 53.125000 noise prob: [0.46866200398653746, 0.3634080155752599, 0.5445996122434735] G_loss: -0.000012, D_loss: 0.000013
+239/286 aspect_loss: 0.048351, aspect_acc: 98.437500 Pseudo aspect_loss: 0.489210, aspect_acc: 51.562500 
+239/286 sentence_acc: 94.531250 Pseudo sentence_acc: 53.906250 noise prob: [0.48822683360776864, 0.33664331096224487, 0.5389379735570401] G_loss: -0.000012, D_loss: 0.000012
+255/286 aspect_loss: 0.095998, aspect_acc: 96.875000 Pseudo aspect_loss: 0.466372, aspect_acc: 50.000000 
+255/286 sentence_acc: 94.531250 Pseudo sentence_acc: 50.781250 noise prob: [0.5042620897293091, 0.35950872069224715, 0.5134837706573308] G_loss: -0.000012, D_loss: 0.000013
+271/286 aspect_loss: 0.152702, aspect_acc: 97.656250 Pseudo aspect_loss: 0.457894, aspect_acc: 53.906250 
+271/286 sentence_acc: 93.750000 Pseudo sentence_acc: 53.906250 noise prob: [0.4571500667370856, 0.3397913337685168, 0.5729309879243374] G_loss: -0.000011, D_loss: 0.000012
+End of 5 train_loss: 0.1531, train_acc: 95.1923, val_loss: 0.1258, val_acc: 79.4304, f1_score: 0.7591
+sentence acc: 45.8861
+noise distribution: [0.2518632251182646, 0.23622655649012503, 0.5119102177049937]
+Epoch 6------------------------------------------------------------
+15/286 aspect_loss: 0.158007, aspect_acc: 96.093750 Pseudo aspect_loss: 0.449459, aspect_acc: 53.906250 
+15/286 sentence_acc: 93.750000 Pseudo sentence_acc: 55.468750 noise prob: [0.4762296013068408, 0.32349853962659836, 0.5449258494190872] G_loss: -0.000012, D_loss: 0.000013
+31/286 aspect_loss: 0.092304, aspect_acc: 95.312500 Pseudo aspect_loss: 0.479282, aspect_acc: 53.906250 
+31/286 sentence_acc: 94.531250 Pseudo sentence_acc: 60.937500 noise prob: [0.4955051941797137, 0.326870103366673, 0.5412408076226711] G_loss: -0.000012, D_loss: 0.000013
+47/286 aspect_loss: 0.114453, aspect_acc: 95.312500 Pseudo aspect_loss: 0.462836, aspect_acc: 45.312500 
+47/286 sentence_acc: 92.968750 Pseudo sentence_acc: 52.343750 noise prob: [0.5398498490685597, 0.2888676683069207, 0.511295503936708] G_loss: -0.000012, D_loss: 0.000012
+63/286 aspect_loss: 0.056413, aspect_acc: 98.437500 Pseudo aspect_loss: 0.446026, aspect_acc: 52.343750 
+63/286 sentence_acc: 93.750000 Pseudo sentence_acc: 50.781250 noise prob: [0.5334163547959179, 0.3429182611871511, 0.47319434862583876] G_loss: -0.000012, D_loss: 0.000013
+79/286 aspect_loss: 0.109538, aspect_acc: 96.875000 Pseudo aspect_loss: 0.444589, aspect_acc: 52.343750 
+79/286 sentence_acc: 96.875000 Pseudo sentence_acc: 48.437500 noise prob: [0.499747225549072, 0.34553468180820346, 0.5166834415867925] G_loss: -0.000014, D_loss: 0.000015
+95/286 aspect_loss: 0.088701, aspect_acc: 95.312500 Pseudo aspect_loss: 0.395161, aspect_acc: 60.937500 
+95/286 sentence_acc: 96.875000 Pseudo sentence_acc: 56.250000 noise prob: [0.49758360674604774, 0.3551986641250551, 0.5078569916076958] G_loss: -0.000012, D_loss: 0.000012
+111/286 aspect_loss: 0.031409, aspect_acc: 98.437500 Pseudo aspect_loss: 0.511450, aspect_acc: 42.968750 
+111/286 sentence_acc: 93.750000 Pseudo sentence_acc: 54.687500 noise prob: [0.4846862734120805, 0.3712370879948139, 0.48973168013617396] G_loss: -0.000012, D_loss: 0.000013
+127/286 aspect_loss: 0.067250, aspect_acc: 97.656250 Pseudo aspect_loss: 0.451898, aspect_acc: 53.906250 
+127/286 sentence_acc: 92.968750 Pseudo sentence_acc: 53.906250 noise prob: [0.45978507306426764, 0.3755004205740988, 0.5385388331487775] G_loss: -0.000012, D_loss: 0.000013
+143/286 aspect_loss: 0.112862, aspect_acc: 97.656250 Pseudo aspect_loss: 0.488135, aspect_acc: 48.437500 
+143/286 sentence_acc: 94.531250 Pseudo sentence_acc: 54.687500 noise prob: [0.48549556313082576, 0.3671368192881346, 0.5166630297899246] G_loss: -0.000013, D_loss: 0.000014
+159/286 aspect_loss: 0.050502, aspect_acc: 98.437500 Pseudo aspect_loss: 0.483005, aspect_acc: 49.218750 
+159/286 sentence_acc: 93.750000 Pseudo sentence_acc: 54.687500 noise prob: [0.49842568347230554, 0.3595185587182641, 0.507535039272625] G_loss: -0.000014, D_loss: 0.000015
+175/286 aspect_loss: 0.056486, aspect_acc: 97.656250 Pseudo aspect_loss: 0.501856, aspect_acc: 49.218750 
+175/286 sentence_acc: 96.875000 Pseudo sentence_acc: 48.437500 noise prob: [0.4815011671744287, 0.35225048335269094, 0.5307439374737442] G_loss: -0.000013, D_loss: 0.000014
+191/286 aspect_loss: 0.103174, aspect_acc: 96.093750 Pseudo aspect_loss: 0.469143, aspect_acc: 52.343750 
+191/286 sentence_acc: 93.750000 Pseudo sentence_acc: 54.687500 noise prob: [0.48236951857688837, 0.35251025203615427, 0.529988709371537] G_loss: -0.000012, D_loss: 0.000013
+207/286 aspect_loss: 0.031662, aspect_acc: 99.218750 Pseudo aspect_loss: 0.459390, aspect_acc: 50.000000 
+207/286 sentence_acc: 92.968750 Pseudo sentence_acc: 48.437500 noise prob: [0.44968743342906237, 0.3129970876034349, 0.5857198224402964] G_loss: -0.000013, D_loss: 0.000014
+223/286 aspect_loss: 0.034995, aspect_acc: 99.218750 Pseudo aspect_loss: 0.439424, aspect_acc: 61.718750 
+223/286 sentence_acc: 93.750000 Pseudo sentence_acc: 50.000000 noise prob: [0.4370917771011591, 0.348813139135018, 0.5519122774712741] G_loss: -0.000013, D_loss: 0.000014
+239/286 aspect_loss: 0.026514, aspect_acc: 98.437500 Pseudo aspect_loss: 0.488842, aspect_acc: 44.531250 
+239/286 sentence_acc: 93.750000 Pseudo sentence_acc: 53.906250 noise prob: [0.44510411613737233, 0.32639597402885556, 0.5575576680712402] G_loss: -0.000014, D_loss: 0.000014
+255/286 aspect_loss: 0.035464, aspect_acc: 97.656250 Pseudo aspect_loss: 0.516298, aspect_acc: 49.218750 
+255/286 sentence_acc: 94.531250 Pseudo sentence_acc: 52.343750 noise prob: [0.44008508743718266, 0.35411441372707486, 0.5442822994664311] G_loss: -0.000014, D_loss: 0.000015
+271/286 aspect_loss: 0.018522, aspect_acc: 100.000000 Pseudo aspect_loss: 0.499863, aspect_acc: 51.562500 
+271/286 sentence_acc: 92.968750 Pseudo sentence_acc: 56.250000 noise prob: [0.4074601074680686, 0.3439274823758751, 0.575224969536066] G_loss: -0.000013, D_loss: 0.000014
+End of 6 train_loss: 0.0684, train_acc: 97.5962, val_loss: 0.1372, val_acc: 81.4873, f1_score: 0.7838
+sentence acc: 47.9430
+noise distribution: [0.26761572720829496, 0.25130612753538933, 0.4810781461856016]
+new best model saved.
+Epoch 7------------------------------------------------------------
+15/286 aspect_loss: 0.144390, aspect_acc: 95.312500 Pseudo aspect_loss: 0.488234, aspect_acc: 50.781250 
+15/286 sentence_acc: 95.312500 Pseudo sentence_acc: 61.718750 noise prob: [0.44832522051001433, 0.363035807851702, 0.54602938471362] G_loss: -0.000014, D_loss: 0.000015
+31/286 aspect_loss: 0.047416, aspect_acc: 99.218750 Pseudo aspect_loss: 0.502379, aspect_acc: 44.531250 
+31/286 sentence_acc: 96.093750 Pseudo sentence_acc: 56.250000 noise prob: [0.4489042987115681, 0.3619861751794815, 0.5523250950500369] G_loss: -0.000014, D_loss: 0.000015
+47/286 aspect_loss: 0.064963, aspect_acc: 97.656250 Pseudo aspect_loss: 0.440922, aspect_acc: 54.687500 
+47/286 sentence_acc: 96.875000 Pseudo sentence_acc: 57.031250 noise prob: [0.4762641183042433, 0.291861871490255, 0.5641720867715776] G_loss: -0.000013, D_loss: 0.000013
+63/286 aspect_loss: 0.041663, aspect_acc: 99.218750 Pseudo aspect_loss: 0.505806, aspect_acc: 52.343750 
+63/286 sentence_acc: 94.531250 Pseudo sentence_acc: 48.437500 noise prob: [0.457792838831665, 0.30682635423727334, 0.5656063910573721] G_loss: -0.000012, D_loss: 0.000013
+79/286 aspect_loss: 0.059965, aspect_acc: 98.437500 Pseudo aspect_loss: 0.474422, aspect_acc: 55.468750 
+79/286 sentence_acc: 92.968750 Pseudo sentence_acc: 57.031250 noise prob: [0.4533358309417963, 0.32837144867517054, 0.5668283449485898] G_loss: -0.000013, D_loss: 0.000015
+95/286 aspect_loss: 0.056763, aspect_acc: 98.437500 Pseudo aspect_loss: 0.447926, aspect_acc: 54.687500 
+95/286 sentence_acc: 92.187500 Pseudo sentence_acc: 56.250000 noise prob: [0.4417295134626329, 0.3562344186939299, 0.5396352256648242] G_loss: -0.000012, D_loss: 0.000013
+111/286 aspect_loss: 0.070245, aspect_acc: 97.656250 Pseudo aspect_loss: 0.461267, aspect_acc: 52.343750 
+111/286 sentence_acc: 94.531250 Pseudo sentence_acc: 57.812500 noise prob: [0.4799976964277448, 0.3580122229177505, 0.494548172224313] G_loss: -0.000013, D_loss: 0.000014
+127/286 aspect_loss: 0.064102, aspect_acc: 98.437500 Pseudo aspect_loss: 0.442213, aspect_acc: 58.593750 
+127/286 sentence_acc: 92.968750 Pseudo sentence_acc: 53.906250 noise prob: [0.4544514836743474, 0.39004317205399275, 0.5249521415680647] G_loss: -0.000014, D_loss: 0.000015
+143/286 aspect_loss: 0.075448, aspect_acc: 96.875000 Pseudo aspect_loss: 0.473502, aspect_acc: 48.437500 
+143/286 sentence_acc: 96.093750 Pseudo sentence_acc: 53.125000 noise prob: [0.4785954291000962, 0.4036697563715279, 0.4997933516278863] G_loss: -0.000014, D_loss: 0.000015
+159/286 aspect_loss: 0.090350, aspect_acc: 96.875000 Pseudo aspect_loss: 0.474649, aspect_acc: 56.250000 
+159/286 sentence_acc: 89.062500 Pseudo sentence_acc: 51.562500 noise prob: [0.5094586941413581, 0.341803923714906, 0.5054511165944859] G_loss: -0.000013, D_loss: 0.000014
+175/286 aspect_loss: 0.047334, aspect_acc: 98.437500 Pseudo aspect_loss: 0.462424, aspect_acc: 48.437500 
+175/286 sentence_acc: 96.875000 Pseudo sentence_acc: 46.093750 noise prob: [0.4706598734483123, 0.3641649857163429, 0.5154631440527737] G_loss: -0.000014, D_loss: 0.000015
+191/286 aspect_loss: 0.076758, aspect_acc: 96.875000 Pseudo aspect_loss: 0.481260, aspect_acc: 49.218750 
+191/286 sentence_acc: 95.312500 Pseudo sentence_acc: 56.250000 noise prob: [0.4756569182063686, 0.34112175134941936, 0.5311867883428931] G_loss: -0.000013, D_loss: 0.000014
+207/286 aspect_loss: 0.059763, aspect_acc: 98.437500 Pseudo aspect_loss: 0.445833, aspect_acc: 55.468750 
+207/286 sentence_acc: 90.625000 Pseudo sentence_acc: 51.562500 noise prob: [0.4516636892221868, 0.3239958434132859, 0.5701493336819112] G_loss: -0.000014, D_loss: 0.000015
+223/286 aspect_loss: 0.072234, aspect_acc: 99.218750 Pseudo aspect_loss: 0.485318, aspect_acc: 49.218750 
+223/286 sentence_acc: 94.531250 Pseudo sentence_acc: 46.875000 noise prob: [0.447551382239908, 0.34444900043308735, 0.546161646489054] G_loss: -0.000013, D_loss: 0.000014
+239/286 aspect_loss: 0.019899, aspect_acc: 99.218750 Pseudo aspect_loss: 0.454388, aspect_acc: 53.906250 
+239/286 sentence_acc: 93.750000 Pseudo sentence_acc: 57.031250 noise prob: [0.44784018996870145, 0.3026453601196408, 0.5654469033470377] G_loss: -0.000013, D_loss: 0.000014
+255/286 aspect_loss: 0.024741, aspect_acc: 99.218750 Pseudo aspect_loss: 0.455764, aspect_acc: 50.781250 
+255/286 sentence_acc: 92.187500 Pseudo sentence_acc: 50.000000 noise prob: [0.4380585695616901, 0.32790667610242963, 0.555632138159126] G_loss: -0.000014, D_loss: 0.000015
+271/286 aspect_loss: 0.023634, aspect_acc: 99.218750 Pseudo aspect_loss: 0.492862, aspect_acc: 50.781250 
+271/286 sentence_acc: 91.406250 Pseudo sentence_acc: 50.781250 noise prob: [0.4020491216215305, 0.3386686039157212, 0.5771422870457172] G_loss: -0.000014, D_loss: 0.000014
+End of 7 train_loss: 0.0592, train_acc: 98.1643, val_loss: 0.1218, val_acc: 80.8544, f1_score: 0.7738
+sentence acc: 50.7911
+noise distribution: [0.2622440435720344, 0.2295590253360002, 0.5081969304331128]
+Epoch 8------------------------------------------------------------
+15/286 aspect_loss: 0.071236, aspect_acc: 97.656250 Pseudo aspect_loss: 0.481716, aspect_acc: 49.218750 
+15/286 sentence_acc: 96.875000 Pseudo sentence_acc: 53.906250 noise prob: [0.4482900948205497, 0.3029383064713329, 0.575293727684766] G_loss: -0.000014, D_loss: 0.000015
+31/286 aspect_loss: 0.050183, aspect_acc: 96.875000 Pseudo aspect_loss: 0.495700, aspect_acc: 45.312500 
+31/286 sentence_acc: 96.093750 Pseudo sentence_acc: 58.593750 noise prob: [0.4303452856838703, 0.3047542547574267, 0.5960292806848884] G_loss: -0.000013, D_loss: 0.000014
+47/286 aspect_loss: 0.051603, aspect_acc: 97.656250 Pseudo aspect_loss: 0.474264, aspect_acc: 53.906250 
+47/286 sentence_acc: 98.437500 Pseudo sentence_acc: 57.031250 noise prob: [0.45887834927998483, 0.2762997387908399, 0.5808673067949712] G_loss: -0.000013, D_loss: 0.000013
+63/286 aspect_loss: 0.025637, aspect_acc: 99.218750 Pseudo aspect_loss: 0.473305, aspect_acc: 56.250000 
+63/286 sentence_acc: 94.531250 Pseudo sentence_acc: 49.218750 noise prob: [0.43814586638472974, 0.2977514029480517, 0.5744356419891119] G_loss: -0.000013, D_loss: 0.000014
+79/286 aspect_loss: 0.039708, aspect_acc: 98.437500 Pseudo aspect_loss: 0.458996, aspect_acc: 52.343750 
+79/286 sentence_acc: 96.875000 Pseudo sentence_acc: 51.562500 noise prob: [0.435512765776366, 0.27721090731211007, 0.5897031677886844] G_loss: -0.000015, D_loss: 0.000016
+95/286 aspect_loss: 0.028520, aspect_acc: 100.000000 Pseudo aspect_loss: 0.457066, aspect_acc: 58.593750 
+95/286 sentence_acc: 91.406250 Pseudo sentence_acc: 54.687500 noise prob: [0.4570493819192052, 0.3002084686886519, 0.5378602682612836] G_loss: -0.000013, D_loss: 0.000013
+111/286 aspect_loss: 0.046257, aspect_acc: 97.656250 Pseudo aspect_loss: 0.459727, aspect_acc: 57.812500 
+111/286 sentence_acc: 95.312500 Pseudo sentence_acc: 56.250000 noise prob: [0.44788375485222787, 0.3090245621278882, 0.5320394155569375] G_loss: -0.000013, D_loss: 0.000014
+127/286 aspect_loss: 0.056207, aspect_acc: 98.437500 Pseudo aspect_loss: 0.518675, aspect_acc: 50.781250 
+127/286 sentence_acc: 93.750000 Pseudo sentence_acc: 56.250000 noise prob: [0.4310610513202846, 0.3274353500455618, 0.5666756797581911] G_loss: -0.000013, D_loss: 0.000014
+143/286 aspect_loss: 0.064569, aspect_acc: 98.437500 Pseudo aspect_loss: 0.474100, aspect_acc: 50.000000 
+143/286 sentence_acc: 92.187500 Pseudo sentence_acc: 60.937500 noise prob: [0.4736790144816041, 0.3050872306339443, 0.5508982297033072] G_loss: -0.000013, D_loss: 0.000014
+159/286 aspect_loss: 0.014424, aspect_acc: 100.000000 Pseudo aspect_loss: 0.472336, aspect_acc: 42.187500 
+159/286 sentence_acc: 93.750000 Pseudo sentence_acc: 50.781250 noise prob: [0.5471887444145977, 0.27207397134043276, 0.5162537351134233] G_loss: -0.000014, D_loss: 0.000015
+175/286 aspect_loss: 0.070031, aspect_acc: 96.093750 Pseudo aspect_loss: 0.483161, aspect_acc: 42.968750 
+175/286 sentence_acc: 93.750000 Pseudo sentence_acc: 45.312500 noise prob: [0.5206099301576614, 0.2863752606790513, 0.5297274771146476] G_loss: -0.000014, D_loss: 0.000015
+191/286 aspect_loss: 0.119513, aspect_acc: 95.312500 Pseudo aspect_loss: 0.524386, aspect_acc: 49.218750 
+191/286 sentence_acc: 92.968750 Pseudo sentence_acc: 53.125000 noise prob: [0.5255172051838599, 0.3262632922269404, 0.5112926904112101] G_loss: -0.000013, D_loss: 0.000014
+207/286 aspect_loss: 0.023481, aspect_acc: 99.218750 Pseudo aspect_loss: 0.467270, aspect_acc: 55.468750 
+207/286 sentence_acc: 94.531250 Pseudo sentence_acc: 54.687500 noise prob: [0.49496389692649245, 0.27527915174141526, 0.5698966304771602] G_loss: -0.000014, D_loss: 0.000015
+223/286 aspect_loss: 0.050176, aspect_acc: 98.437500 Pseudo aspect_loss: 0.479519, aspect_acc: 44.531250 
+223/286 sentence_acc: 96.093750 Pseudo sentence_acc: 42.187500 noise prob: [0.4940732712857425, 0.29206720052752644, 0.548356780782342] G_loss: -0.000013, D_loss: 0.000014
+239/286 aspect_loss: 0.009627, aspect_acc: 100.000000 Pseudo aspect_loss: 0.464748, aspect_acc: 56.250000 
+239/286 sentence_acc: 95.312500 Pseudo sentence_acc: 59.375000 noise prob: [0.5018772604526021, 0.2554474542266689, 0.5586223739665002] G_loss: -0.000014, D_loss: 0.000015
+255/286 aspect_loss: 0.021110, aspect_acc: 99.218750 Pseudo aspect_loss: 0.466508, aspect_acc: 57.812500 
+255/286 sentence_acc: 93.750000 Pseudo sentence_acc: 51.562500 noise prob: [0.5125461162533611, 0.2710150685161352, 0.5324515644460917] G_loss: -0.000014, D_loss: 0.000015
+271/286 aspect_loss: 0.022438, aspect_acc: 99.218750 Pseudo aspect_loss: 0.509194, aspect_acc: 42.968750 
+271/286 sentence_acc: 92.968750 Pseudo sentence_acc: 56.250000 noise prob: [0.48762062774039805, 0.2637266831006855, 0.55748535040766] G_loss: -0.000013, D_loss: 0.000014
+End of 8 train_loss: 0.0435, train_acc: 98.3829, val_loss: 0.1598, val_acc: 79.7468, f1_score: 0.7533
+sentence acc: 46.6772
+noise distribution: [0.28406455017116017, 0.1805698657348215, 0.5353655839108851]
+Epoch 9------------------------------------------------------------
+15/286 aspect_loss: 0.093601, aspect_acc: 96.875000 Pseudo aspect_loss: 0.474053, aspect_acc: 53.125000 
+15/286 sentence_acc: 95.312500 Pseudo sentence_acc: 61.718750 noise prob: [0.5003553671995178, 0.2554966816678643, 0.5676407278515399] G_loss: -0.000014, D_loss: 0.000015
+31/286 aspect_loss: 0.039584, aspect_acc: 98.437500 Pseudo aspect_loss: 0.439901, aspect_acc: 60.156250 
+31/286 sentence_acc: 96.875000 Pseudo sentence_acc: 61.718750 noise prob: [0.4834808758459985, 0.2560499106766656, 0.5728336060419679] G_loss: -0.000015, D_loss: 0.000016
+47/286 aspect_loss: 0.063049, aspect_acc: 96.875000 Pseudo aspect_loss: 0.495053, aspect_acc: 53.125000 
+47/286 sentence_acc: 93.750000 Pseudo sentence_acc: 54.687500 noise prob: [0.5325272800400853, 0.23652120144106448, 0.5573588623665273] G_loss: -0.000012, D_loss: 0.000013
+63/286 aspect_loss: 0.018317, aspect_acc: 99.218750 Pseudo aspect_loss: 0.452703, aspect_acc: 57.812500 
+63/286 sentence_acc: 89.843750 Pseudo sentence_acc: 47.656250 noise prob: [0.5266224266961217, 0.2422973343054764, 0.5428211437538266] G_loss: -0.000013, D_loss: 0.000014
+79/286 aspect_loss: 0.030544, aspect_acc: 98.437500 Pseudo aspect_loss: 0.462808, aspect_acc: 49.218750 
+79/286 sentence_acc: 96.875000 Pseudo sentence_acc: 55.468750 noise prob: [0.5199328484013677, 0.22374659747583792, 0.5682363528758287] G_loss: -0.000014, D_loss: 0.000016
+95/286 aspect_loss: 0.024111, aspect_acc: 99.218750 Pseudo aspect_loss: 0.444628, aspect_acc: 56.250000 
+95/286 sentence_acc: 96.093750 Pseudo sentence_acc: 59.375000 noise prob: [0.5482686152681708, 0.25340317364316434, 0.5087771806865931] G_loss: -0.000012, D_loss: 0.000013
+111/286 aspect_loss: 0.038624, aspect_acc: 97.656250 Pseudo aspect_loss: 0.512230, aspect_acc: 49.218750 
+111/286 sentence_acc: 95.312500 Pseudo sentence_acc: 54.687500 noise prob: [0.5397833143360913, 0.2664489049639087, 0.5040772189386189] G_loss: -0.000013, D_loss: 0.000014
+127/286 aspect_loss: 0.076221, aspect_acc: 98.437500 Pseudo aspect_loss: 0.468670, aspect_acc: 50.000000 
+127/286 sentence_acc: 95.312500 Pseudo sentence_acc: 56.250000 noise prob: [0.5178580577485263, 0.2657951572909951, 0.5498533463105559] G_loss: -0.000012, D_loss: 0.000013
+143/286 aspect_loss: 0.025136, aspect_acc: 99.218750 Pseudo aspect_loss: 0.469654, aspect_acc: 50.781250 
+143/286 sentence_acc: 92.968750 Pseudo sentence_acc: 57.031250 noise prob: [0.5512651968747377, 0.23730484204133973, 0.527994149364531] G_loss: -0.000013, D_loss: 0.000014
+159/286 aspect_loss: 0.009006, aspect_acc: 100.000000 Pseudo aspect_loss: 0.521839, aspect_acc: 53.125000 
+159/286 sentence_acc: 92.968750 Pseudo sentence_acc: 51.562500 noise prob: [0.5652527892962098, 0.22092440255801193, 0.5324426901061088] G_loss: -0.000013, D_loss: 0.000014
+175/286 aspect_loss: 0.049534, aspect_acc: 96.875000 Pseudo aspect_loss: 0.455477, aspect_acc: 53.906250 
+175/286 sentence_acc: 92.187500 Pseudo sentence_acc: 46.875000 noise prob: [0.5597156789153814, 0.23093359469203278, 0.5375205976888537] G_loss: -0.000013, D_loss: 0.000014
+191/286 aspect_loss: 0.031334, aspect_acc: 98.437500 Pseudo aspect_loss: 0.484414, aspect_acc: 50.000000 
+191/286 sentence_acc: 99.218750 Pseudo sentence_acc: 53.906250 noise prob: [0.5432357757817954, 0.2522389409132302, 0.5230848146602511] G_loss: -0.000014, D_loss: 0.000015
+207/286 aspect_loss: 0.061393, aspect_acc: 97.656250 Pseudo aspect_loss: 0.433696, aspect_acc: 54.687500 
+207/286 sentence_acc: 95.312500 Pseudo sentence_acc: 51.562500 noise prob: [0.5212179482914507, 0.23284085598425008, 0.5679436489008367] G_loss: -0.000015, D_loss: 0.000016
+223/286 aspect_loss: 0.021025, aspect_acc: 99.218750 Pseudo aspect_loss: 0.497957, aspect_acc: 52.343750 
+223/286 sentence_acc: 96.875000 Pseudo sentence_acc: 41.406250 noise prob: [0.5251534096896648, 0.26958813398960046, 0.5266140666790307] G_loss: -0.000014, D_loss: 0.000015
+239/286 aspect_loss: 0.015330, aspect_acc: 99.218750 Pseudo aspect_loss: 0.445537, aspect_acc: 61.718750 
+239/286 sentence_acc: 95.312500 Pseudo sentence_acc: 55.468750 noise prob: [0.5267349304631352, 0.23919838546134997, 0.5386415173998103] G_loss: -0.000014, D_loss: 0.000015
+255/286 aspect_loss: 0.018970, aspect_acc: 99.218750 Pseudo aspect_loss: 0.427767, aspect_acc: 53.125000 
+255/286 sentence_acc: 94.531250 Pseudo sentence_acc: 55.468750 noise prob: [0.5245487811043859, 0.24486659048125148, 0.5371643416583538] G_loss: -0.000015, D_loss: 0.000016
+271/286 aspect_loss: 0.012095, aspect_acc: 100.000000 Pseudo aspect_loss: 0.509333, aspect_acc: 53.125000 
+271/286 sentence_acc: 96.093750 Pseudo sentence_acc: 53.125000 noise prob: [0.4808995584025979, 0.2600813088938594, 0.5568034173920751] G_loss: -0.000015, D_loss: 0.000015
+End of 9 train_loss: 0.0358, train_acc: 98.5577, val_loss: 0.1602, val_acc: 81.0127, f1_score: 0.7733
+sentence acc: 46.6772
+noise distribution: [0.27929159778106866, 0.2046588339502429, 0.5160495670372164]
+Epoch 10------------------------------------------------------------
+15/286 aspect_loss: 0.099426, aspect_acc: 96.875000 Pseudo aspect_loss: 0.452712, aspect_acc: 60.937500 
+15/286 sentence_acc: 95.312500 Pseudo sentence_acc: 61.718750 noise prob: [0.5029485558043234, 0.25912152021192014, 0.5421474608592689] G_loss: -0.000015, D_loss: 0.000016
+31/286 aspect_loss: 0.049396, aspect_acc: 98.437500 Pseudo aspect_loss: 0.420672, aspect_acc: 60.937500 
+31/286 sentence_acc: 96.875000 Pseudo sentence_acc: 65.625000 noise prob: [0.48542362451553345, 0.286069564986974, 0.5396242272108793] G_loss: -0.000015, D_loss: 0.000016
+47/286 aspect_loss: 0.072085, aspect_acc: 97.656250 Pseudo aspect_loss: 0.396963, aspect_acc: 55.468750 
+47/286 sentence_acc: 90.625000 Pseudo sentence_acc: 57.812500 noise prob: [0.5221426161006093, 0.27621107461163774, 0.5144588891416788] G_loss: -0.000013, D_loss: 0.000014
+63/286 aspect_loss: 0.015723, aspect_acc: 99.218750 Pseudo aspect_loss: 0.411069, aspect_acc: 64.062500 
+63/286 sentence_acc: 94.531250 Pseudo sentence_acc: 48.437500 noise prob: [0.5214614112628624, 0.2787519849371165, 0.513897524215281] G_loss: -0.000014, D_loss: 0.000015
+79/286 aspect_loss: 0.023510, aspect_acc: 99.218750 Pseudo aspect_loss: 0.416410, aspect_acc: 60.156250 
+79/286 sentence_acc: 92.187500 Pseudo sentence_acc: 57.812500 noise prob: [0.5196210956200957, 0.24902489336091094, 0.5307256355881691] G_loss: -0.000016, D_loss: 0.000017
+95/286 aspect_loss: 0.032579, aspect_acc: 99.218750 Pseudo aspect_loss: 0.416251, aspect_acc: 60.937500 
+95/286 sentence_acc: 97.656250 Pseudo sentence_acc: 57.031250 noise prob: [0.5442108828574419, 0.2792182001285255, 0.47881992161273956] G_loss: -0.000014, D_loss: 0.000015
+111/286 aspect_loss: 0.060346, aspect_acc: 96.875000 Pseudo aspect_loss: 0.463206, aspect_acc: 53.906250 
+111/286 sentence_acc: 92.968750 Pseudo sentence_acc: 59.375000 noise prob: [0.5265920421807095, 0.27912732772529125, 0.4868628615513444] G_loss: -0.000014, D_loss: 0.000015
+127/286 aspect_loss: 0.048952, aspect_acc: 97.656250 Pseudo aspect_loss: 0.500291, aspect_acc: 50.000000 
+127/286 sentence_acc: 92.187500 Pseudo sentence_acc: 57.031250 noise prob: [0.4972764072008431, 0.28974093962460756, 0.531581211835146] G_loss: -0.000013, D_loss: 0.000014
+143/286 aspect_loss: 0.034335, aspect_acc: 99.218750 Pseudo aspect_loss: 0.506517, aspect_acc: 46.093750 
+143/286 sentence_acc: 99.218750 Pseudo sentence_acc: 58.593750 noise prob: [0.5396614177152514, 0.24934735643910244, 0.5106428032740951] G_loss: -0.000013, D_loss: 0.000014
+159/286 aspect_loss: 0.018178, aspect_acc: 100.000000 Pseudo aspect_loss: 0.514674, aspect_acc: 50.000000 
+159/286 sentence_acc: 97.656250 Pseudo sentence_acc: 57.031250 noise prob: [0.5354677480645478, 0.23578908311901614, 0.5140506117604673] G_loss: -0.000014, D_loss: 0.000015
+175/286 aspect_loss: 0.058246, aspect_acc: 97.656250 Pseudo aspect_loss: 0.455198, aspect_acc: 50.781250 
+175/286 sentence_acc: 94.531250 Pseudo sentence_acc: 52.343750 noise prob: [0.526700193528086, 0.2328489922801964, 0.5308023425750434] G_loss: -0.000014, D_loss: 0.000015
+191/286 aspect_loss: 0.021077, aspect_acc: 99.218750 Pseudo aspect_loss: 0.457731, aspect_acc: 60.156250 
+191/286 sentence_acc: 96.875000 Pseudo sentence_acc: 62.500000 noise prob: [0.5204168063064571, 0.23825286014471203, 0.5244828327558935] G_loss: -0.000015, D_loss: 0.000016
+207/286 aspect_loss: 0.009419, aspect_acc: 100.000000 Pseudo aspect_loss: 0.449209, aspect_acc: 60.937500 
+207/286 sentence_acc: 98.437500 Pseudo sentence_acc: 56.250000 noise prob: [0.4941254579462111, 0.22121008520480245, 0.5679919444955885] G_loss: -0.000015, D_loss: 0.000017
+223/286 aspect_loss: 0.014276, aspect_acc: 99.218750 Pseudo aspect_loss: 0.467254, aspect_acc: 54.687500 
+223/286 sentence_acc: 94.531250 Pseudo sentence_acc: 41.406250 noise prob: [0.49150069802999496, 0.2749906233220827, 0.5199572015553713] G_loss: -0.000016, D_loss: 0.000017
+239/286 aspect_loss: 0.014860, aspect_acc: 99.218750 Pseudo aspect_loss: 0.482483, aspect_acc: 53.125000 
+239/286 sentence_acc: 96.093750 Pseudo sentence_acc: 56.250000 noise prob: [0.4712374361115508, 0.3131883851601742, 0.5010191281035077] G_loss: -0.000015, D_loss: 0.000016
+255/286 aspect_loss: 0.021399, aspect_acc: 99.218750 Pseudo aspect_loss: 0.462267, aspect_acc: 53.906250 
+255/286 sentence_acc: 96.093750 Pseudo sentence_acc: 47.656250 noise prob: [0.4706296124495566, 0.3272517416626215, 0.5016745440661907] G_loss: -0.000015, D_loss: 0.000016
+271/286 aspect_loss: 0.023084, aspect_acc: 99.218750 Pseudo aspect_loss: 0.429626, aspect_acc: 56.250000 
+271/286 sentence_acc: 97.656250 Pseudo sentence_acc: 49.218750 noise prob: [0.43703684586216696, 0.31803024519467726, 0.5306967319920659] G_loss: -0.000015, D_loss: 0.000016
+End of 10 train_loss: 0.0360, train_acc: 98.7325, val_loss: 0.1683, val_acc: 80.8544, f1_score: 0.7678
+sentence acc: 47.7848
+noise distribution: [0.2719797116054356, 0.1924175118369356, 0.5356027750388082]
+Epoch 11------------------------------------------------------------
+15/286 aspect_loss: 0.050609, aspect_acc: 98.437500 Pseudo aspect_loss: 0.483823, aspect_acc: 50.000000 
+15/286 sentence_acc: 95.312500 Pseudo sentence_acc: 62.500000 noise prob: [0.41703794436034514, 0.3633925896137953, 0.5121549889445305] G_loss: -0.000017, D_loss: 0.000018
+31/286 aspect_loss: 0.074583, aspect_acc: 96.875000 Pseudo aspect_loss: 0.417081, aspect_acc: 57.812500 
+31/286 sentence_acc: 97.656250 Pseudo sentence_acc: 64.843750 noise prob: [0.40464872121810913, 0.3695339655969292, 0.5294625731185079] G_loss: -0.000016, D_loss: 0.000018
+47/286 aspect_loss: 0.047918, aspect_acc: 97.656250 Pseudo aspect_loss: 0.444291, aspect_acc: 53.906250 
+47/286 sentence_acc: 93.750000 Pseudo sentence_acc: 62.500000 noise prob: [0.4580343650886789, 0.33278831047937274, 0.5073136417195201] G_loss: -0.000014, D_loss: 0.000016
+63/286 aspect_loss: 0.014119, aspect_acc: 99.218750 Pseudo aspect_loss: 0.500200, aspect_acc: 47.656250 
+63/286 sentence_acc: 96.875000 Pseudo sentence_acc: 53.906250 noise prob: [0.44130847172345966, 0.3400931030046195, 0.5049020396545529] G_loss: -0.000015, D_loss: 0.000017
+79/286 aspect_loss: 0.020115, aspect_acc: 99.218750 Pseudo aspect_loss: 0.467521, aspect_acc: 47.656250 
+79/286 sentence_acc: 99.218750 Pseudo sentence_acc: 59.375000 noise prob: [0.44616458332166076, 0.3168939987081103, 0.5239733522757888] G_loss: -0.000017, D_loss: 0.000018
+95/286 aspect_loss: 0.021879, aspect_acc: 99.218750 Pseudo aspect_loss: 0.430743, aspect_acc: 64.062500 
+95/286 sentence_acc: 93.750000 Pseudo sentence_acc: 56.250000 noise prob: [0.44858441734686494, 0.3401864275801927, 0.48598045483231544] G_loss: -0.000015, D_loss: 0.000016
+111/286 aspect_loss: 0.021247, aspect_acc: 99.218750 Pseudo aspect_loss: 0.490683, aspect_acc: 47.656250 
+111/286 sentence_acc: 98.437500 Pseudo sentence_acc: 60.937500 noise prob: [0.438545194134349, 0.36299703767872415, 0.4711757102049887] G_loss: -0.000015, D_loss: 0.000017
+127/286 aspect_loss: 0.023712, aspect_acc: 100.000000 Pseudo aspect_loss: 0.448990, aspect_acc: 45.312500 
+127/286 sentence_acc: 94.531250 Pseudo sentence_acc: 56.250000 noise prob: [0.4216307098977268, 0.35570276575163007, 0.5097550880163908] G_loss: -0.000016, D_loss: 0.000018
+143/286 aspect_loss: 0.011211, aspect_acc: 100.000000 Pseudo aspect_loss: 0.439696, aspect_acc: 57.031250 
+143/286 sentence_acc: 97.656250 Pseudo sentence_acc: 58.593750 noise prob: [0.4409788716584444, 0.3338664557086304, 0.5022162431851029] G_loss: -0.000016, D_loss: 0.000017
+159/286 aspect_loss: 0.016367, aspect_acc: 99.218750 Pseudo aspect_loss: 0.480484, aspect_acc: 53.906250 
+159/286 sentence_acc: 96.093750 Pseudo sentence_acc: 55.468750 noise prob: [0.44171488797292113, 0.31972218805458397, 0.5145063148520421] G_loss: -0.000017, D_loss: 0.000019
+175/286 aspect_loss: 0.028079, aspect_acc: 98.437500 Pseudo aspect_loss: 0.451540, aspect_acc: 52.343750 
+175/286 sentence_acc: 95.312500 Pseudo sentence_acc: 56.250000 noise prob: [0.42829447193071246, 0.3208006930653937, 0.5287774484604597] G_loss: -0.000017, D_loss: 0.000019
+191/286 aspect_loss: 0.014444, aspect_acc: 99.218750 Pseudo aspect_loss: 0.452135, aspect_acc: 48.437500 
+191/286 sentence_acc: 96.093750 Pseudo sentence_acc: 57.812500 noise prob: [0.42785460416416754, 0.3272267737193033, 0.5124489120207727] G_loss: -0.000018, D_loss: 0.000020
+207/286 aspect_loss: 0.006842, aspect_acc: 100.000000 Pseudo aspect_loss: 0.453667, aspect_acc: 55.468750 
+207/286 sentence_acc: 94.531250 Pseudo sentence_acc: 60.937500 noise prob: [0.4291826360858977, 0.29094748036004603, 0.5578846670687199] G_loss: -0.000017, D_loss: 0.000019
+223/286 aspect_loss: 0.002321, aspect_acc: 100.000000 Pseudo aspect_loss: 0.446279, aspect_acc: 56.250000 
+223/286 sentence_acc: 93.750000 Pseudo sentence_acc: 46.093750 noise prob: [0.47107381699606776, 0.3018281788099557, 0.5089552192948759] G_loss: -0.000017, D_loss: 0.000018
+239/286 aspect_loss: 0.001243, aspect_acc: 100.000000 Pseudo aspect_loss: 0.452797, aspect_acc: 51.562500 
+239/286 sentence_acc: 96.093750 Pseudo sentence_acc: 57.031250 noise prob: [0.4825143812340684, 0.26835510059027, 0.5288301210966893] G_loss: -0.000016, D_loss: 0.000017
+255/286 aspect_loss: 0.007999, aspect_acc: 99.218750 Pseudo aspect_loss: 0.453574, aspect_acc: 55.468750 
+255/286 sentence_acc: 96.875000 Pseudo sentence_acc: 58.593750 noise prob: [0.48823197023011744, 0.2824394013732672, 0.51271568890661] G_loss: -0.000016, D_loss: 0.000018
+271/286 aspect_loss: 0.006836, aspect_acc: 100.000000 Pseudo aspect_loss: 0.474800, aspect_acc: 46.875000 
+271/286 sentence_acc: 96.875000 Pseudo sentence_acc: 57.031250 noise prob: [0.45791638729861006, 0.27028453146340325, 0.554792569950223] G_loss: -0.000016, D_loss: 0.000017
+End of 11 train_loss: 0.0209, train_acc: 99.2133, val_loss: 0.2091, val_acc: 81.4873, f1_score: 0.7800
+sentence acc: 47.6266
+noise distribution: [0.30080486043170523, 0.2050926515451038, 0.4941024878816971]
+Epoch 12------------------------------------------------------------
+15/286 aspect_loss: 0.060713, aspect_acc: 96.875000 Pseudo aspect_loss: 0.442157, aspect_acc: 53.906250 
+15/286 sentence_acc: 97.656250 Pseudo sentence_acc: 60.937500 noise prob: [0.4876207576598972, 0.2725648197811097, 0.539730800781399] G_loss: -0.000016, D_loss: 0.000017
+31/286 aspect_loss: 0.032002, aspect_acc: 96.875000 Pseudo aspect_loss: 0.438789, aspect_acc: 58.593750 
+31/286 sentence_acc: 97.656250 Pseudo sentence_acc: 61.718750 noise prob: [0.4772138725966215, 0.27621446375269443, 0.5411512805148959] G_loss: -0.000016, D_loss: 0.000017
+47/286 aspect_loss: 0.042551, aspect_acc: 97.656250 Pseudo aspect_loss: 0.457202, aspect_acc: 60.156250 
+47/286 sentence_acc: 95.312500 Pseudo sentence_acc: 61.718750 noise prob: [0.49551064730621874, 0.25973892031470314, 0.5379567751660943] G_loss: -0.000015, D_loss: 0.000016
+63/286 aspect_loss: 0.010425, aspect_acc: 99.218750 Pseudo aspect_loss: 0.443378, aspect_acc: 56.250000 
+63/286 sentence_acc: 96.875000 Pseudo sentence_acc: 52.343750 noise prob: [0.4792285867733881, 0.274353533226531, 0.5267638210207224] G_loss: -0.000016, D_loss: 0.000017
+79/286 aspect_loss: 0.021446, aspect_acc: 98.437500 Pseudo aspect_loss: 0.409190, aspect_acc: 57.031250 
+79/286 sentence_acc: 93.750000 Pseudo sentence_acc: 53.125000 noise prob: [0.48033264512196183, 0.2473537601181306, 0.5577032389119267] G_loss: -0.000016, D_loss: 0.000018
+95/286 aspect_loss: 0.013661, aspect_acc: 99.218750 Pseudo aspect_loss: 0.462783, aspect_acc: 55.468750 
+95/286 sentence_acc: 96.093750 Pseudo sentence_acc: 58.593750 noise prob: [0.48827390233054757, 0.27070264756912366, 0.5275162318721414] G_loss: -0.000014, D_loss: 0.000015
+111/286 aspect_loss: 0.038455, aspect_acc: 98.437500 Pseudo aspect_loss: 0.408798, aspect_acc: 60.156250 
+111/286 sentence_acc: 96.093750 Pseudo sentence_acc: 60.937500 noise prob: [0.47304700198583305, 0.27275518371607177, 0.5425247335806489] G_loss: -0.000014, D_loss: 0.000015
+127/286 aspect_loss: 0.019584, aspect_acc: 100.000000 Pseudo aspect_loss: 0.500038, aspect_acc: 46.093750 
+127/286 sentence_acc: 95.312500 Pseudo sentence_acc: 53.906250 noise prob: [0.4463392551988363, 0.2709919565822929, 0.5809145290404558] G_loss: -0.000015, D_loss: 0.000016
+143/286 aspect_loss: 0.022946, aspect_acc: 99.218750 Pseudo aspect_loss: 0.443127, aspect_acc: 58.593750 
+143/286 sentence_acc: 99.218750 Pseudo sentence_acc: 58.593750 noise prob: [0.47973712626844645, 0.25880042344215326, 0.5499005513265729] G_loss: -0.000015, D_loss: 0.000016
+159/286 aspect_loss: 0.013914, aspect_acc: 99.218750 Pseudo aspect_loss: 0.425562, aspect_acc: 59.375000 
+159/286 sentence_acc: 96.093750 Pseudo sentence_acc: 57.812500 noise prob: [0.47602421836927533, 0.2701769544510171, 0.5366307008953299] G_loss: -0.000016, D_loss: 0.000018
+175/286 aspect_loss: 0.034697, aspect_acc: 97.656250 Pseudo aspect_loss: 0.433054, aspect_acc: 54.687500 
+175/286 sentence_acc: 96.875000 Pseudo sentence_acc: 53.906250 noise prob: [0.47206523921340704, 0.2700698076514527, 0.5434881644323468] G_loss: -0.000017, D_loss: 0.000018
+191/286 aspect_loss: 0.012150, aspect_acc: 99.218750 Pseudo aspect_loss: 0.432859, aspect_acc: 60.937500 
+191/286 sentence_acc: 92.968750 Pseudo sentence_acc: 59.375000 noise prob: [0.46596791142656, 0.2756013088510372, 0.535430601797998] G_loss: -0.000018, D_loss: 0.000019
+207/286 aspect_loss: 0.009725, aspect_acc: 99.218750 Pseudo aspect_loss: 0.469772, aspect_acc: 50.781250 
+207/286 sentence_acc: 98.437500 Pseudo sentence_acc: 54.687500 noise prob: [0.43676486797630787, 0.2599580999230966, 0.5793499685823917] G_loss: -0.000018, D_loss: 0.000019
+223/286 aspect_loss: 0.002411, aspect_acc: 100.000000 Pseudo aspect_loss: 0.463254, aspect_acc: 50.000000 
+223/286 sentence_acc: 96.093750 Pseudo sentence_acc: 47.656250 noise prob: [0.4358819229528308, 0.2896560214285273, 0.5505106565542519] G_loss: -0.000018, D_loss: 0.000019
+239/286 aspect_loss: 0.015976, aspect_acc: 99.218750 Pseudo aspect_loss: 0.457673, aspect_acc: 49.218750 
+239/286 sentence_acc: 95.312500 Pseudo sentence_acc: 60.937500 noise prob: [0.42861027967592236, 0.2625730810977984, 0.5772755029902328] G_loss: -0.000017, D_loss: 0.000018
+255/286 aspect_loss: 0.009092, aspect_acc: 99.218750 Pseudo aspect_loss: 0.456834, aspect_acc: 51.562500 
+255/286 sentence_acc: 95.312500 Pseudo sentence_acc: 60.156250 noise prob: [0.44055021926760674, 0.2742691384628415, 0.5653711236082017] G_loss: -0.000016, D_loss: 0.000017
+271/286 aspect_loss: 0.013736, aspect_acc: 99.218750 Pseudo aspect_loss: 0.453771, aspect_acc: 49.218750 
+271/286 sentence_acc: 94.531250 Pseudo sentence_acc: 57.031250 noise prob: [0.40855873582768254, 0.27216184706776403, 0.6006900342181325] G_loss: -0.000016, D_loss: 0.000017
+End of 12 train_loss: 0.0225, train_acc: 98.7325, val_loss: 0.1835, val_acc: 79.1139, f1_score: 0.7461
+sentence acc: 46.3608
+noise distribution: [0.2555031550445628, 0.18624257765994842, 0.5582542639875814]
+Epoch 13------------------------------------------------------------
+15/286 aspect_loss: 0.043843, aspect_acc: 97.656250 Pseudo aspect_loss: 0.448197, aspect_acc: 53.906250 
+15/286 sentence_acc: 96.875000 Pseudo sentence_acc: 65.625000 noise prob: [0.4260787227685796, 0.26904136582743376, 0.5972451781854033] G_loss: -0.000017, D_loss: 0.000019
+31/286 aspect_loss: 0.020097, aspect_acc: 98.437500 Pseudo aspect_loss: 0.496266, aspect_acc: 53.125000 
+31/286 sentence_acc: 95.312500 Pseudo sentence_acc: 63.281250 noise prob: [0.43012357177212834, 0.26208588492590934, 0.5939527545124292] G_loss: -0.000017, D_loss: 0.000019
+47/286 aspect_loss: 0.032027, aspect_acc: 98.437500 Pseudo aspect_loss: 0.436934, aspect_acc: 56.250000 
+47/286 sentence_acc: 95.312500 Pseudo sentence_acc: 60.156250 noise prob: [0.45427965591079555, 0.24430487858626293, 0.5830888384953141] G_loss: -0.000016, D_loss: 0.000016
+63/286 aspect_loss: 0.008112, aspect_acc: 99.218750 Pseudo aspect_loss: 0.435740, aspect_acc: 62.500000 
+63/286 sentence_acc: 97.656250 Pseudo sentence_acc: 54.687500 noise prob: [0.4455043460329762, 0.2566198959830217, 0.5719017321243882] G_loss: -0.000016, D_loss: 0.000018
+79/286 aspect_loss: 0.040378, aspect_acc: 97.656250 Pseudo aspect_loss: 0.449310, aspect_acc: 47.656250 
+79/286 sentence_acc: 95.312500 Pseudo sentence_acc: 55.468750 noise prob: [0.4458870505914092, 0.2504594232304953, 0.5814922926947474] G_loss: -0.000018, D_loss: 0.000019
+95/286 aspect_loss: 0.028967, aspect_acc: 98.437500 Pseudo aspect_loss: 0.438594, aspect_acc: 56.250000 
+95/286 sentence_acc: 95.312500 Pseudo sentence_acc: 60.156250 noise prob: [0.4380592219531536, 0.28199745880556293, 0.5543952444568276] G_loss: -0.000015, D_loss: 0.000016
+111/286 aspect_loss: 0.027634, aspect_acc: 99.218750 Pseudo aspect_loss: 0.455141, aspect_acc: 52.343750 
+111/286 sentence_acc: 96.093750 Pseudo sentence_acc: 57.031250 noise prob: [0.43750722019467503, 0.2958701145253144, 0.5455944072455168] G_loss: -0.000016, D_loss: 0.000017
+127/286 aspect_loss: 0.015935, aspect_acc: 100.000000 Pseudo aspect_loss: 0.455763, aspect_acc: 55.468750 
+127/286 sentence_acc: 98.437500 Pseudo sentence_acc: 61.718750 noise prob: [0.3996293544769287, 0.26906066201627254, 0.6091134632006288] G_loss: -0.000017, D_loss: 0.000018
+143/286 aspect_loss: 0.015932, aspect_acc: 98.437500 Pseudo aspect_loss: 0.471186, aspect_acc: 48.437500 
+143/286 sentence_acc: 97.656250 Pseudo sentence_acc: 61.718750 noise prob: [0.4433114188723266, 0.2730992796132341, 0.5612979810684919] G_loss: -0.000017, D_loss: 0.000018
+159/286 aspect_loss: 0.019300, aspect_acc: 98.437500 Pseudo aspect_loss: 0.457926, aspect_acc: 48.437500 
+159/286 sentence_acc: 97.656250 Pseudo sentence_acc: 59.375000 noise prob: [0.4651579838246107, 0.2544988687732257, 0.5582932319957763] G_loss: -0.000017, D_loss: 0.000018
+175/286 aspect_loss: 0.036585, aspect_acc: 97.656250 Pseudo aspect_loss: 0.440364, aspect_acc: 63.281250 
+175/286 sentence_acc: 96.875000 Pseudo sentence_acc: 53.906250 noise prob: [0.43949186243116856, 0.26415789904422127, 0.5744575201533735] G_loss: -0.000018, D_loss: 0.000019
+191/286 aspect_loss: 0.030860, aspect_acc: 98.437500 Pseudo aspect_loss: 0.485109, aspect_acc: 50.781250 
+191/286 sentence_acc: 96.093750 Pseudo sentence_acc: 56.250000 noise prob: [0.44457341529778205, 0.27147943538147956, 0.5595746571198106] G_loss: -0.000018, D_loss: 0.000019
+207/286 aspect_loss: 0.005556, aspect_acc: 100.000000 Pseudo aspect_loss: 0.466271, aspect_acc: 60.156250 
+207/286 sentence_acc: 95.312500 Pseudo sentence_acc: 57.812500 noise prob: [0.43411390017718077, 0.2579644135548733, 0.5918097589164972] G_loss: -0.000018, D_loss: 0.000020
+223/286 aspect_loss: 0.004299, aspect_acc: 100.000000 Pseudo aspect_loss: 0.439924, aspect_acc: 60.156250 
+223/286 sentence_acc: 94.531250 Pseudo sentence_acc: 44.531250 noise prob: [0.4231445067562163, 0.29098675936984364, 0.5650468128733337] G_loss: -0.000018, D_loss: 0.000019
+239/286 aspect_loss: 0.003673, aspect_acc: 100.000000 Pseudo aspect_loss: 0.485744, aspect_acc: 60.937500 
+239/286 sentence_acc: 96.875000 Pseudo sentence_acc: 62.500000 noise prob: [0.4451216379820835, 0.26344745339883957, 0.5690492995636305] G_loss: -0.000017, D_loss: 0.000019
+255/286 aspect_loss: 0.024028, aspect_acc: 98.437500 Pseudo aspect_loss: 0.461724, aspect_acc: 52.343750 
+255/286 sentence_acc: 95.312500 Pseudo sentence_acc: 51.562500 noise prob: [0.4626725404523313, 0.2892622957006097, 0.54212243296206] G_loss: -0.000017, D_loss: 0.000018
+271/286 aspect_loss: 0.010746, aspect_acc: 100.000000 Pseudo aspect_loss: 0.422494, aspect_acc: 60.937500 
+271/286 sentence_acc: 96.093750 Pseudo sentence_acc: 59.375000 noise prob: [0.42116570263169706, 0.3202849590452388, 0.547129082493484] G_loss: -0.000016, D_loss: 0.000017
+End of 13 train_loss: 0.0209, train_acc: 98.9073, val_loss: 0.2018, val_acc: 81.0127, f1_score: 0.7757
+sentence acc: 49.5253
+noise distribution: [0.2865771249769721, 0.21019748305309763, 0.5032253879759985]
+Epoch 14------------------------------------------------------------
+15/286 aspect_loss: 0.047994, aspect_acc: 96.875000 Pseudo aspect_loss: 0.456070, aspect_acc: 50.000000 
+15/286 sentence_acc: 93.750000 Pseudo sentence_acc: 67.968750 noise prob: [0.4439967435610015, 0.3390917165670544, 0.5080057359300554] G_loss: -0.000018, D_loss: 0.000019
+31/286 aspect_loss: 0.021465, aspect_acc: 99.218750 Pseudo aspect_loss: 0.455819, aspect_acc: 50.781250 
+31/286 sentence_acc: 96.093750 Pseudo sentence_acc: 67.968750 noise prob: [0.4571271841414273, 0.3322930139256641, 0.5057524926960468] G_loss: -0.000018, D_loss: 0.000019
+47/286 aspect_loss: 0.027770, aspect_acc: 97.656250 Pseudo aspect_loss: 0.467857, aspect_acc: 51.562500 
+47/286 sentence_acc: 96.875000 Pseudo sentence_acc: 62.500000 noise prob: [0.4787406452232972, 0.310453693382442, 0.4963936032727361] G_loss: -0.000017, D_loss: 0.000018
+63/286 aspect_loss: 0.010821, aspect_acc: 99.218750 Pseudo aspect_loss: 0.428607, aspect_acc: 55.468750 
+63/286 sentence_acc: 94.531250 Pseudo sentence_acc: 57.812500 noise prob: [0.4672843048465438, 0.31136571790557355, 0.4950588056817651] G_loss: -0.000017, D_loss: 0.000019
+79/286 aspect_loss: 0.017571, aspect_acc: 99.218750 Pseudo aspect_loss: 0.430061, aspect_acc: 60.156250 
+79/286 sentence_acc: 91.406250 Pseudo sentence_acc: 61.718750 noise prob: [0.4638635697774589, 0.2562309064378496, 0.5533746303990483] G_loss: -0.000018, D_loss: 0.000019
+95/286 aspect_loss: 0.020496, aspect_acc: 98.437500 Pseudo aspect_loss: 0.445340, aspect_acc: 56.250000 
+95/286 sentence_acc: 96.875000 Pseudo sentence_acc: 54.687500 noise prob: [0.4701691037043929, 0.28989482286851853, 0.5142139326781034] G_loss: -0.000015, D_loss: 0.000016
+111/286 aspect_loss: 0.028549, aspect_acc: 98.437500 Pseudo aspect_loss: 0.431885, aspect_acc: 58.593750 
+111/286 sentence_acc: 97.656250 Pseudo sentence_acc: 64.062500 noise prob: [0.4627004152862355, 0.31018787337234244, 0.503866477869451] G_loss: -0.000016, D_loss: 0.000017
+127/286 aspect_loss: 0.016306, aspect_acc: 99.218750 Pseudo aspect_loss: 0.427909, aspect_acc: 56.250000 
+127/286 sentence_acc: 96.875000 Pseudo sentence_acc: 57.812500 noise prob: [0.4345120768994093, 0.2978442411404103, 0.5463464660570025] G_loss: -0.000017, D_loss: 0.000018
+143/286 aspect_loss: 0.016652, aspect_acc: 99.218750 Pseudo aspect_loss: 0.448345, aspect_acc: 57.031250 
+143/286 sentence_acc: 96.093750 Pseudo sentence_acc: 59.375000 noise prob: [0.499564646743238, 0.27230493584647775, 0.4995776489377022] G_loss: -0.000017, D_loss: 0.000018
+159/286 aspect_loss: 0.009637, aspect_acc: 99.218750 Pseudo aspect_loss: 0.439715, aspect_acc: 54.687500 
+159/286 sentence_acc: 96.093750 Pseudo sentence_acc: 56.250000 noise prob: [0.5340505973435938, 0.24532566565903835, 0.4891762652041507] G_loss: -0.000017, D_loss: 0.000019
+175/286 aspect_loss: 0.036434, aspect_acc: 97.656250 Pseudo aspect_loss: 0.460612, aspect_acc: 51.562500 
+175/286 sentence_acc: 97.656250 Pseudo sentence_acc: 57.812500 noise prob: [0.5299463546834886, 0.25578637089347467, 0.49232631130144] G_loss: -0.000018, D_loss: 0.000019
+191/286 aspect_loss: 0.011961, aspect_acc: 99.218750 Pseudo aspect_loss: 0.468051, aspect_acc: 53.906250 
+191/286 sentence_acc: 98.437500 Pseudo sentence_acc: 67.187500 noise prob: [0.517386171821272, 0.2676291929092258, 0.4874100158922374] G_loss: -0.000018, D_loss: 0.000020
+207/286 aspect_loss: 0.005671, aspect_acc: 100.000000 Pseudo aspect_loss: 0.482900, aspect_acc: 56.250000 
+207/286 sentence_acc: 96.875000 Pseudo sentence_acc: 59.375000 noise prob: [0.4810810089111328, 0.25161293341079727, 0.5426121037453413] G_loss: -0.000019, D_loss: 0.000020
+223/286 aspect_loss: 0.001585, aspect_acc: 100.000000 Pseudo aspect_loss: 0.436615, aspect_acc: 57.812500 
+223/286 sentence_acc: 96.875000 Pseudo sentence_acc: 50.781250 noise prob: [0.5031908880919218, 0.2902351122465916, 0.47760441852733493] G_loss: -0.000019, D_loss: 0.000020
+239/286 aspect_loss: 0.008410, aspect_acc: 99.218750 Pseudo aspect_loss: 0.455839, aspect_acc: 50.000000 
+239/286 sentence_acc: 96.093750 Pseudo sentence_acc: 64.843750 noise prob: [0.5200713239028119, 0.2649270764668472, 0.48192166507215006] G_loss: -0.000018, D_loss: 0.000019
+255/286 aspect_loss: 0.007108, aspect_acc: 99.218750 Pseudo aspect_loss: 0.477656, aspect_acc: 52.343750 
+255/286 sentence_acc: 99.218750 Pseudo sentence_acc: 63.281250 noise prob: [0.5054576192051172, 0.2639099252410233, 0.5010588318109512] G_loss: -0.000018, D_loss: 0.000019
+271/286 aspect_loss: 0.016683, aspect_acc: 99.218750 Pseudo aspect_loss: 0.446569, aspect_acc: 57.031250 
+271/286 sentence_acc: 98.437500 Pseudo sentence_acc: 61.718750 noise prob: [0.4767220002831891, 0.2534644333063625, 0.5361365601420403] G_loss: -0.000017, D_loss: 0.000018
+End of 14 train_loss: 0.0172, train_acc: 98.9510, val_loss: 0.2337, val_acc: 80.5380, f1_score: 0.7673
+sentence acc: 48.1013
+noise distribution: [0.28759657924532983, 0.19739792057843486, 0.5150054988018087]
+Epoch 15------------------------------------------------------------
+15/286 aspect_loss: 0.026311, aspect_acc: 98.437500 Pseudo aspect_loss: 0.468005, aspect_acc: 51.562500 
+15/286 sentence_acc: 98.437500 Pseudo sentence_acc: 70.312500 noise prob: [0.4808646032761317, 0.2555581278866157, 0.5364740598015487] G_loss: -0.000018, D_loss: 0.000019
+31/286 aspect_loss: 0.020629, aspect_acc: 98.437500 Pseudo aspect_loss: 0.446711, aspect_acc: 50.000000 
+31/286 sentence_acc: 96.875000 Pseudo sentence_acc: 65.625000 noise prob: [0.49675854155793786, 0.2579244276857935, 0.5234446059912443] G_loss: -0.000018, D_loss: 0.000020
+47/286 aspect_loss: 0.026119, aspect_acc: 98.437500 Pseudo aspect_loss: 0.437671, aspect_acc: 55.468750 
+47/286 sentence_acc: 96.875000 Pseudo sentence_acc: 61.718750 noise prob: [0.5372160810511559, 0.2753529327455908, 0.46735323825851083] G_loss: -0.000017, D_loss: 0.000018
+63/286 aspect_loss: 0.004934, aspect_acc: 100.000000 Pseudo aspect_loss: 0.421242, aspect_acc: 56.250000 
+63/286 sentence_acc: 97.656250 Pseudo sentence_acc: 53.125000 noise prob: [0.5094277645694092, 0.29237028234638274, 0.4752002377063036] G_loss: -0.000019, D_loss: 0.000020
+79/286 aspect_loss: 0.016027, aspect_acc: 98.437500 Pseudo aspect_loss: 0.413548, aspect_acc: 60.156250 
+79/286 sentence_acc: 98.437500 Pseudo sentence_acc: 64.062500 noise prob: [0.4947831225581467, 0.2571885282814037, 0.5324703669175506] G_loss: -0.000019, D_loss: 0.000020
+95/286 aspect_loss: 0.016363, aspect_acc: 98.437500 Pseudo aspect_loss: 0.482268, aspect_acc: 49.218750 
+95/286 sentence_acc: 96.875000 Pseudo sentence_acc: 60.937500 noise prob: [0.5105733266100287, 0.2935288625594694, 0.46975009655579925] G_loss: -0.000017, D_loss: 0.000018
+111/286 aspect_loss: 0.022519, aspect_acc: 98.437500 Pseudo aspect_loss: 0.452877, aspect_acc: 52.343750 
+111/286 sentence_acc: 96.093750 Pseudo sentence_acc: 63.281250 noise prob: [0.4936595144099556, 0.32070219960587565, 0.45776394847780466] G_loss: -0.000018, D_loss: 0.000019
+127/286 aspect_loss: 0.011580, aspect_acc: 100.000000 Pseudo aspect_loss: 0.485931, aspect_acc: 48.437500 
+127/286 sentence_acc: 96.875000 Pseudo sentence_acc: 59.375000 noise prob: [0.4593058009631932, 0.3048245662357658, 0.5143484510481358] G_loss: -0.000018, D_loss: 0.000019
+143/286 aspect_loss: 0.012821, aspect_acc: 98.437500 Pseudo aspect_loss: 0.463338, aspect_acc: 52.343750 
+143/286 sentence_acc: 96.875000 Pseudo sentence_acc: 64.062500 noise prob: [0.4933170066215098, 0.30086612308514304, 0.4703054716810584] G_loss: -0.000018, D_loss: 0.000020
+159/286 aspect_loss: 0.007976, aspect_acc: 99.218750 Pseudo aspect_loss: 0.477190, aspect_acc: 49.218750 
+159/286 sentence_acc: 96.875000 Pseudo sentence_acc: 61.718750 noise prob: [0.516207451466471, 0.2743160921090748, 0.4792360575302155] G_loss: -0.000018, D_loss: 0.000020
+175/286 aspect_loss: 0.036626, aspect_acc: 96.875000 Pseudo aspect_loss: 0.468491, aspect_acc: 53.906250 
+175/286 sentence_acc: 93.750000 Pseudo sentence_acc: 58.593750 noise prob: [0.49473187420517206, 0.2852634664159268, 0.5065436698496342] G_loss: -0.000017, D_loss: 0.000019
+191/286 aspect_loss: 0.012133, aspect_acc: 99.218750 Pseudo aspect_loss: 0.428552, aspect_acc: 55.468750 
+191/286 sentence_acc: 95.312500 Pseudo sentence_acc: 58.593750 noise prob: [0.4938371817988809, 0.2833682523923926, 0.49852141458541155] G_loss: -0.000019, D_loss: 0.000020
+207/286 aspect_loss: 0.005176, aspect_acc: 100.000000 Pseudo aspect_loss: 0.443184, aspect_acc: 56.250000 
+207/286 sentence_acc: 98.437500 Pseudo sentence_acc: 63.281250 noise prob: [0.4623337062075734, 0.2775803377153352, 0.5383407082408667] G_loss: -0.000020, D_loss: 0.000021
+223/286 aspect_loss: 0.002419, aspect_acc: 100.000000 Pseudo aspect_loss: 0.494177, aspect_acc: 47.656250 
+223/286 sentence_acc: 96.875000 Pseudo sentence_acc: 60.937500 noise prob: [0.46580449771136045, 0.31787566374987364, 0.48955381009727716] G_loss: -0.000020, D_loss: 0.000021
+239/286 aspect_loss: 0.015887, aspect_acc: 99.218750 Pseudo aspect_loss: 0.480109, aspect_acc: 49.218750 
+239/286 sentence_acc: 96.093750 Pseudo sentence_acc: 58.593750 noise prob: [0.4777620924869552, 0.3029046737065073, 0.48966784111689776] G_loss: -0.000019, D_loss: 0.000020
+255/286 aspect_loss: 0.001879, aspect_acc: 100.000000 Pseudo aspect_loss: 0.461596, aspect_acc: 53.906250 
+255/286 sentence_acc: 96.093750 Pseudo sentence_acc: 57.031250 noise prob: [0.4829250508919358, 0.31343957176432014, 0.4815165074542165] G_loss: -0.000019, D_loss: 0.000020
+271/286 aspect_loss: 0.010050, aspect_acc: 99.218750 Pseudo aspect_loss: 0.471148, aspect_acc: 49.218750 
+271/286 sentence_acc: 96.093750 Pseudo sentence_acc: 56.250000 noise prob: [0.4782835972146131, 0.28347059147199616, 0.5076921740546823] G_loss: -0.000018, D_loss: 0.000019
+End of 15 train_loss: 0.0145, train_acc: 99.0385, val_loss: 0.2431, val_acc: 81.1709, f1_score: 0.7775
+sentence acc: 44.9367
+noise distribution: [0.29900621462629595, 0.20517448312058134, 0.49581930345895003]
+Epoch 16------------------------------------------------------------
+15/286 aspect_loss: 0.061812, aspect_acc: 96.875000 Pseudo aspect_loss: 0.471808, aspect_acc: 49.218750 
+15/286 sentence_acc: 96.093750 Pseudo sentence_acc: 68.750000 noise prob: [0.49748489502235316, 0.2891864921548404, 0.48979492392390966] G_loss: -0.000018, D_loss: 0.000020
+31/286 aspect_loss: 0.034994, aspect_acc: 98.437500 Pseudo aspect_loss: 0.442693, aspect_acc: 51.562500 
+31/286 sentence_acc: 98.437500 Pseudo sentence_acc: 69.531250 noise prob: [0.48053752491250634, 0.27167003677459434, 0.5237449109554291] G_loss: -0.000018, D_loss: 0.000020
+47/286 aspect_loss: 0.028313, aspect_acc: 97.656250 Pseudo aspect_loss: 0.466243, aspect_acc: 54.687500 
+47/286 sentence_acc: 96.875000 Pseudo sentence_acc: 64.843750 noise prob: [0.5085802496178076, 0.2614155160699738, 0.5004361211322248] G_loss: -0.000017, D_loss: 0.000018
+63/286 aspect_loss: 0.006844, aspect_acc: 100.000000 Pseudo aspect_loss: 0.458916, aspect_acc: 57.812500 
+63/286 sentence_acc: 96.875000 Pseudo sentence_acc: 57.031250 noise prob: [0.5084645355818793, 0.2708193813741673, 0.48772585950791836] G_loss: -0.000018, D_loss: 0.000019
+79/286 aspect_loss: 0.014862, aspect_acc: 98.437500 Pseudo aspect_loss: 0.440483, aspect_acc: 50.000000 
+79/286 sentence_acc: 96.093750 Pseudo sentence_acc: 65.625000 noise prob: [0.4783214353956282, 0.253111325961072, 0.5378420688211918] G_loss: -0.000019, D_loss: 0.000020
+95/286 aspect_loss: 0.019413, aspect_acc: 99.218750 Pseudo aspect_loss: 0.453628, aspect_acc: 53.906250 
+95/286 sentence_acc: 96.875000 Pseudo sentence_acc: 64.062500 noise prob: [0.5104602253995836, 0.27806398159009404, 0.47816767869517207] G_loss: -0.000016, D_loss: 0.000018
+111/286 aspect_loss: 0.018711, aspect_acc: 99.218750 Pseudo aspect_loss: 0.461807, aspect_acc: 53.906250 
+111/286 sentence_acc: 97.656250 Pseudo sentence_acc: 63.281250 noise prob: [0.47961999516701326, 0.31275300116976723, 0.47609565407037735] G_loss: -0.000018, D_loss: 0.000019
+127/286 aspect_loss: 0.011487, aspect_acc: 99.218750 Pseudo aspect_loss: 0.433328, aspect_acc: 51.562500 
+127/286 sentence_acc: 96.093750 Pseudo sentence_acc: 67.187500 noise prob: [0.4378821705467999, 0.3074042401276529, 0.5231513921171427] G_loss: -0.000019, D_loss: 0.000020
+143/286 aspect_loss: 0.014617, aspect_acc: 98.437500 Pseudo aspect_loss: 0.457849, aspect_acc: 54.687500 
+143/286 sentence_acc: 96.093750 Pseudo sentence_acc: 64.843750 noise prob: [0.48434031708166003, 0.2867504062887747, 0.4916803389787674] G_loss: -0.000018, D_loss: 0.000020
+159/286 aspect_loss: 0.008442, aspect_acc: 99.218750 Pseudo aspect_loss: 0.446703, aspect_acc: 50.000000 
+159/286 sentence_acc: 96.875000 Pseudo sentence_acc: 56.250000 noise prob: [0.49599239882081747, 0.267292302014539, 0.49144461195828626] G_loss: -0.000020, D_loss: 0.000021
+175/286 aspect_loss: 0.020272, aspect_acc: 99.218750 Pseudo aspect_loss: 0.479449, aspect_acc: 54.687500 
+175/286 sentence_acc: 96.875000 Pseudo sentence_acc: 64.843750 noise prob: [0.48227637773379683, 0.27538636382087134, 0.507109104655683] G_loss: -0.000019, D_loss: 0.000020
+191/286 aspect_loss: 0.008421, aspect_acc: 99.218750 Pseudo aspect_loss: 0.437246, aspect_acc: 60.156250 
+191/286 sentence_acc: 93.750000 Pseudo sentence_acc: 60.937500 noise prob: [0.49131076081539504, 0.2685755353595596, 0.49885568115860224] G_loss: -0.000020, D_loss: 0.000021
+207/286 aspect_loss: 0.005645, aspect_acc: 100.000000 Pseudo aspect_loss: 0.456261, aspect_acc: 57.812500 
+207/286 sentence_acc: 99.218750 Pseudo sentence_acc: 65.625000 noise prob: [0.455801609903574, 0.2532035815966083, 0.5531204547733068] G_loss: -0.000020, D_loss: 0.000021
+223/286 aspect_loss: 0.000437, aspect_acc: 100.000000 Pseudo aspect_loss: 0.453096, aspect_acc: 52.343750 
+223/286 sentence_acc: 96.875000 Pseudo sentence_acc: 56.250000 noise prob: [0.4517909809947014, 0.2960463620547671, 0.5127090564928949] G_loss: -0.000020, D_loss: 0.000021
+239/286 aspect_loss: 0.003572, aspect_acc: 100.000000 Pseudo aspect_loss: 0.460635, aspect_acc: 56.250000 
+239/286 sentence_acc: 94.531250 Pseudo sentence_acc: 71.093750 noise prob: [0.44723646822967567, 0.27625279771746136, 0.5354634730756516] G_loss: -0.000019, D_loss: 0.000020
+255/286 aspect_loss: 0.028341, aspect_acc: 98.437500 Pseudo aspect_loss: 0.467605, aspect_acc: 55.468750 
+255/286 sentence_acc: 95.312500 Pseudo sentence_acc: 60.156250 noise prob: [0.45831374009139836, 0.29251423524692655, 0.5140160340815783] G_loss: -0.000019, D_loss: 0.000020
+271/286 aspect_loss: 0.011134, aspect_acc: 99.218750 Pseudo aspect_loss: 0.474904, aspect_acc: 53.125000 
+271/286 sentence_acc: 96.875000 Pseudo sentence_acc: 61.718750 noise prob: [0.43936255446169525, 0.27799620022415183, 0.54831562936306] G_loss: -0.000017, D_loss: 0.000019
+End of 16 train_loss: 0.0171, train_acc: 98.9948, val_loss: 0.2254, val_acc: 80.6962, f1_score: 0.7662
+sentence acc: 45.0949
+noise distribution: [0.2891202943209879, 0.18635822685958198, 0.5245214814409868]
+Epoch 17------------------------------------------------------------
+15/286 aspect_loss: 0.029464, aspect_acc: 97.656250 Pseudo aspect_loss: 0.481948, aspect_acc: 46.093750 
+15/286 sentence_acc: 99.218750 Pseudo sentence_acc: 72.656250 noise prob: [0.4510430421214551, 0.27118120732484385, 0.5537035656161606] G_loss: -0.000019, D_loss: 0.000021
+31/286 aspect_loss: 0.017352, aspect_acc: 98.437500 Pseudo aspect_loss: 0.463354, aspect_acc: 56.250000 
+31/286 sentence_acc: 98.437500 Pseudo sentence_acc: 71.875000 noise prob: [0.4447947056032717, 0.2576798895606771, 0.565210715867579] G_loss: -0.000019, D_loss: 0.000020
+47/286 aspect_loss: 0.023471, aspect_acc: 98.437500 Pseudo aspect_loss: 0.478778, aspect_acc: 57.031250 
+47/286 sentence_acc: 97.656250 Pseudo sentence_acc: 66.406250 noise prob: [0.4534006358589977, 0.2641710585085093, 0.5500537622720003] G_loss: -0.000018, D_loss: 0.000019
+63/286 aspect_loss: 0.005997, aspect_acc: 100.000000 Pseudo aspect_loss: 0.439596, aspect_acc: 61.718750 
+63/286 sentence_acc: 99.218750 Pseudo sentence_acc: 57.031250 noise prob: [0.45155618819990195, 0.2721457694860874, 0.5374862095341086] G_loss: -0.000018, D_loss: 0.000020
+79/286 aspect_loss: 0.012332, aspect_acc: 99.218750 Pseudo aspect_loss: 0.425926, aspect_acc: 57.812500 
+79/286 sentence_acc: 96.093750 Pseudo sentence_acc: 67.968750 noise prob: [0.449172580614686, 0.2496257814927958, 0.5664634546265006] G_loss: -0.000019, D_loss: 0.000021
+95/286 aspect_loss: 0.018609, aspect_acc: 98.437500 Pseudo aspect_loss: 0.456485, aspect_acc: 55.468750 
+95/286 sentence_acc: 99.218750 Pseudo sentence_acc: 64.062500 noise prob: [0.4723257082514465, 0.27696599380578846, 0.5137399323284626] G_loss: -0.000016, D_loss: 0.000018
+111/286 aspect_loss: 0.019933, aspect_acc: 99.218750 Pseudo aspect_loss: 0.472552, aspect_acc: 52.343750 
+111/286 sentence_acc: 95.312500 Pseudo sentence_acc: 65.625000 noise prob: [0.45161260780878365, 0.3018037116198684, 0.5174067295156419] G_loss: -0.000017, D_loss: 0.000019
+127/286 aspect_loss: 0.020138, aspect_acc: 98.437500 Pseudo aspect_loss: 0.474435, aspect_acc: 50.000000 
+127/286 sentence_acc: 94.531250 Pseudo sentence_acc: 64.843750 noise prob: [0.44770840369164944, 0.27841205103322864, 0.5467571429908276] G_loss: -0.000018, D_loss: 0.000019
+143/286 aspect_loss: 0.015924, aspect_acc: 98.437500 Pseudo aspect_loss: 0.472122, aspect_acc: 49.218750 
+143/286 sentence_acc: 96.093750 Pseudo sentence_acc: 61.718750 noise prob: [0.4962037168443203, 0.2631403454579413, 0.516291388310492] G_loss: -0.000017, D_loss: 0.000019
+159/286 aspect_loss: 0.008350, aspect_acc: 99.218750 Pseudo aspect_loss: 0.466912, aspect_acc: 53.906250 
+159/286 sentence_acc: 96.875000 Pseudo sentence_acc: 60.156250 noise prob: [0.4983785431832075, 0.2523743392084725, 0.5140555481484625] G_loss: -0.000018, D_loss: 0.000020
+175/286 aspect_loss: 0.021418, aspect_acc: 99.218750 Pseudo aspect_loss: 0.499213, aspect_acc: 51.562500 
+175/286 sentence_acc: 95.312500 Pseudo sentence_acc: 66.406250 noise prob: [0.49681534664705396, 0.2682970689929789, 0.5073323184624314] G_loss: -0.000019, D_loss: 0.000020
+191/286 aspect_loss: 0.010590, aspect_acc: 100.000000 Pseudo aspect_loss: 0.475151, aspect_acc: 56.250000 
+191/286 sentence_acc: 96.093750 Pseudo sentence_acc: 57.812500 noise prob: [0.48377265135059133, 0.2779654281330295, 0.5048509333282709] G_loss: -0.000019, D_loss: 0.000021
+207/286 aspect_loss: 0.006280, aspect_acc: 100.000000 Pseudo aspect_loss: 0.465197, aspect_acc: 46.875000 
+207/286 sentence_acc: 97.656250 Pseudo sentence_acc: 63.281250 noise prob: [0.4646600871346891, 0.24891426859539934, 0.5587750594131649] G_loss: -0.000019, D_loss: 0.000021
+223/286 aspect_loss: 0.000533, aspect_acc: 100.000000 Pseudo aspect_loss: 0.462989, aspect_acc: 57.812500 
+223/286 sentence_acc: 99.218750 Pseudo sentence_acc: 57.031250 noise prob: [0.4659175123088062, 0.29000343021471053, 0.5152877471409738] G_loss: -0.000019, D_loss: 0.000021
+239/286 aspect_loss: 0.006639, aspect_acc: 99.218750 Pseudo aspect_loss: 0.453933, aspect_acc: 53.125000 
+239/286 sentence_acc: 96.093750 Pseudo sentence_acc: 67.968750 noise prob: [0.4916221522144042, 0.2533131735108327, 0.5306856057650293] G_loss: -0.000018, D_loss: 0.000020
+255/286 aspect_loss: 0.007860, aspect_acc: 100.000000 Pseudo aspect_loss: 0.480890, aspect_acc: 49.218750 
+255/286 sentence_acc: 96.093750 Pseudo sentence_acc: 66.406250 noise prob: [0.4990514167584479, 0.26545219914987683, 0.49772963067516685] G_loss: -0.000019, D_loss: 0.000020
+271/286 aspect_loss: 0.011466, aspect_acc: 99.218750 Pseudo aspect_loss: 0.422145, aspect_acc: 56.250000 
+271/286 sentence_acc: 97.656250 Pseudo sentence_acc: 57.812500 noise prob: [0.4854418553877622, 0.23786182989715599, 0.5489249797537923] G_loss: -0.000018, D_loss: 0.000019
+End of 17 train_loss: 0.0137, train_acc: 99.1259, val_loss: 0.2369, val_acc: 81.3291, f1_score: 0.7748
+sentence acc: 46.5190
+noise distribution: [0.29030292034549027, 0.19528582266691585, 0.5144112589220164]
+Epoch 18------------------------------------------------------------
+15/286 aspect_loss: 0.025277, aspect_acc: 97.656250 Pseudo aspect_loss: 0.411658, aspect_acc: 60.937500 
+15/286 sentence_acc: 95.312500 Pseudo sentence_acc: 74.218750 noise prob: [0.4882152510690503, 0.23490532411960885, 0.5611556665971875] G_loss: -0.000019, D_loss: 0.000020
+31/286 aspect_loss: 0.015247, aspect_acc: 99.218750 Pseudo aspect_loss: 0.454205, aspect_acc: 55.468750 
+31/286 sentence_acc: 96.093750 Pseudo sentence_acc: 74.218750 noise prob: [0.48406305257230997, 0.23572945709747728, 0.5634289542213082] G_loss: -0.000019, D_loss: 0.000020
+47/286 aspect_loss: 0.023054, aspect_acc: 99.218750 Pseudo aspect_loss: 0.448690, aspect_acc: 56.250000 
+47/286 sentence_acc: 92.187500 Pseudo sentence_acc: 68.750000 noise prob: [0.5193506104405969, 0.2249598998350848, 0.5361560108140111] G_loss: -0.000018, D_loss: 0.000019
+63/286 aspect_loss: 0.006083, aspect_acc: 100.000000 Pseudo aspect_loss: 0.473394, aspect_acc: 48.437500 
+63/286 sentence_acc: 96.875000 Pseudo sentence_acc: 65.625000 noise prob: [0.5176267686183564, 0.23652514399873326, 0.5281227827072144] G_loss: -0.000019, D_loss: 0.000020
+79/286 aspect_loss: 0.014756, aspect_acc: 98.437500 Pseudo aspect_loss: 0.420015, aspect_acc: 57.031250 
+79/286 sentence_acc: 97.656250 Pseudo sentence_acc: 71.093750 noise prob: [0.5140548022463918, 0.22242523412569426, 0.5425700815394521] G_loss: -0.000019, D_loss: 0.000021
+95/286 aspect_loss: 0.014459, aspect_acc: 99.218750 Pseudo aspect_loss: 0.488103, aspect_acc: 50.000000 
+95/286 sentence_acc: 96.875000 Pseudo sentence_acc: 66.406250 noise prob: [0.5316718565300107, 0.2509476256745984, 0.4927325411699712] G_loss: -0.000017, D_loss: 0.000018
+111/286 aspect_loss: 0.019659, aspect_acc: 98.437500 Pseudo aspect_loss: 0.455304, aspect_acc: 52.343750 
+111/286 sentence_acc: 96.875000 Pseudo sentence_acc: 67.187500 noise prob: [0.5169197473442182, 0.2782463376497617, 0.48644791077822447] G_loss: -0.000017, D_loss: 0.000019
+127/286 aspect_loss: 0.011815, aspect_acc: 99.218750 Pseudo aspect_loss: 0.468934, aspect_acc: 50.000000 
+127/286 sentence_acc: 96.875000 Pseudo sentence_acc: 64.062500 noise prob: [0.4796773944981396, 0.2682907856069505, 0.5331853209063411] G_loss: -0.000018, D_loss: 0.000019
+143/286 aspect_loss: 0.014178, aspect_acc: 98.437500 Pseudo aspect_loss: 0.452120, aspect_acc: 60.937500 
+143/286 sentence_acc: 95.312500 Pseudo sentence_acc: 66.406250 noise prob: [0.5177959343418479, 0.24629230530263158, 0.5105824982747436] G_loss: -0.000018, D_loss: 0.000020
+159/286 aspect_loss: 0.067644, aspect_acc: 98.437500 Pseudo aspect_loss: 0.455605, aspect_acc: 47.656250 
+159/286 sentence_acc: 96.875000 Pseudo sentence_acc: 62.500000 noise prob: [0.5495083667337894, 0.2235621240834007, 0.5000462400203105] G_loss: -0.000018, D_loss: 0.000020
+175/286 aspect_loss: 0.025536, aspect_acc: 99.218750 Pseudo aspect_loss: 0.483023, aspect_acc: 46.093750 
+175/286 sentence_acc: 99.218750 Pseudo sentence_acc: 63.281250 noise prob: [0.5398246850818396, 0.2440803379213321, 0.5073941005393863] G_loss: -0.000018, D_loss: 0.000019
+191/286 aspect_loss: 0.008487, aspect_acc: 100.000000 Pseudo aspect_loss: 0.428678, aspect_acc: 54.687500 
+191/286 sentence_acc: 96.093750 Pseudo sentence_acc: 64.843750 noise prob: [0.5346043985337019, 0.23931559787888546, 0.5073677049949765] G_loss: -0.000019, D_loss: 0.000020
+207/286 aspect_loss: 0.004199, aspect_acc: 100.000000 Pseudo aspect_loss: 0.481016, aspect_acc: 54.687500 
+207/286 sentence_acc: 96.093750 Pseudo sentence_acc: 67.968750 noise prob: [0.5058033368550241, 0.23434171827102546, 0.545598397962749] G_loss: -0.000019, D_loss: 0.000021
+223/286 aspect_loss: 0.000184, aspect_acc: 100.000000 Pseudo aspect_loss: 0.451181, aspect_acc: 55.468750 
+223/286 sentence_acc: 98.437500 Pseudo sentence_acc: 53.125000 noise prob: [0.5014054393395782, 0.2714337103680009, 0.5069834422320127] G_loss: -0.000020, D_loss: 0.000021
+239/286 aspect_loss: 0.005611, aspect_acc: 99.218750 Pseudo aspect_loss: 0.425244, aspect_acc: 57.812500 
+239/286 sentence_acc: 98.437500 Pseudo sentence_acc: 61.718750 noise prob: [0.5088182695908472, 0.2378616409478127, 0.5375696521514328] G_loss: -0.000018, D_loss: 0.000020
+255/286 aspect_loss: 0.007587, aspect_acc: 99.218750 Pseudo aspect_loss: 0.467371, aspect_acc: 53.906250 
+255/286 sentence_acc: 98.437500 Pseudo sentence_acc: 71.093750 noise prob: [0.5062359133735299, 0.26089025009423494, 0.5063821631483734] G_loss: -0.000019, D_loss: 0.000020
+271/286 aspect_loss: 0.009537, aspect_acc: 100.000000 Pseudo aspect_loss: 0.425603, aspect_acc: 54.687500 
+271/286 sentence_acc: 99.218750 Pseudo sentence_acc: 61.718750 noise prob: [0.48870962590444833, 0.2439280751204933, 0.5454668132588267] G_loss: -0.000017, D_loss: 0.000019
+End of 18 train_loss: 0.0156, train_acc: 99.2133, val_loss: 0.2321, val_acc: 80.8544, f1_score: 0.7686
+sentence acc: 46.5190
+noise distribution: [0.2946669344149411, 0.18705588046055396, 0.5182771894654723]
+Epoch 19------------------------------------------------------------
+15/286 aspect_loss: 0.027750, aspect_acc: 99.218750 Pseudo aspect_loss: 0.417392, aspect_acc: 58.593750 
+15/286 sentence_acc: 94.531250 Pseudo sentence_acc: 72.656250 noise prob: [0.48660087486496195, 0.2548696808225941, 0.5393820297904313] G_loss: -0.000019, D_loss: 0.000020
+31/286 aspect_loss: 0.014974, aspect_acc: 98.437500 Pseudo aspect_loss: 0.388440, aspect_acc: 64.062500 
+31/286 sentence_acc: 96.093750 Pseudo sentence_acc: 71.093750 noise prob: [0.4941911343485117, 0.23884986454504542, 0.5481082266196609] G_loss: -0.000018, D_loss: 0.000020
+47/286 aspect_loss: 0.024422, aspect_acc: 98.437500 Pseudo aspect_loss: 0.404650, aspect_acc: 67.187500 
+47/286 sentence_acc: 98.437500 Pseudo sentence_acc: 67.968750 noise prob: [0.5395730403251946, 0.221272541442886, 0.520971626508981] G_loss: -0.000017, D_loss: 0.000019
+63/286 aspect_loss: 0.001828, aspect_acc: 100.000000 Pseudo aspect_loss: 0.397960, aspect_acc: 64.843750 
+63/286 sentence_acc: 96.093750 Pseudo sentence_acc: 63.281250 noise prob: [0.5253807587432675, 0.23924557899590582, 0.5137483682483435] G_loss: -0.000019, D_loss: 0.000020
+79/286 aspect_loss: 0.015950, aspect_acc: 98.437500 Pseudo aspect_loss: 0.414522, aspect_acc: 60.156250 
+79/286 sentence_acc: 97.656250 Pseudo sentence_acc: 71.875000 noise prob: [0.5251890965737402, 0.21186874268460087, 0.5366790927946568] G_loss: -0.000019, D_loss: 0.000021
+95/286 aspect_loss: 0.011046, aspect_acc: 99.218750 Pseudo aspect_loss: 0.473408, aspect_acc: 56.250000 
+95/286 sentence_acc: 95.312500 Pseudo sentence_acc: 66.406250 noise prob: [0.5346692292951047, 0.25084050844452577, 0.4905002652667463] G_loss: -0.000017, D_loss: 0.000018
+111/286 aspect_loss: 0.017374, aspect_acc: 99.218750 Pseudo aspect_loss: 0.493159, aspect_acc: 51.562500 
+111/286 sentence_acc: 96.093750 Pseudo sentence_acc: 66.406250 noise prob: [0.5205148629611358, 0.28364495990535943, 0.4726278502494097] G_loss: -0.000017, D_loss: 0.000019
+127/286 aspect_loss: 0.012755, aspect_acc: 100.000000 Pseudo aspect_loss: 0.486223, aspect_acc: 50.781250 
+127/286 sentence_acc: 98.437500 Pseudo sentence_acc: 63.281250 noise prob: [0.48046866757795215, 0.2801250669872388, 0.5139055140316486] G_loss: -0.000018, D_loss: 0.000019
+143/286 aspect_loss: 0.013865, aspect_acc: 98.437500 Pseudo aspect_loss: 0.478515, aspect_acc: 49.218750 
+143/286 sentence_acc: 98.437500 Pseudo sentence_acc: 70.312500 noise prob: [0.5083812987431884, 0.271926608402282, 0.49249459337443113] G_loss: -0.000018, D_loss: 0.000019
+159/286 aspect_loss: 0.008998, aspect_acc: 99.218750 Pseudo aspect_loss: 0.461091, aspect_acc: 52.343750 
+159/286 sentence_acc: 97.656250 Pseudo sentence_acc: 71.093750 noise prob: [0.5220662732608616, 0.25060389857389964, 0.49517700739670545] G_loss: -0.000018, D_loss: 0.000020
+175/286 aspect_loss: 0.023066, aspect_acc: 98.437500 Pseudo aspect_loss: 0.437414, aspect_acc: 57.812500 
+175/286 sentence_acc: 99.218750 Pseudo sentence_acc: 65.625000 noise prob: [0.5096148638986051, 0.25994155621447135, 0.5078844502568245] G_loss: -0.000018, D_loss: 0.000020
+191/286 aspect_loss: 0.007685, aspect_acc: 100.000000 Pseudo aspect_loss: 0.442316, aspect_acc: 57.812500 
+191/286 sentence_acc: 99.218750 Pseudo sentence_acc: 64.843750 noise prob: [0.5058648959093262, 0.25702522808569483, 0.5053566028364003] G_loss: -0.000019, D_loss: 0.000020
+207/286 aspect_loss: 0.004436, aspect_acc: 100.000000 Pseudo aspect_loss: 0.445931, aspect_acc: 58.593750 
+207/286 sentence_acc: 98.437500 Pseudo sentence_acc: 74.218750 noise prob: [0.49049348291009665, 0.24016377738735173, 0.5425657806918025] G_loss: -0.000019, D_loss: 0.000021
+223/286 aspect_loss: 0.000663, aspect_acc: 100.000000 Pseudo aspect_loss: 0.450218, aspect_acc: 56.250000 
+223/286 sentence_acc: 97.656250 Pseudo sentence_acc: 56.250000 noise prob: [0.47440116852521896, 0.2922741183647304, 0.4974238318391144] G_loss: -0.000020, D_loss: 0.000021
+239/286 aspect_loss: 0.006134, aspect_acc: 99.218750 Pseudo aspect_loss: 0.437591, aspect_acc: 60.937500 
+239/286 sentence_acc: 99.218750 Pseudo sentence_acc: 71.093750 noise prob: [0.48467859195079654, 0.25615287168329814, 0.5294125886721304] G_loss: -0.000018, D_loss: 0.000020
+255/286 aspect_loss: 0.009560, aspect_acc: 99.218750 Pseudo aspect_loss: 0.422890, aspect_acc: 53.906250 
+255/286 sentence_acc: 99.218750 Pseudo sentence_acc: 66.406250 noise prob: [0.49396798573434353, 0.26792885549366474, 0.5107897105626762] G_loss: -0.000019, D_loss: 0.000020
+271/286 aspect_loss: 0.012218, aspect_acc: 99.218750 Pseudo aspect_loss: 0.454756, aspect_acc: 56.250000 
+271/286 sentence_acc: 95.312500 Pseudo sentence_acc: 65.625000 noise prob: [0.4529128178837709, 0.2762033148610499, 0.5457700314000249] G_loss: -0.000018, D_loss: 0.000019
+End of 19 train_loss: 0.0121, train_acc: 99.2570, val_loss: 0.2362, val_acc: 81.4873, f1_score: 0.7788
+sentence acc: 46.9937
+noise distribution: [0.283326793953483, 0.20495633532175137, 0.5117168794332555]
+Epoch 20------------------------------------------------------------
+15/286 aspect_loss: 0.027718, aspect_acc: 96.875000 Pseudo aspect_loss: 0.421748, aspect_acc: 60.156250 
+15/286 sentence_acc: 96.875000 Pseudo sentence_acc: 67.187500 noise prob: [0.4656679379986599, 0.2725652808439918, 0.5363700450398028] G_loss: -0.000019, D_loss: 0.000021
+31/286 aspect_loss: 0.012261, aspect_acc: 99.218750 Pseudo aspect_loss: 0.450388, aspect_acc: 56.250000 
+31/286 sentence_acc: 97.656250 Pseudo sentence_acc: 69.531250 noise prob: [0.4660157607868314, 0.26015540065418463, 0.5463199447840452] G_loss: -0.000019, D_loss: 0.000021
+47/286 aspect_loss: 0.017333, aspect_acc: 98.437500 Pseudo aspect_loss: 0.501065, aspect_acc: 46.093750 
+47/286 sentence_acc: 100.000000 Pseudo sentence_acc: 69.531250 noise prob: [0.4946611983468756, 0.25443638163415017, 0.5233744392171502] G_loss: -0.000018, D_loss: 0.000019
+63/286 aspect_loss: 0.003960, aspect_acc: 100.000000 Pseudo aspect_loss: 0.447814, aspect_acc: 55.468750 
+63/286 sentence_acc: 98.437500 Pseudo sentence_acc: 64.062500 noise prob: [0.4894176694797352, 0.2694063765084138, 0.5132334446534514] G_loss: -0.000019, D_loss: 0.000021
+79/286 aspect_loss: 0.012531, aspect_acc: 98.437500 Pseudo aspect_loss: 0.419692, aspect_acc: 62.500000 
+79/286 sentence_acc: 96.093750 Pseudo sentence_acc: 70.312500 noise prob: [0.46869135228917, 0.25199442796292715, 0.5442841220647097] G_loss: -0.000019, D_loss: 0.000021
+95/286 aspect_loss: 0.012397, aspect_acc: 98.437500 Pseudo aspect_loss: 0.462020, aspect_acc: 52.343750 
+95/286 sentence_acc: 99.218750 Pseudo sentence_acc: 68.750000 noise prob: [0.48714219126850367, 0.29044180530763697, 0.48832293739542365] G_loss: -0.000018, D_loss: 0.000019
+111/286 aspect_loss: 0.017122, aspect_acc: 99.218750 Pseudo aspect_loss: 0.453249, aspect_acc: 46.093750 
+111/286 sentence_acc: 95.312500 Pseudo sentence_acc: 65.625000 noise prob: [0.4786529107950628, 0.30209839976305375, 0.48536603478714824] G_loss: -0.000018, D_loss: 0.000020
+127/286 aspect_loss: 0.008296, aspect_acc: 100.000000 Pseudo aspect_loss: 0.441182, aspect_acc: 59.375000 
+127/286 sentence_acc: 99.218750 Pseudo sentence_acc: 66.406250 noise prob: [0.4355941638350487, 0.3001214291434735, 0.5315830120816827] G_loss: -0.000019, D_loss: 0.000020
+143/286 aspect_loss: 0.012825, aspect_acc: 98.437500 Pseudo aspect_loss: 0.437810, aspect_acc: 56.250000 
+143/286 sentence_acc: 97.656250 Pseudo sentence_acc: 62.500000 noise prob: [0.46861119708046317, 0.2838250240893103, 0.5039612092077732] G_loss: -0.000019, D_loss: 0.000021
+159/286 aspect_loss: 0.007351, aspect_acc: 99.218750 Pseudo aspect_loss: 0.432430, aspect_acc: 57.812500 
+159/286 sentence_acc: 97.656250 Pseudo sentence_acc: 72.656250 noise prob: [0.49112723069265485, 0.24996984307654202, 0.5208941016317112] G_loss: -0.000020, D_loss: 0.000021
+175/286 aspect_loss: 0.026283, aspect_acc: 97.656250 Pseudo aspect_loss: 0.411613, aspect_acc: 55.468750 
+175/286 sentence_acc: 96.093750 Pseudo sentence_acc: 64.843750 noise prob: [0.4716169126331806, 0.2708193856815342, 0.5243128961883485] G_loss: -0.000020, D_loss: 0.000021
+191/286 aspect_loss: 0.009776, aspect_acc: 99.218750 Pseudo aspect_loss: 0.440254, aspect_acc: 54.687500 
+191/286 sentence_acc: 98.437500 Pseudo sentence_acc: 67.187500 noise prob: [0.4782500711589819, 0.26410647880402394, 0.5241555287502706] G_loss: -0.000020, D_loss: 0.000022
+207/286 aspect_loss: 0.005216, aspect_acc: 100.000000 Pseudo aspect_loss: 0.436053, aspect_acc: 55.468750 
+207/286 sentence_acc: 96.875000 Pseudo sentence_acc: 67.968750 noise prob: [0.48104237858206034, 0.24904767629050184, 0.5418223231099546] G_loss: -0.000020, D_loss: 0.000022
+223/286 aspect_loss: 0.000124, aspect_acc: 100.000000 Pseudo aspect_loss: 0.430604, aspect_acc: 54.687500 
+223/286 sentence_acc: 96.875000 Pseudo sentence_acc: 58.593750 noise prob: [0.4778289645910263, 0.2781702061765827, 0.511233885306865] G_loss: -0.000020, D_loss: 0.000021
+239/286 aspect_loss: 0.008200, aspect_acc: 99.218750 Pseudo aspect_loss: 0.441689, aspect_acc: 53.125000 
+239/286 sentence_acc: 97.656250 Pseudo sentence_acc: 68.750000 noise prob: [0.495254914421821, 0.2591229691315675, 0.5097638497682055] G_loss: -0.000019, D_loss: 0.000020
+255/286 aspect_loss: 0.006856, aspect_acc: 99.218750 Pseudo aspect_loss: 0.464406, aspect_acc: 50.781250 
+255/286 sentence_acc: 99.218750 Pseudo sentence_acc: 60.937500 noise prob: [0.4954812237992883, 0.2631332683376968, 0.5141225843690336] G_loss: -0.000019, D_loss: 0.000021
+271/286 aspect_loss: 0.008555, aspect_acc: 100.000000 Pseudo aspect_loss: 0.421926, aspect_acc: 53.906250 
+271/286 sentence_acc: 96.875000 Pseudo sentence_acc: 66.406250 noise prob: [0.4703951191622764, 0.25395902134187054, 0.5524030197411776] G_loss: -0.000018, D_loss: 0.000020
+End of 20 train_loss: 0.0111, train_acc: 99.0822, val_loss: 0.2499, val_acc: 81.9620, f1_score: 0.7858
+sentence acc: 48.7342
+noise distribution: [0.2747159757474581, 0.2140927071855935, 0.5111913220951367]
+new best model saved.
+Epoch 21------------------------------------------------------------
+15/286 aspect_loss: 0.023169, aspect_acc: 98.437500 Pseudo aspect_loss: 0.425583, aspect_acc: 63.281250 
+15/286 sentence_acc: 96.875000 Pseudo sentence_acc: 69.531250 noise prob: [0.48353438841877505, 0.252102649101289, 0.5299101630225778] G_loss: -0.000020, D_loss: 0.000021
+31/286 aspect_loss: 0.018855, aspect_acc: 98.437500 Pseudo aspect_loss: 0.440736, aspect_acc: 61.718750 
+31/286 sentence_acc: 97.656250 Pseudo sentence_acc: 72.656250 noise prob: [0.4808284817263484, 0.24175077644758858, 0.551285189576447] G_loss: -0.000019, D_loss: 0.000021
+47/286 aspect_loss: 0.017820, aspect_acc: 99.218750 Pseudo aspect_loss: 0.444211, aspect_acc: 53.125000 
+47/286 sentence_acc: 97.656250 Pseudo sentence_acc: 71.875000 noise prob: [0.506762825883925, 0.24706693126063328, 0.513891673181206] G_loss: -0.000018, D_loss: 0.000019
+63/286 aspect_loss: 0.004009, aspect_acc: 100.000000 Pseudo aspect_loss: 0.395442, aspect_acc: 61.718750 
+63/286 sentence_acc: 98.437500 Pseudo sentence_acc: 61.718750 noise prob: [0.49829918309114873, 0.24573187254281947, 0.5264744414016604] G_loss: -0.000019, D_loss: 0.000020
+79/286 aspect_loss: 0.012963, aspect_acc: 98.437500 Pseudo aspect_loss: 0.447526, aspect_acc: 64.062500 
+79/286 sentence_acc: 96.093750 Pseudo sentence_acc: 70.312500 noise prob: [0.4897488672286272, 0.2217841439996846, 0.5605876855552197] G_loss: -0.000019, D_loss: 0.000021
+95/286 aspect_loss: 0.029230, aspect_acc: 97.656250 Pseudo aspect_loss: 0.397878, aspect_acc: 59.375000 
+95/286 sentence_acc: 97.656250 Pseudo sentence_acc: 64.843750 noise prob: [0.5033642873167992, 0.24508724692714168, 0.5213674586266279] G_loss: -0.000017, D_loss: 0.000018
+111/286 aspect_loss: 0.018054, aspect_acc: 98.437500 Pseudo aspect_loss: 0.497445, aspect_acc: 50.781250 
+111/286 sentence_acc: 97.656250 Pseudo sentence_acc: 69.531250 noise prob: [0.4859635066241026, 0.2824356492346851, 0.5081268600188196] G_loss: -0.000018, D_loss: 0.000019
+127/286 aspect_loss: 0.006880, aspect_acc: 100.000000 Pseudo aspect_loss: 0.430985, aspect_acc: 57.031250 
+127/286 sentence_acc: 99.218750 Pseudo sentence_acc: 64.843750 noise prob: [0.45481678610667586, 0.26989990973379463, 0.5492755575105548] G_loss: -0.000018, D_loss: 0.000019
+143/286 aspect_loss: 0.012627, aspect_acc: 98.437500 Pseudo aspect_loss: 0.403584, aspect_acc: 57.812500 
+143/286 sentence_acc: 97.656250 Pseudo sentence_acc: 69.531250 noise prob: [0.47799114137887955, 0.276977106652339, 0.5139736421406269] G_loss: -0.000018, D_loss: 0.000020
+159/286 aspect_loss: 0.007636, aspect_acc: 99.218750 Pseudo aspect_loss: 0.422266, aspect_acc: 56.250000 
+159/286 sentence_acc: 97.656250 Pseudo sentence_acc: 67.187500 noise prob: [0.5007962547242641, 0.24734189437003806, 0.5189740611676825] G_loss: -0.000019, D_loss: 0.000021
+175/286 aspect_loss: 0.025457, aspect_acc: 97.656250 Pseudo aspect_loss: 0.447876, aspect_acc: 59.375000 
+175/286 sentence_acc: 97.656250 Pseudo sentence_acc: 67.968750 noise prob: [0.4938239138573408, 0.2560368698614184, 0.5227841516025364] G_loss: -0.000019, D_loss: 0.000021
+191/286 aspect_loss: 0.007448, aspect_acc: 100.000000 Pseudo aspect_loss: 0.462991, aspect_acc: 51.562500 
+191/286 sentence_acc: 98.437500 Pseudo sentence_acc: 65.625000 noise prob: [0.4852080841374118, 0.27060917105700355, 0.5117541165091097] G_loss: -0.000019, D_loss: 0.000021
+207/286 aspect_loss: 0.007010, aspect_acc: 99.218750 Pseudo aspect_loss: 0.435278, aspect_acc: 57.812500 
+207/286 sentence_acc: 96.875000 Pseudo sentence_acc: 73.437500 noise prob: [0.47165560256689787, 0.24438563866715413, 0.5580804776400328] G_loss: -0.000020, D_loss: 0.000021
+223/286 aspect_loss: 0.000038, aspect_acc: 100.000000 Pseudo aspect_loss: 0.439911, aspect_acc: 46.093750 
+223/286 sentence_acc: 96.875000 Pseudo sentence_acc: 64.062500 noise prob: [0.4525701408274472, 0.29146823674818734, 0.5201249942183495] G_loss: -0.000020, D_loss: 0.000022
+239/286 aspect_loss: 0.004926, aspect_acc: 100.000000 Pseudo aspect_loss: 0.435922, aspect_acc: 59.375000 
+239/286 sentence_acc: 96.875000 Pseudo sentence_acc: 67.968750 noise prob: [0.4645991296856664, 0.2648014723235974, 0.5393250274064485] G_loss: -0.000019, D_loss: 0.000021
+255/286 aspect_loss: 0.006649, aspect_acc: 99.218750 Pseudo aspect_loss: 0.462006, aspect_acc: 51.562500 
+255/286 sentence_acc: 96.093750 Pseudo sentence_acc: 66.406250 noise prob: [0.47181816026568413, 0.26942040398716927, 0.5227487995289266] G_loss: -0.000019, D_loss: 0.000020
+271/286 aspect_loss: 0.008975, aspect_acc: 100.000000 Pseudo aspect_loss: 0.432783, aspect_acc: 56.250000 
+271/286 sentence_acc: 93.750000 Pseudo sentence_acc: 61.718750 noise prob: [0.44495708507020026, 0.26205127089633606, 0.5579340672120452] G_loss: -0.000018, D_loss: 0.000020
+End of 21 train_loss: 0.0118, train_acc: 99.1259, val_loss: 0.2496, val_acc: 81.8038, f1_score: 0.7840
+sentence acc: 47.4684
+noise distribution: [0.28687291870374604, 0.20880636364939492, 0.5043207243840124]
+Epoch 22------------------------------------------------------------
+15/286 aspect_loss: 0.036553, aspect_acc: 96.875000 Pseudo aspect_loss: 0.480357, aspect_acc: 54.687500 
+15/286 sentence_acc: 97.656250 Pseudo sentence_acc: 65.625000 noise prob: [0.4687509755603969, 0.2563660392188467, 0.547832490876317] G_loss: -0.000019, D_loss: 0.000021
+31/286 aspect_loss: 0.019702, aspect_acc: 99.218750 Pseudo aspect_loss: 0.405471, aspect_acc: 61.718750 
+31/286 sentence_acc: 96.093750 Pseudo sentence_acc: 71.875000 noise prob: [0.4604727514088154, 0.2473707093304256, 0.5637314431369305] G_loss: -0.000019, D_loss: 0.000021
+47/286 aspect_loss: 0.020027, aspect_acc: 98.437500 Pseudo aspect_loss: 0.436954, aspect_acc: 59.375000 
+47/286 sentence_acc: 98.437500 Pseudo sentence_acc: 74.218750 noise prob: [0.49353586364304647, 0.24454417014567298, 0.5319123840890825] G_loss: -0.000018, D_loss: 0.000020
+63/286 aspect_loss: 0.000048, aspect_acc: 100.000000 Pseudo aspect_loss: 0.443321, aspect_acc: 50.781250 
+63/286 sentence_acc: 96.093750 Pseudo sentence_acc: 64.843750 noise prob: [0.47830632515251637, 0.25876709135627607, 0.5227283081039786] G_loss: -0.000019, D_loss: 0.000021
+79/286 aspect_loss: 0.013395, aspect_acc: 99.218750 Pseudo aspect_loss: 0.426731, aspect_acc: 57.031250 
+79/286 sentence_acc: 99.218750 Pseudo sentence_acc: 71.875000 noise prob: [0.4643049808219075, 0.2361040089162998, 0.5644633620977402] G_loss: -0.000020, D_loss: 0.000021
+95/286 aspect_loss: 0.018348, aspect_acc: 98.437500 Pseudo aspect_loss: 0.425827, aspect_acc: 56.250000 
+95/286 sentence_acc: 98.437500 Pseudo sentence_acc: 67.187500 noise prob: [0.48259343625977635, 0.2659851092030294, 0.5125542730093002] G_loss: -0.000018, D_loss: 0.000019
+111/286 aspect_loss: 0.014726, aspect_acc: 100.000000 Pseudo aspect_loss: 0.453496, aspect_acc: 55.468750 
+111/286 sentence_acc: 100.000000 Pseudo sentence_acc: 72.656250 noise prob: [0.46317384342546575, 0.2843699851509882, 0.5192980547435582] G_loss: -0.000018, D_loss: 0.000020
+127/286 aspect_loss: 0.003511, aspect_acc: 100.000000 Pseudo aspect_loss: 0.460045, aspect_acc: 55.468750 
+127/286 sentence_acc: 96.875000 Pseudo sentence_acc: 71.875000 noise prob: [0.4347279919311404, 0.27316222444642335, 0.5533591816201806] G_loss: -0.000019, D_loss: 0.000021
+143/286 aspect_loss: 0.012141, aspect_acc: 99.218750 Pseudo aspect_loss: 0.430377, aspect_acc: 50.781250 
+143/286 sentence_acc: 98.437500 Pseudo sentence_acc: 70.312500 noise prob: [0.4825191777199507, 0.25710175460699247, 0.5206866981461644] G_loss: -0.000019, D_loss: 0.000020
+159/286 aspect_loss: 0.007606, aspect_acc: 99.218750 Pseudo aspect_loss: 0.471355, aspect_acc: 62.500000 
+159/286 sentence_acc: 96.875000 Pseudo sentence_acc: 66.406250 noise prob: [0.49168396927416325, 0.23726704479486216, 0.5308991622805479] G_loss: -0.000020, D_loss: 0.000021
+175/286 aspect_loss: 0.026504, aspect_acc: 98.437500 Pseudo aspect_loss: 0.419512, aspect_acc: 53.906250 
+175/286 sentence_acc: 96.875000 Pseudo sentence_acc: 71.093750 noise prob: [0.47944992827251554, 0.24911151448031887, 0.535882422234863] G_loss: -0.000020, D_loss: 0.000021
+191/286 aspect_loss: 0.009621, aspect_acc: 99.218750 Pseudo aspect_loss: 0.477178, aspect_acc: 57.031250 
+191/286 sentence_acc: 96.093750 Pseudo sentence_acc: 67.187500 noise prob: [0.4815767054678872, 0.2486095040512737, 0.5334319765679538] G_loss: -0.000020, D_loss: 0.000022
+207/286 aspect_loss: 0.005381, aspect_acc: 100.000000 Pseudo aspect_loss: 0.402379, aspect_acc: 61.718750 
+207/286 sentence_acc: 96.875000 Pseudo sentence_acc: 74.218750 noise prob: [0.4524592994712293, 0.23429272315115668, 0.5781237031333148] G_loss: -0.000020, D_loss: 0.000022
+223/286 aspect_loss: 0.000156, aspect_acc: 100.000000 Pseudo aspect_loss: 0.493552, aspect_acc: 58.593750 
+223/286 sentence_acc: 97.656250 Pseudo sentence_acc: 60.937500 noise prob: [0.4464823738671839, 0.27952545242442284, 0.52938750712201] G_loss: -0.000020, D_loss: 0.000022
+239/286 aspect_loss: 0.004197, aspect_acc: 100.000000 Pseudo aspect_loss: 0.435690, aspect_acc: 60.937500 
+239/286 sentence_acc: 98.437500 Pseudo sentence_acc: 73.437500 noise prob: [0.45965070254169405, 0.26535787094326224, 0.5365014673516271] G_loss: -0.000020, D_loss: 0.000021
+255/286 aspect_loss: 0.005141, aspect_acc: 100.000000 Pseudo aspect_loss: 0.420457, aspect_acc: 60.156250 
+255/286 sentence_acc: 96.093750 Pseudo sentence_acc: 73.437500 noise prob: [0.4612311508972198, 0.2629389939829707, 0.5362335997633636] G_loss: -0.000019, D_loss: 0.000021
+271/286 aspect_loss: 0.009765, aspect_acc: 100.000000 Pseudo aspect_loss: 0.475057, aspect_acc: 44.531250 
+271/286 sentence_acc: 95.312500 Pseudo sentence_acc: 64.062500 noise prob: [0.43107170627627056, 0.2709104152454529, 0.559045173227787] G_loss: -0.000019, D_loss: 0.000020
+End of 22 train_loss: 0.0116, train_acc: 99.3444, val_loss: 0.2528, val_acc: 81.3291, f1_score: 0.7760
+sentence acc: 47.7848
+noise distribution: [0.2779852687584865, 0.20228997948365354, 0.5197247589883073]
+Epoch 23------------------------------------------------------------
+15/286 aspect_loss: 0.023805, aspect_acc: 98.437500 Pseudo aspect_loss: 0.451979, aspect_acc: 56.250000 
+15/286 sentence_acc: 94.531250 Pseudo sentence_acc: 75.000000 noise prob: [0.44954435783438385, 0.26641815723269247, 0.5514019639231265] G_loss: -0.000020, D_loss: 0.000021
+31/286 aspect_loss: 0.012891, aspect_acc: 99.218750 Pseudo aspect_loss: 0.436921, aspect_acc: 57.812500 
+31/286 sentence_acc: 98.437500 Pseudo sentence_acc: 73.437500 noise prob: [0.4563461341895163, 0.25874266495520715, 0.554443865083158] G_loss: -0.000020, D_loss: 0.000021
+47/286 aspect_loss: 0.014680, aspect_acc: 98.437500 Pseudo aspect_loss: 0.433756, aspect_acc: 52.343750 
+47/286 sentence_acc: 97.656250 Pseudo sentence_acc: 74.218750 noise prob: [0.4884246432338841, 0.25133733559778193, 0.5269954996183515] G_loss: -0.000019, D_loss: 0.000020
+63/286 aspect_loss: 0.000422, aspect_acc: 100.000000 Pseudo aspect_loss: 0.411749, aspect_acc: 60.937500 
+63/286 sentence_acc: 96.093750 Pseudo sentence_acc: 66.406250 noise prob: [0.4761451528756879, 0.25216274640115444, 0.53298822324723] G_loss: -0.000020, D_loss: 0.000021
+79/286 aspect_loss: 0.012893, aspect_acc: 99.218750 Pseudo aspect_loss: 0.451783, aspect_acc: 54.687500 
+79/286 sentence_acc: 97.656250 Pseudo sentence_acc: 72.656250 noise prob: [0.47423804085701704, 0.23543811394483782, 0.5547957830131054] G_loss: -0.000020, D_loss: 0.000021
+95/286 aspect_loss: 0.010658, aspect_acc: 99.218750 Pseudo aspect_loss: 0.399398, aspect_acc: 63.281250 
+95/286 sentence_acc: 97.656250 Pseudo sentence_acc: 65.625000 noise prob: [0.48259123554453254, 0.2679881998410565, 0.5182256558910012] G_loss: -0.000018, D_loss: 0.000019
+111/286 aspect_loss: 0.018229, aspect_acc: 99.218750 Pseudo aspect_loss: 0.415323, aspect_acc: 55.468750 
+111/286 sentence_acc: 96.875000 Pseudo sentence_acc: 71.093750 noise prob: [0.4746966216189321, 0.28901062773365993, 0.5070859706029296] G_loss: -0.000018, D_loss: 0.000020
+127/286 aspect_loss: 0.003519, aspect_acc: 100.000000 Pseudo aspect_loss: 0.427437, aspect_acc: 58.593750 
+127/286 sentence_acc: 97.656250 Pseudo sentence_acc: 71.875000 noise prob: [0.44816783303394914, 0.2695686989463866, 0.5498374570161104] G_loss: -0.000019, D_loss: 0.000020
+143/286 aspect_loss: 0.013022, aspect_acc: 98.437500 Pseudo aspect_loss: 0.457691, aspect_acc: 53.125000 
+143/286 sentence_acc: 97.656250 Pseudo sentence_acc: 69.531250 noise prob: [0.48488951520994306, 0.25497423027991317, 0.5308259557932615] G_loss: -0.000019, D_loss: 0.000021
+159/286 aspect_loss: 0.006887, aspect_acc: 99.218750 Pseudo aspect_loss: 0.427310, aspect_acc: 58.593750 
+159/286 sentence_acc: 100.000000 Pseudo sentence_acc: 66.406250 noise prob: [0.513572377152741, 0.22408774089126382, 0.531360054614197] G_loss: -0.000020, D_loss: 0.000021
+175/286 aspect_loss: 0.028314, aspect_acc: 97.656250 Pseudo aspect_loss: 0.461815, aspect_acc: 55.468750 
+175/286 sentence_acc: 98.437500 Pseudo sentence_acc: 73.437500 noise prob: [0.4971380503848195, 0.24777188188454602, 0.5273870695382357] G_loss: -0.000019, D_loss: 0.000021
+191/286 aspect_loss: 0.007193, aspect_acc: 99.218750 Pseudo aspect_loss: 0.459522, aspect_acc: 56.250000 
+191/286 sentence_acc: 96.875000 Pseudo sentence_acc: 73.437500 noise prob: [0.48995586250384804, 0.24763240013999166, 0.5358056165277958] G_loss: -0.000020, D_loss: 0.000022
+207/286 aspect_loss: 0.003712, aspect_acc: 100.000000 Pseudo aspect_loss: 0.464761, aspect_acc: 56.250000 
+207/286 sentence_acc: 97.656250 Pseudo sentence_acc: 69.531250 noise prob: [0.47329969331622124, 0.24231903039617464, 0.5489110355265439] G_loss: -0.000020, D_loss: 0.000022
+223/286 aspect_loss: 0.000975, aspect_acc: 100.000000 Pseudo aspect_loss: 0.427439, aspect_acc: 53.125000 
+223/286 sentence_acc: 97.656250 Pseudo sentence_acc: 60.156250 noise prob: [0.46662424178794026, 0.27930752188694896, 0.5227317865937948] G_loss: -0.000020, D_loss: 0.000022
+239/286 aspect_loss: 0.004117, aspect_acc: 100.000000 Pseudo aspect_loss: 0.466069, aspect_acc: 50.781250 
+239/286 sentence_acc: 99.218750 Pseudo sentence_acc: 71.875000 noise prob: [0.47648625503643416, 0.2590685371978907, 0.5365910634936881] G_loss: -0.000019, D_loss: 0.000021
+255/286 aspect_loss: 0.006681, aspect_acc: 99.218750 Pseudo aspect_loss: 0.453670, aspect_acc: 54.687500 
+255/286 sentence_acc: 97.656250 Pseudo sentence_acc: 71.875000 noise prob: [0.4910103431902826, 0.24637632397934794, 0.5377487484365702] G_loss: -0.000019, D_loss: 0.000021
+271/286 aspect_loss: 0.008658, aspect_acc: 100.000000 Pseudo aspect_loss: 0.427848, aspect_acc: 63.281250 
+271/286 sentence_acc: 98.437500 Pseudo sentence_acc: 66.406250 noise prob: [0.45661711087450385, 0.2436438912700396, 0.5736861806362867] G_loss: -0.000018, D_loss: 0.000019
+End of 23 train_loss: 0.0099, train_acc: 99.3007, val_loss: 0.2560, val_acc: 81.4873, f1_score: 0.7760
+sentence acc: 46.3608
+noise distribution: [0.2836581076535721, 0.1931371413122977, 0.5232047564052363]
+Epoch 24------------------------------------------------------------
+15/286 aspect_loss: 0.022001, aspect_acc: 97.656250 Pseudo aspect_loss: 0.453910, aspect_acc: 51.562500 
+15/286 sentence_acc: 99.218750 Pseudo sentence_acc: 71.875000 noise prob: [0.4729772319260519, 0.2621346092200838, 0.5414031208492815] G_loss: -0.000020, D_loss: 0.000021
+31/286 aspect_loss: 0.012478, aspect_acc: 99.218750 Pseudo aspect_loss: 0.406863, aspect_acc: 64.062500 
+31/286 sentence_acc: 98.437500 Pseudo sentence_acc: 71.875000 noise prob: [0.47145825531333685, 0.2486631739884615, 0.5472071692347527] G_loss: -0.000020, D_loss: 0.000021
+47/286 aspect_loss: 0.013434, aspect_acc: 99.218750 Pseudo aspect_loss: 0.403770, aspect_acc: 54.687500 
+47/286 sentence_acc: 97.656250 Pseudo sentence_acc: 73.437500 noise prob: [0.4972540105227381, 0.2490794011464459, 0.5270455828867853] G_loss: -0.000019, D_loss: 0.000020
+63/286 aspect_loss: 0.003907, aspect_acc: 100.000000 Pseudo aspect_loss: 0.407246, aspect_acc: 61.718750 
+63/286 sentence_acc: 99.218750 Pseudo sentence_acc: 65.625000 noise prob: [0.4784269763622433, 0.24981171960826032, 0.5407656691968441] G_loss: -0.000020, D_loss: 0.000022
+79/286 aspect_loss: 0.012277, aspect_acc: 99.218750 Pseudo aspect_loss: 0.457897, aspect_acc: 50.000000 
+79/286 sentence_acc: 100.000000 Pseudo sentence_acc: 76.562500 noise prob: [0.4813480023294687, 0.235548276847112, 0.5564495101571083] G_loss: -0.000020, D_loss: 0.000022
+95/286 aspect_loss: 0.017514, aspect_acc: 99.218750 Pseudo aspect_loss: 0.467292, aspect_acc: 53.125000 
+95/286 sentence_acc: 98.437500 Pseudo sentence_acc: 71.093750 noise prob: [0.505654308013618, 0.2616178149328334, 0.5020658853463829] G_loss: -0.000018, D_loss: 0.000020
+111/286 aspect_loss: 0.017384, aspect_acc: 99.218750 Pseudo aspect_loss: 0.459791, aspect_acc: 54.687500 
+111/286 sentence_acc: 95.312500 Pseudo sentence_acc: 75.000000 noise prob: [0.4824515808140859, 0.2844070550017932, 0.5030301259830594] G_loss: -0.000019, D_loss: 0.000020
+127/286 aspect_loss: 0.003188, aspect_acc: 100.000000 Pseudo aspect_loss: 0.456206, aspect_acc: 50.781250 
+127/286 sentence_acc: 98.437500 Pseudo sentence_acc: 71.875000 noise prob: [0.44988322304561734, 0.27885467594023794, 0.5397791061550379] G_loss: -0.000019, D_loss: 0.000021
+143/286 aspect_loss: 0.014031, aspect_acc: 98.437500 Pseudo aspect_loss: 0.437939, aspect_acc: 60.156250 
+143/286 sentence_acc: 97.656250 Pseudo sentence_acc: 71.093750 noise prob: [0.49127179803326726, 0.2566745879739756, 0.522188063710928] G_loss: -0.000019, D_loss: 0.000021
+159/286 aspect_loss: 0.007115, aspect_acc: 99.218750 Pseudo aspect_loss: 0.460310, aspect_acc: 54.687500 
+159/286 sentence_acc: 96.875000 Pseudo sentence_acc: 70.312500 noise prob: [0.5032805036753416, 0.24102967611543136, 0.5195816483610542] G_loss: -0.000020, D_loss: 0.000022
+175/286 aspect_loss: 0.029361, aspect_acc: 96.875000 Pseudo aspect_loss: 0.414337, aspect_acc: 58.593750 
+175/286 sentence_acc: 98.437500 Pseudo sentence_acc: 69.531250 noise prob: [0.49527959944680333, 0.2523111365153454, 0.5291552520357072] G_loss: -0.000020, D_loss: 0.000021
+191/286 aspect_loss: 0.006004, aspect_acc: 100.000000 Pseudo aspect_loss: 0.455967, aspect_acc: 53.125000 
+191/286 sentence_acc: 97.656250 Pseudo sentence_acc: 68.750000 noise prob: [0.4760852584586246, 0.2714415711670881, 0.5172335528768599] G_loss: -0.000020, D_loss: 0.000022
+207/286 aspect_loss: 0.004876, aspect_acc: 100.000000 Pseudo aspect_loss: 0.461487, aspect_acc: 52.343750 
+207/286 sentence_acc: 97.656250 Pseudo sentence_acc: 70.312500 noise prob: [0.45219466369599104, 0.2535699746076716, 0.5579479383304715] G_loss: -0.000021, D_loss: 0.000022
+223/286 aspect_loss: 0.000092, aspect_acc: 100.000000 Pseudo aspect_loss: 0.462627, aspect_acc: 56.250000 
+223/286 sentence_acc: 97.656250 Pseudo sentence_acc: 63.281250 noise prob: [0.4517424339428544, 0.2934429065717268, 0.5134930196218193] G_loss: -0.000021, D_loss: 0.000023
+239/286 aspect_loss: 0.006068, aspect_acc: 99.218750 Pseudo aspect_loss: 0.446312, aspect_acc: 52.343750 
+239/286 sentence_acc: 98.437500 Pseudo sentence_acc: 74.218750 noise prob: [0.4646600149862934, 0.28279967469279654, 0.514458161440416] G_loss: -0.000020, D_loss: 0.000021
+255/286 aspect_loss: 0.007824, aspect_acc: 100.000000 Pseudo aspect_loss: 0.454413, aspect_acc: 54.687500 
+255/286 sentence_acc: 96.093750 Pseudo sentence_acc: 71.875000 noise prob: [0.4837715025059879, 0.2741354391910136, 0.5023117149248719] G_loss: -0.000020, D_loss: 0.000022
+271/286 aspect_loss: 0.008575, aspect_acc: 100.000000 Pseudo aspect_loss: 0.455093, aspect_acc: 52.343750 
+271/286 sentence_acc: 96.875000 Pseudo sentence_acc: 65.625000 noise prob: [0.4581631349865347, 0.27532535314094275, 0.532866295427084] G_loss: -0.000019, D_loss: 0.000020
+End of 24 train_loss: 0.0104, train_acc: 99.3007, val_loss: 0.2683, val_acc: 81.4873, f1_score: 0.7797
+sentence acc: 47.1519
+noise distribution: [0.2878757156635397, 0.20300040488094595, 0.5091238859057139]
+Epoch 25------------------------------------------------------------
+15/286 aspect_loss: 0.025659, aspect_acc: 98.437500 Pseudo aspect_loss: 0.443435, aspect_acc: 53.906250 
+15/286 sentence_acc: 98.437500 Pseudo sentence_acc: 74.218750 noise prob: [0.4672269155853428, 0.25349781091790646, 0.5548164574429393] G_loss: -0.000020, D_loss: 0.000021
+31/286 aspect_loss: 0.011680, aspect_acc: 99.218750 Pseudo aspect_loss: 0.465390, aspect_acc: 56.250000 
+31/286 sentence_acc: 96.875000 Pseudo sentence_acc: 77.343750 noise prob: [0.4728370984084904, 0.25552909904217813, 0.5407118992879987] G_loss: -0.000020, D_loss: 0.000021
+47/286 aspect_loss: 0.012388, aspect_acc: 99.218750 Pseudo aspect_loss: 0.462860, aspect_acc: 53.906250 
+47/286 sentence_acc: 96.875000 Pseudo sentence_acc: 72.656250 noise prob: [0.5027879269327968, 0.2499307753460016, 0.5136569491587579] G_loss: -0.000018, D_loss: 0.000020
+63/286 aspect_loss: 0.000934, aspect_acc: 100.000000 Pseudo aspect_loss: 0.433030, aspect_acc: 52.343750 
+63/286 sentence_acc: 97.656250 Pseudo sentence_acc: 67.187500 noise prob: [0.4860682521830313, 0.2557546536627342, 0.5286256773397326] G_loss: -0.000020, D_loss: 0.000022
+79/286 aspect_loss: 0.009589, aspect_acc: 100.000000 Pseudo aspect_loss: 0.460056, aspect_acc: 50.000000 
+79/286 sentence_acc: 96.875000 Pseudo sentence_acc: 72.656250 noise prob: [0.4839111673645675, 0.24195187857549172, 0.5446739261969924] G_loss: -0.000020, D_loss: 0.000022
+95/286 aspect_loss: 0.010793, aspect_acc: 99.218750 Pseudo aspect_loss: 0.435154, aspect_acc: 57.812500 
+95/286 sentence_acc: 99.218750 Pseudo sentence_acc: 65.625000 noise prob: [0.48723477963358164, 0.2756540124100866, 0.5052547547966242] G_loss: -0.000018, D_loss: 0.000019
+111/286 aspect_loss: 0.028832, aspect_acc: 99.218750 Pseudo aspect_loss: 0.443013, aspect_acc: 45.312500 
+111/286 sentence_acc: 99.218750 Pseudo sentence_acc: 71.093750 noise prob: [0.4686261368333362, 0.30180284270318225, 0.5010088849812746] G_loss: -0.000019, D_loss: 0.000021
+127/286 aspect_loss: 0.004780, aspect_acc: 100.000000 Pseudo aspect_loss: 0.446226, aspect_acc: 57.812500 
+127/286 sentence_acc: 95.312500 Pseudo sentence_acc: 74.218750 noise prob: [0.44380119955167174, 0.2811538049718365, 0.5461126817390323] G_loss: -0.000020, D_loss: 0.000021
+143/286 aspect_loss: 0.012895, aspect_acc: 98.437500 Pseudo aspect_loss: 0.445152, aspect_acc: 56.250000 
+143/286 sentence_acc: 98.437500 Pseudo sentence_acc: 75.000000 noise prob: [0.4818832236342132, 0.26486500616010744, 0.5207793125882745] G_loss: -0.000019, D_loss: 0.000021
+159/286 aspect_loss: 0.008521, aspect_acc: 99.218750 Pseudo aspect_loss: 0.457351, aspect_acc: 53.125000 
+159/286 sentence_acc: 96.875000 Pseudo sentence_acc: 75.000000 noise prob: [0.49736324045807123, 0.24119776356383227, 0.5244573442541878] G_loss: -0.000020, D_loss: 0.000021
+175/286 aspect_loss: 0.024805, aspect_acc: 97.656250 Pseudo aspect_loss: 0.440224, aspect_acc: 55.468750 
+175/286 sentence_acc: 96.093750 Pseudo sentence_acc: 75.000000 noise prob: [0.4968186398036778, 0.24951609321578871, 0.5259149693883955] G_loss: -0.000020, D_loss: 0.000021
+191/286 aspect_loss: 0.004261, aspect_acc: 100.000000 Pseudo aspect_loss: 0.431818, aspect_acc: 57.812500 
+191/286 sentence_acc: 99.218750 Pseudo sentence_acc: 71.093750 noise prob: [0.4823441671615001, 0.253744074201677, 0.534970018081367] G_loss: -0.000020, D_loss: 0.000022
+207/286 aspect_loss: 0.006324, aspect_acc: 99.218750 Pseudo aspect_loss: 0.435900, aspect_acc: 54.687500 
+207/286 sentence_acc: 96.093750 Pseudo sentence_acc: 70.312500 noise prob: [0.4546173941344023, 0.23575576472649118, 0.5812094486318529] G_loss: -0.000021, D_loss: 0.000022
+223/286 aspect_loss: 0.000204, aspect_acc: 100.000000 Pseudo aspect_loss: 0.461112, aspect_acc: 57.031250 
+223/286 sentence_acc: 95.312500 Pseudo sentence_acc: 62.500000 noise prob: [0.44240496400743723, 0.2790372905874392, 0.5416947789490223] G_loss: -0.000021, D_loss: 0.000023
+239/286 aspect_loss: 0.005486, aspect_acc: 99.218750 Pseudo aspect_loss: 0.460897, aspect_acc: 55.468750 
+239/286 sentence_acc: 96.875000 Pseudo sentence_acc: 72.656250 noise prob: [0.45809332112548873, 0.2739695839700289, 0.5291656291810796] G_loss: -0.000020, D_loss: 0.000022
+255/286 aspect_loss: 0.000844, aspect_acc: 100.000000 Pseudo aspect_loss: 0.443221, aspect_acc: 53.906250 
+255/286 sentence_acc: 98.437500 Pseudo sentence_acc: 71.875000 noise prob: [0.47365848580375314, 0.26695474749431014, 0.5206390419043601] G_loss: -0.000020, D_loss: 0.000022
+271/286 aspect_loss: 0.009375, aspect_acc: 100.000000 Pseudo aspect_loss: 0.471515, aspect_acc: 49.218750 
+271/286 sentence_acc: 96.093750 Pseudo sentence_acc: 64.062500 noise prob: [0.43315779883414507, 0.2620539482741151, 0.5763712404295802] G_loss: -0.000019, D_loss: 0.000020
+End of 25 train_loss: 0.0099, train_acc: 99.3881, val_loss: 0.2513, val_acc: 81.1709, f1_score: 0.7748
+sentence acc: 46.8354
+noise distribution: [0.2819800094776595, 0.2057687361812332, 0.5122512621685475]
+Epoch 26------------------------------------------------------------
+15/286 aspect_loss: 0.021898, aspect_acc: 98.437500 Pseudo aspect_loss: 0.442617, aspect_acc: 57.031250 
+15/286 sentence_acc: 98.437500 Pseudo sentence_acc: 74.218750 noise prob: [0.4464107923267875, 0.2530177219014149, 0.5736668920144439] G_loss: -0.000020, D_loss: 0.000022
+31/286 aspect_loss: 0.019502, aspect_acc: 98.437500 Pseudo aspect_loss: 0.468576, aspect_acc: 55.468750 
+31/286 sentence_acc: 97.656250 Pseudo sentence_acc: 75.000000 noise prob: [0.43658037623390555, 0.25025940661726054, 0.5811906736344099] G_loss: -0.000020, D_loss: 0.000021
+47/286 aspect_loss: 0.011657, aspect_acc: 99.218750 Pseudo aspect_loss: 0.455714, aspect_acc: 55.468750 
+47/286 sentence_acc: 96.875000 Pseudo sentence_acc: 80.468750 noise prob: [0.4674705525394529, 0.24326477327849716, 0.5542073617689312] G_loss: -0.000018, D_loss: 0.000020
+63/286 aspect_loss: 0.000117, aspect_acc: 100.000000 Pseudo aspect_loss: 0.413215, aspect_acc: 60.937500 
+63/286 sentence_acc: 98.437500 Pseudo sentence_acc: 62.500000 noise prob: [0.46905539295403287, 0.2518111972967745, 0.5438872864469886] G_loss: -0.000019, D_loss: 0.000021
+79/286 aspect_loss: 0.012469, aspect_acc: 99.218750 Pseudo aspect_loss: 0.440111, aspect_acc: 57.812500 
+79/286 sentence_acc: 96.875000 Pseudo sentence_acc: 78.906250 noise prob: [0.46251468220725656, 0.23534098445088603, 0.5675429934635758] G_loss: -0.000020, D_loss: 0.000022
+95/286 aspect_loss: 0.014522, aspect_acc: 98.437500 Pseudo aspect_loss: 0.469985, aspect_acc: 51.562500 
+95/286 sentence_acc: 96.093750 Pseudo sentence_acc: 71.093750 noise prob: [0.4694944676011801, 0.2630987282827846, 0.5350578622892499] G_loss: -0.000017, D_loss: 0.000019
+111/286 aspect_loss: 0.015764, aspect_acc: 100.000000 Pseudo aspect_loss: 0.467931, aspect_acc: 49.218750 
+111/286 sentence_acc: 96.093750 Pseudo sentence_acc: 75.781250 noise prob: [0.4689247652422637, 0.2855728471913608, 0.5161329545080662] G_loss: -0.000018, D_loss: 0.000020
+127/286 aspect_loss: 0.005009, aspect_acc: 100.000000 Pseudo aspect_loss: 0.455417, aspect_acc: 57.031250 
+127/286 sentence_acc: 95.312500 Pseudo sentence_acc: 75.000000 noise prob: [0.44241755874827504, 0.26915301161352545, 0.5592991597950459] G_loss: -0.000019, D_loss: 0.000021
+143/286 aspect_loss: 0.014062, aspect_acc: 98.437500 Pseudo aspect_loss: 0.476646, aspect_acc: 48.437500 
+143/286 sentence_acc: 96.093750 Pseudo sentence_acc: 71.875000 noise prob: [0.4716976690106094, 0.26605328317236854, 0.5245122108608484] G_loss: -0.000019, D_loss: 0.000021
+159/286 aspect_loss: 0.006699, aspect_acc: 99.218750 Pseudo aspect_loss: 0.488284, aspect_acc: 58.593750 
+159/286 sentence_acc: 97.656250 Pseudo sentence_acc: 72.656250 noise prob: [0.498407943174243, 0.2430714539368637, 0.5262771526031429] G_loss: -0.000020, D_loss: 0.000021
+175/286 aspect_loss: 0.022414, aspect_acc: 99.218750 Pseudo aspect_loss: 0.477082, aspect_acc: 53.906250 
+175/286 sentence_acc: 98.437500 Pseudo sentence_acc: 71.093750 noise prob: [0.4825957822613418, 0.25540954799362225, 0.5307035688310862] G_loss: -0.000019, D_loss: 0.000021
+191/286 aspect_loss: 0.009635, aspect_acc: 99.218750 Pseudo aspect_loss: 0.427851, aspect_acc: 50.781250 
+191/286 sentence_acc: 97.656250 Pseudo sentence_acc: 74.218750 noise prob: [0.48705634809448384, 0.2467385452328017, 0.5379833350889385] G_loss: -0.000020, D_loss: 0.000022
+207/286 aspect_loss: 0.004073, aspect_acc: 100.000000 Pseudo aspect_loss: 0.468064, aspect_acc: 55.468750 
+207/286 sentence_acc: 98.437500 Pseudo sentence_acc: 77.343750 noise prob: [0.4595286026597023, 0.23967711284785764, 0.5729034245014191] G_loss: -0.000020, D_loss: 0.000022
+223/286 aspect_loss: 0.000204, aspect_acc: 100.000000 Pseudo aspect_loss: 0.466105, aspect_acc: 49.218750 
+223/286 sentence_acc: 96.093750 Pseudo sentence_acc: 68.750000 noise prob: [0.46798909455537796, 0.27226913703634636, 0.5327901085838675] G_loss: -0.000020, D_loss: 0.000022
+239/286 aspect_loss: 0.004611, aspect_acc: 100.000000 Pseudo aspect_loss: 0.442918, aspect_acc: 57.812500 
+239/286 sentence_acc: 96.875000 Pseudo sentence_acc: 71.093750 noise prob: [0.4775903973786626, 0.2604582325438969, 0.5323325488789123] G_loss: -0.000020, D_loss: 0.000021
+255/286 aspect_loss: 0.004126, aspect_acc: 100.000000 Pseudo aspect_loss: 0.432117, aspect_acc: 57.812500 
+255/286 sentence_acc: 96.875000 Pseudo sentence_acc: 74.218750 noise prob: [0.4907536031678319, 0.24904113914817572, 0.5345886214636266] G_loss: -0.000020, D_loss: 0.000021
+271/286 aspect_loss: 0.009649, aspect_acc: 100.000000 Pseudo aspect_loss: 0.450698, aspect_acc: 60.937500 
+271/286 sentence_acc: 99.218750 Pseudo sentence_acc: 69.531250 noise prob: [0.45298951416043565, 0.25625995343580144, 0.569485398940742] G_loss: -0.000019, D_loss: 0.000020
+End of 26 train_loss: 0.0099, train_acc: 99.4318, val_loss: 0.2571, val_acc: 81.0127, f1_score: 0.7703
+sentence acc: 46.3608
+noise distribution: [0.28471566145755756, 0.192262365769686, 0.5230219794715327]
+Epoch 27------------------------------------------------------------
+15/286 aspect_loss: 0.021157, aspect_acc: 98.437500 Pseudo aspect_loss: 0.422153, aspect_acc: 60.937500 
+15/286 sentence_acc: 98.437500 Pseudo sentence_acc: 76.562500 noise prob: [0.481448445643764, 0.2378866087528877, 0.5594970528036356] G_loss: -0.000020, D_loss: 0.000022
+31/286 aspect_loss: 0.032051, aspect_acc: 99.218750 Pseudo aspect_loss: 0.466335, aspect_acc: 53.125000 
+31/286 sentence_acc: 96.093750 Pseudo sentence_acc: 76.562500 noise prob: [0.47535982448607683, 0.2377664076484507, 0.5654294174164534] G_loss: -0.000020, D_loss: 0.000022
+47/286 aspect_loss: 0.009045, aspect_acc: 100.000000 Pseudo aspect_loss: 0.458408, aspect_acc: 53.125000 
+47/286 sentence_acc: 98.437500 Pseudo sentence_acc: 75.781250 noise prob: [0.4976784022292122, 0.22939949991632602, 0.5491575580090284] G_loss: -0.000019, D_loss: 0.000020
+63/286 aspect_loss: 0.000286, aspect_acc: 100.000000 Pseudo aspect_loss: 0.422981, aspect_acc: 59.375000 
+63/286 sentence_acc: 95.312500 Pseudo sentence_acc: 69.531250 noise prob: [0.4903964633704163, 0.24140171156614088, 0.5394879216328263] G_loss: -0.000020, D_loss: 0.000021
+79/286 aspect_loss: 0.011269, aspect_acc: 99.218750 Pseudo aspect_loss: 0.485620, aspect_acc: 48.437500 
+79/286 sentence_acc: 96.875000 Pseudo sentence_acc: 77.343750 noise prob: [0.4860670608468354, 0.22684662013489287, 0.5566966626793146] G_loss: -0.000020, D_loss: 0.000022
+95/286 aspect_loss: 0.014906, aspect_acc: 98.437500 Pseudo aspect_loss: 0.433435, aspect_acc: 58.593750 
+95/286 sentence_acc: 97.656250 Pseudo sentence_acc: 72.656250 noise prob: [0.49840803258121014, 0.2575297518997104, 0.5149472001940012] G_loss: -0.000018, D_loss: 0.000019
+111/286 aspect_loss: 0.012441, aspect_acc: 99.218750 Pseudo aspect_loss: 0.437070, aspect_acc: 54.687500 
+111/286 sentence_acc: 99.218750 Pseudo sentence_acc: 76.562500 noise prob: [0.477764286857564, 0.2833162382048613, 0.5122626638039947] G_loss: -0.000019, D_loss: 0.000020
+127/286 aspect_loss: 0.005651, aspect_acc: 100.000000 Pseudo aspect_loss: 0.452473, aspect_acc: 57.031250 
+127/286 sentence_acc: 95.312500 Pseudo sentence_acc: 75.781250 noise prob: [0.4472327334806323, 0.257211999502033, 0.5624806638807058] G_loss: -0.000020, D_loss: 0.000021
+143/286 aspect_loss: 0.014262, aspect_acc: 98.437500 Pseudo aspect_loss: 0.476347, aspect_acc: 53.906250 
+143/286 sentence_acc: 98.437500 Pseudo sentence_acc: 75.000000 noise prob: [0.4990031849592924, 0.24874330010061385, 0.5196807235479355] G_loss: -0.000019, D_loss: 0.000021
+159/286 aspect_loss: 0.007193, aspect_acc: 99.218750 Pseudo aspect_loss: 0.450044, aspect_acc: 50.000000 
+159/286 sentence_acc: 99.218750 Pseudo sentence_acc: 73.437500 noise prob: [0.5128691904246807, 0.21899603878409835, 0.5403587973742106] G_loss: -0.000020, D_loss: 0.000021
+175/286 aspect_loss: 0.025815, aspect_acc: 98.437500 Pseudo aspect_loss: 0.449969, aspect_acc: 53.125000 
+175/286 sentence_acc: 96.093750 Pseudo sentence_acc: 71.875000 noise prob: [0.5018629413098097, 0.23500530277669895, 0.540878283791244] G_loss: -0.000020, D_loss: 0.000021
+191/286 aspect_loss: 0.006814, aspect_acc: 99.218750 Pseudo aspect_loss: 0.445052, aspect_acc: 56.250000 
+191/286 sentence_acc: 97.656250 Pseudo sentence_acc: 69.531250 noise prob: [0.49844874495465774, 0.2503024620236829, 0.5236415220424533] G_loss: -0.000020, D_loss: 0.000022
+207/286 aspect_loss: 0.007273, aspect_acc: 100.000000 Pseudo aspect_loss: 0.420592, aspect_acc: 64.062500 
+207/286 sentence_acc: 99.218750 Pseudo sentence_acc: 76.562500 noise prob: [0.4734699879772961, 0.22553486831020564, 0.5777611713856459] G_loss: -0.000021, D_loss: 0.000022
+223/286 aspect_loss: 0.000043, aspect_acc: 100.000000 Pseudo aspect_loss: 0.439947, aspect_acc: 55.468750 
+223/286 sentence_acc: 98.437500 Pseudo sentence_acc: 69.531250 noise prob: [0.46531893964856863, 0.25898107333341613, 0.5462165949866176] G_loss: -0.000021, D_loss: 0.000022
+239/286 aspect_loss: 0.022025, aspect_acc: 99.218750 Pseudo aspect_loss: 0.435335, aspect_acc: 54.687500 
+239/286 sentence_acc: 99.218750 Pseudo sentence_acc: 78.906250 noise prob: [0.4814353934780229, 0.24733000686683226, 0.5394889829112799] G_loss: -0.000020, D_loss: 0.000021
+255/286 aspect_loss: 0.004930, aspect_acc: 100.000000 Pseudo aspect_loss: 0.407038, aspect_acc: 58.593750 
+255/286 sentence_acc: 96.875000 Pseudo sentence_acc: 78.906250 noise prob: [0.47968885861337185, 0.2502048355527222, 0.538145471829921] G_loss: -0.000020, D_loss: 0.000022
+271/286 aspect_loss: 0.008659, aspect_acc: 99.218750 Pseudo aspect_loss: 0.416731, aspect_acc: 61.718750 
+271/286 sentence_acc: 100.000000 Pseudo sentence_acc: 74.218750 noise prob: [0.45134453038917854, 0.23847120576101588, 0.579641223885119] G_loss: -0.000019, D_loss: 0.000020
+End of 27 train_loss: 0.0115, train_acc: 99.3444, val_loss: 0.2606, val_acc: 81.0127, f1_score: 0.7698
+sentence acc: 44.7785
+noise distribution: [0.2804140021132676, 0.19381987141608245, 0.5257661329817508]
+Epoch 28------------------------------------------------------------
+15/286 aspect_loss: 0.017695, aspect_acc: 99.218750 Pseudo aspect_loss: 0.396163, aspect_acc: 62.500000 
+15/286 sentence_acc: 96.875000 Pseudo sentence_acc: 77.343750 noise prob: [0.47385333219426684, 0.23540637528640218, 0.5691743800416589] G_loss: -0.000020, D_loss: 0.000022
+31/286 aspect_loss: 0.010088, aspect_acc: 100.000000 Pseudo aspect_loss: 0.409601, aspect_acc: 64.843750 
+31/286 sentence_acc: 96.093750 Pseudo sentence_acc: 77.343750 noise prob: [0.4709859979338944, 0.2318652242247481, 0.5672369617968798] G_loss: -0.000020, D_loss: 0.000022
+47/286 aspect_loss: 0.008849, aspect_acc: 100.000000 Pseudo aspect_loss: 0.389850, aspect_acc: 64.843750 
+47/286 sentence_acc: 97.656250 Pseudo sentence_acc: 74.218750 noise prob: [0.49597793887369335, 0.22789625732366403, 0.5472527570091188] G_loss: -0.000019, D_loss: 0.000020
+63/286 aspect_loss: 0.000032, aspect_acc: 100.000000 Pseudo aspect_loss: 0.423538, aspect_acc: 60.156250 
+63/286 sentence_acc: 98.437500 Pseudo sentence_acc: 67.187500 noise prob: [0.4894328668306116, 0.23441672866465524, 0.5422284603118896] G_loss: -0.000020, D_loss: 0.000022
+79/286 aspect_loss: 0.010623, aspect_acc: 100.000000 Pseudo aspect_loss: 0.442138, aspect_acc: 56.250000 
+79/286 sentence_acc: 98.437500 Pseudo sentence_acc: 74.218750 noise prob: [0.4876272967085242, 0.22648267034674063, 0.5572257647290826] G_loss: -0.000020, D_loss: 0.000022
+95/286 aspect_loss: 0.010152, aspect_acc: 100.000000 Pseudo aspect_loss: 0.480219, aspect_acc: 52.343750 
+95/286 sentence_acc: 96.093750 Pseudo sentence_acc: 75.781250 noise prob: [0.5062961746007204, 0.2568858330923831, 0.5084485588595271] G_loss: -0.000018, D_loss: 0.000020
+111/286 aspect_loss: 0.016942, aspect_acc: 98.437500 Pseudo aspect_loss: 0.463766, aspect_acc: 53.125000 
+111/286 sentence_acc: 97.656250 Pseudo sentence_acc: 76.562500 noise prob: [0.4866113835014403, 0.28410402458393946, 0.5017237141728401] G_loss: -0.000019, D_loss: 0.000020
+127/286 aspect_loss: 0.003769, aspect_acc: 100.000000 Pseudo aspect_loss: 0.476826, aspect_acc: 50.781250 
+127/286 sentence_acc: 98.437500 Pseudo sentence_acc: 75.000000 noise prob: [0.44460761453956366, 0.2766792447073385, 0.5474915504455566] G_loss: -0.000019, D_loss: 0.000021
+143/286 aspect_loss: 0.015616, aspect_acc: 98.437500 Pseudo aspect_loss: 0.452619, aspect_acc: 53.906250 
+143/286 sentence_acc: 97.656250 Pseudo sentence_acc: 75.781250 noise prob: [0.49732119077816606, 0.25009074999252334, 0.5218697972595692] G_loss: -0.000019, D_loss: 0.000021
+159/286 aspect_loss: 0.007112, aspect_acc: 99.218750 Pseudo aspect_loss: 0.411249, aspect_acc: 60.937500 
+159/286 sentence_acc: 100.000000 Pseudo sentence_acc: 73.437500 noise prob: [0.5037593790329993, 0.22645151612960035, 0.5358607543239486] G_loss: -0.000020, D_loss: 0.000022
+175/286 aspect_loss: 0.024293, aspect_acc: 98.437500 Pseudo aspect_loss: 0.436302, aspect_acc: 54.687500 
+175/286 sentence_acc: 98.437500 Pseudo sentence_acc: 76.562500 noise prob: [0.5029770568944514, 0.2336276218338753, 0.5386103256605566] G_loss: -0.000020, D_loss: 0.000021
+191/286 aspect_loss: 0.008483, aspect_acc: 100.000000 Pseudo aspect_loss: 0.446173, aspect_acc: 61.718750 
+191/286 sentence_acc: 96.875000 Pseudo sentence_acc: 71.875000 noise prob: [0.49198466463712975, 0.2481357117940206, 0.5319595420733094] G_loss: -0.000020, D_loss: 0.000022
+207/286 aspect_loss: 0.003969, aspect_acc: 100.000000 Pseudo aspect_loss: 0.411866, aspect_acc: 58.593750 
+207/286 sentence_acc: 98.437500 Pseudo sentence_acc: 75.000000 noise prob: [0.46973346965387464, 0.23830036566505441, 0.5549750225618482] G_loss: -0.000021, D_loss: 0.000022
+223/286 aspect_loss: 0.000489, aspect_acc: 100.000000 Pseudo aspect_loss: 0.430531, aspect_acc: 60.937500 
+223/286 sentence_acc: 99.218750 Pseudo sentence_acc: 64.062500 noise prob: [0.4590976028703153, 0.2618038957953104, 0.5464864056557417] G_loss: -0.000021, D_loss: 0.000023
+239/286 aspect_loss: 0.004738, aspect_acc: 100.000000 Pseudo aspect_loss: 0.419154, aspect_acc: 57.031250 
+239/286 sentence_acc: 98.437500 Pseudo sentence_acc: 69.531250 noise prob: [0.482368373835925, 0.24698301765602082, 0.5392923546314705] G_loss: -0.000020, D_loss: 0.000021
+255/286 aspect_loss: 0.010188, aspect_acc: 99.218750 Pseudo aspect_loss: 0.471112, aspect_acc: 46.875000 
+255/286 sentence_acc: 95.312500 Pseudo sentence_acc: 74.218750 noise prob: [0.48254868760704994, 0.25073312455788255, 0.5391356600448489] G_loss: -0.000020, D_loss: 0.000022
+271/286 aspect_loss: 0.008904, aspect_acc: 100.000000 Pseudo aspect_loss: 0.415514, aspect_acc: 59.375000 
+271/286 sentence_acc: 100.000000 Pseudo sentence_acc: 69.531250 noise prob: [0.4488241848011967, 0.25795857909542974, 0.5679564848542213] G_loss: -0.000019, D_loss: 0.000020
+End of 28 train_loss: 0.0091, train_acc: 99.6066, val_loss: 0.2608, val_acc: 81.1709, f1_score: 0.7718
+sentence acc: 45.7278
+noise distribution: [0.28190971319546243, 0.19497809980132583, 0.5231121946338342]
+Epoch 29------------------------------------------------------------
+15/286 aspect_loss: 0.021089, aspect_acc: 97.656250 Pseudo aspect_loss: 0.438459, aspect_acc: 60.156250 
+15/286 sentence_acc: 99.218750 Pseudo sentence_acc: 76.562500 noise prob: [0.4691308320616372, 0.24621417978778481, 0.5602072831243277] G_loss: -0.000020, D_loss: 0.000022
+31/286 aspect_loss: 0.013861, aspect_acc: 98.437500 Pseudo aspect_loss: 0.511470, aspect_acc: 45.312500 
+31/286 sentence_acc: 98.437500 Pseudo sentence_acc: 78.906250 noise prob: [0.47328745061531663, 0.2354071090958314, 0.5705260299146175] G_loss: -0.000020, D_loss: 0.000022
+47/286 aspect_loss: 0.009434, aspect_acc: 99.218750 Pseudo aspect_loss: 0.421817, aspect_acc: 60.156250 
+47/286 sentence_acc: 100.000000 Pseudo sentence_acc: 75.781250 noise prob: [0.4975635861046612, 0.2396518182467844, 0.5355341918766499] G_loss: -0.000019, D_loss: 0.000020
+63/286 aspect_loss: 0.000324, aspect_acc: 100.000000 Pseudo aspect_loss: 0.441109, aspect_acc: 57.812500 
+63/286 sentence_acc: 98.437500 Pseudo sentence_acc: 71.093750 noise prob: [0.48286739649483934, 0.24785262066870928, 0.5352114178240299] G_loss: -0.000020, D_loss: 0.000022
+79/286 aspect_loss: 0.010739, aspect_acc: 99.218750 Pseudo aspect_loss: 0.443612, aspect_acc: 50.781250 
+79/286 sentence_acc: 99.218750 Pseudo sentence_acc: 75.781250 noise prob: [0.47912727063521743, 0.23800581225077622, 0.553114639595151] G_loss: -0.000020, D_loss: 0.000022
+95/286 aspect_loss: 0.024277, aspect_acc: 97.656250 Pseudo aspect_loss: 0.444012, aspect_acc: 53.125000 
+95/286 sentence_acc: 96.093750 Pseudo sentence_acc: 69.531250 noise prob: [0.49477176275104284, 0.26338329245481873, 0.5097910175099969] G_loss: -0.000018, D_loss: 0.000019
+111/286 aspect_loss: 0.017065, aspect_acc: 99.218750 Pseudo aspect_loss: 0.415098, aspect_acc: 61.718750 
+111/286 sentence_acc: 99.218750 Pseudo sentence_acc: 76.562500 noise prob: [0.4735301783075556, 0.2903388843842549, 0.5066004926338792] G_loss: -0.000019, D_loss: 0.000020
+127/286 aspect_loss: 0.003233, aspect_acc: 100.000000 Pseudo aspect_loss: 0.432982, aspect_acc: 60.937500 
+127/286 sentence_acc: 94.531250 Pseudo sentence_acc: 71.093750 noise prob: [0.4436701610684395, 0.2757105079945177, 0.5485691530629992] G_loss: -0.000019, D_loss: 0.000021
+143/286 aspect_loss: 0.013454, aspect_acc: 98.437500 Pseudo aspect_loss: 0.416677, aspect_acc: 57.031250 
+143/286 sentence_acc: 98.437500 Pseudo sentence_acc: 73.437500 noise prob: [0.49093996873125434, 0.2511182809830643, 0.5295001585036516] G_loss: -0.000019, D_loss: 0.000021
+159/286 aspect_loss: 0.007013, aspect_acc: 99.218750 Pseudo aspect_loss: 0.395566, aspect_acc: 60.937500 
+159/286 sentence_acc: 98.437500 Pseudo sentence_acc: 74.218750 noise prob: [0.4953791247680783, 0.2370689892413793, 0.5290412881731754] G_loss: -0.000020, D_loss: 0.000022
+175/286 aspect_loss: 0.023076, aspect_acc: 99.218750 Pseudo aspect_loss: 0.422273, aspect_acc: 58.593750 
+175/286 sentence_acc: 99.218750 Pseudo sentence_acc: 75.000000 noise prob: [0.4969905107282102, 0.2371523242254625, 0.5423950362019241] G_loss: -0.000020, D_loss: 0.000021
+191/286 aspect_loss: 0.005737, aspect_acc: 99.218750 Pseudo aspect_loss: 0.439749, aspect_acc: 59.375000 
+191/286 sentence_acc: 97.656250 Pseudo sentence_acc: 72.656250 noise prob: [0.48993078534840606, 0.25167614837846486, 0.5271951803006232] G_loss: -0.000020, D_loss: 0.000022
+207/286 aspect_loss: 0.004523, aspect_acc: 100.000000 Pseudo aspect_loss: 0.410555, aspect_acc: 57.812500 
+207/286 sentence_acc: 96.093750 Pseudo sentence_acc: 76.562500 noise prob: [0.4734705206938088, 0.2240380287694279, 0.574604778084904] G_loss: -0.000021, D_loss: 0.000022
+223/286 aspect_loss: 0.000161, aspect_acc: 100.000000 Pseudo aspect_loss: 0.430425, aspect_acc: 56.250000 
+223/286 sentence_acc: 97.656250 Pseudo sentence_acc: 64.843750 noise prob: [0.47365623572841287, 0.26637022793875076, 0.5284346449188888] G_loss: -0.000021, D_loss: 0.000023
+239/286 aspect_loss: 0.004120, aspect_acc: 100.000000 Pseudo aspect_loss: 0.445601, aspect_acc: 56.250000 
+239/286 sentence_acc: 100.000000 Pseudo sentence_acc: 76.562500 noise prob: [0.47571156741469167, 0.2454940506213461, 0.5551142176555004] G_loss: -0.000020, D_loss: 0.000021
+255/286 aspect_loss: 0.006341, aspect_acc: 99.218750 Pseudo aspect_loss: 0.413797, aspect_acc: 57.031250 
+255/286 sentence_acc: 96.875000 Pseudo sentence_acc: 68.750000 noise prob: [0.4756049532443285, 0.2536733876913786, 0.541171149816364] G_loss: -0.000020, D_loss: 0.000022
+271/286 aspect_loss: 0.008848, aspect_acc: 100.000000 Pseudo aspect_loss: 0.390956, aspect_acc: 64.843750 
+271/286 sentence_acc: 100.000000 Pseudo sentence_acc: 71.093750 noise prob: [0.4631808976409957, 0.24929625249933451, 0.5515517266467214] G_loss: -0.000019, D_loss: 0.000020
+End of 29 train_loss: 0.0099, train_acc: 99.2570, val_loss: 0.2707, val_acc: 81.3291, f1_score: 0.7755
+sentence acc: 46.8354
+noise distribution: [0.27881596034420664, 0.20265084286473128, 0.5185332064264018]
+Epoch 30------------------------------------------------------------
+15/286 aspect_loss: 0.019652, aspect_acc: 99.218750 Pseudo aspect_loss: 0.408318, aspect_acc: 67.187500 
+15/286 sentence_acc: 99.218750 Pseudo sentence_acc: 75.781250 noise prob: [0.4674143702141009, 0.23901140291127376, 0.56339499540627] G_loss: -0.000021, D_loss: 0.000022
+31/286 aspect_loss: 0.008166, aspect_acc: 99.218750 Pseudo aspect_loss: 0.445605, aspect_acc: 50.000000 
+31/286 sentence_acc: 96.875000 Pseudo sentence_acc: 75.781250 noise prob: [0.46628928929567337, 0.24611602968070656, 0.5630825348198414] G_loss: -0.000020, D_loss: 0.000022
+47/286 aspect_loss: 0.005923, aspect_acc: 100.000000 Pseudo aspect_loss: 0.383260, aspect_acc: 66.406250 
+47/286 sentence_acc: 97.656250 Pseudo sentence_acc: 80.468750 noise prob: [0.4926173286512494, 0.23175867762984126, 0.5447276993654668] G_loss: -0.000019, D_loss: 0.000021
+63/286 aspect_loss: 0.000055, aspect_acc: 100.000000 Pseudo aspect_loss: 0.418088, aspect_acc: 60.156250 
+63/286 sentence_acc: 95.312500 Pseudo sentence_acc: 75.000000 noise prob: [0.4836763559724204, 0.23248164598771837, 0.554764648899436] G_loss: -0.000020, D_loss: 0.000022
+79/286 aspect_loss: 0.011709, aspect_acc: 99.218750 Pseudo aspect_loss: 0.390311, aspect_acc: 60.937500 
+79/286 sentence_acc: 97.656250 Pseudo sentence_acc: 75.781250 noise prob: [0.48204747727140784, 0.21022257025470026, 0.5770603157579899] G_loss: -0.000021, D_loss: 0.000022
+95/286 aspect_loss: 0.015949, aspect_acc: 98.437500 Pseudo aspect_loss: 0.485917, aspect_acc: 53.906250 
+95/286 sentence_acc: 100.000000 Pseudo sentence_acc: 75.781250 noise prob: [0.49197589699178934, 0.25202042736054864, 0.5268324734643102] G_loss: -0.000018, D_loss: 0.000020
+111/286 aspect_loss: 0.013733, aspect_acc: 99.218750 Pseudo aspect_loss: 0.408014, aspect_acc: 57.812500 
+111/286 sentence_acc: 97.656250 Pseudo sentence_acc: 76.562500 noise prob: [0.4658441229548771, 0.28036100311146583, 0.5225597163662314] G_loss: -0.000019, D_loss: 0.000021
+127/286 aspect_loss: 0.003401, aspect_acc: 100.000000 Pseudo aspect_loss: 0.410229, aspect_acc: 54.687500 
+127/286 sentence_acc: 97.656250 Pseudo sentence_acc: 74.218750 noise prob: [0.4432751382701099, 0.27137359499465674, 0.5521314889192581] G_loss: -0.000020, D_loss: 0.000021
+143/286 aspect_loss: 0.010120, aspect_acc: 99.218750 Pseudo aspect_loss: 0.385044, aspect_acc: 65.625000 
+143/286 sentence_acc: 98.437500 Pseudo sentence_acc: 75.000000 noise prob: [0.4799973387271166, 0.24558482857173658, 0.5374837396666408] G_loss: -0.000020, D_loss: 0.000022
+159/286 aspect_loss: 0.007871, aspect_acc: 99.218750 Pseudo aspect_loss: 0.450367, aspect_acc: 58.593750 
+159/286 sentence_acc: 96.875000 Pseudo sentence_acc: 71.875000 noise prob: [0.5063417293131351, 0.22052151105890516, 0.5387281610674108] G_loss: -0.000020, D_loss: 0.000022
+175/286 aspect_loss: 0.025913, aspect_acc: 97.656250 Pseudo aspect_loss: 0.451566, aspect_acc: 53.906250 
+175/286 sentence_acc: 99.218750 Pseudo sentence_acc: 75.781250 noise prob: [0.49183071264997125, 0.24098001376842149, 0.536003487650305] G_loss: -0.000020, D_loss: 0.000022
+191/286 aspect_loss: 0.005678, aspect_acc: 100.000000 Pseudo aspect_loss: 0.400615, aspect_acc: 62.500000 
+191/286 sentence_acc: 96.875000 Pseudo sentence_acc: 75.781250 noise prob: [0.4937633470108267, 0.2376962318594451, 0.5370694543235004] G_loss: -0.000021, D_loss: 0.000022
+207/286 aspect_loss: 0.005084, aspect_acc: 100.000000 Pseudo aspect_loss: 0.437625, aspect_acc: 44.531250 
+207/286 sentence_acc: 99.218750 Pseudo sentence_acc: 74.218750 noise prob: [0.46201554173603654, 0.2337029351911042, 0.57064861478284] G_loss: -0.000021, D_loss: 0.000023
+223/286 aspect_loss: 0.000152, aspect_acc: 100.000000 Pseudo aspect_loss: 0.427517, aspect_acc: 57.812500 
+223/286 sentence_acc: 97.656250 Pseudo sentence_acc: 66.406250 noise prob: [0.4637919198721647, 0.2689658279850846, 0.5309619260951877] G_loss: -0.000021, D_loss: 0.000023
+239/286 aspect_loss: 0.004842, aspect_acc: 100.000000 Pseudo aspect_loss: 0.453008, aspect_acc: 53.906250 
+239/286 sentence_acc: 96.875000 Pseudo sentence_acc: 76.562500 noise prob: [0.46941646095365286, 0.2565644481073832, 0.538098176017229] G_loss: -0.000020, D_loss: 0.000022
+255/286 aspect_loss: 0.003231, aspect_acc: 100.000000 Pseudo aspect_loss: 0.436879, aspect_acc: 57.031250 
+255/286 sentence_acc: 95.312500 Pseudo sentence_acc: 71.875000 noise prob: [0.48248457396402955, 0.2516714516095817, 0.5290928473696113] G_loss: -0.000021, D_loss: 0.000022
+271/286 aspect_loss: 0.008706, aspect_acc: 100.000000 Pseudo aspect_loss: 0.451384, aspect_acc: 57.812500 
+271/286 sentence_acc: 98.437500 Pseudo sentence_acc: 70.312500 noise prob: [0.449243743380066, 0.24721413163933903, 0.5719315754249692] G_loss: -0.000019, D_loss: 0.000021
+End of 30 train_loss: 0.0084, train_acc: 99.5192, val_loss: 0.2761, val_acc: 81.3291, f1_score: 0.7761
+sentence acc: 45.7278
+noise distribution: [0.2804043112560396, 0.20402175875495515, 0.515573938359604]
+Training ended with 30 epochs.
+the first of the best acc appeared at 20 epoch
+Loading best checkpoint from  experiment/log/Laptops/best_result/33/best_model.pt
+Evaluation Results: test_loss:0.24987787008285522, test_acc:81.9620253164557, test_f1:0.7858492800681208
+sentence acc: 48.7342
+noise distribution: [0.2747159757474581, 0.2140927071855935, 0.5111913220951367]

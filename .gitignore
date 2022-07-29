@@ -1,0 +1,38 @@
+# dataset
+*.json
+*.vocab
+
+# local
+learn/
+*help.py
+
+# Mac OS
+.DS_Store
+*/.DS_Store
+
+# vscode
+.vscode
+*/.vscode
+
+# python
+*__py*
+
+# logs
+/stacktrace.log
+/test/reports
+*/logs/*
+*.log.*
+
+#models
+*/model/*
+*/pre_model/*
+*.pt
+*.bin
+*.txt
+
+# profile
+*.lprof
+*speed*
+
+# visual
+*.png
