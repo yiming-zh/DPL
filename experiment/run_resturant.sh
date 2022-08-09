@@ -47,8 +47,8 @@ CUDA_VISIBLE_DEVICES=$now_cu python3 -u main.py \
 	--reset_pool \
 	--seed $seed \
 	--dataset_size rest_$size \
-	--num_epoch 100 \
-	--decay_patience 10 \
+	--num_epoch 30 \
+	--decay_patience 3 \
 	--bert_from "pre_model/rest" \
 	--step_long 2 2>&1 | tee $exp_path/$exp_setting.log
 

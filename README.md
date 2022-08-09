@@ -1,6 +1,8 @@
 # Towards-Unifying-the-Label-Space-for-Aspect--and-Sentence-based-Sentiment-Analysis
 ---
-[Towards Unifying the Label Space for Aspect- and Sentence-based Sentiment Analysis](https://aclanthology.org/2022.findings-acl.3/)
+Code repository for paper [Towards Unifying the Label Space for Aspect- and Sentence-based Sentiment Analysis](https://aclanthology.org/2022.findings-acl.3/).
+
+
 
 <!-- <p align="center"><img width="85%" src="imgs/shaping_main.png" /></p> -->
 
@@ -14,21 +16,68 @@ Use the following commands to clone and install this package.
 python == 3.6.12
 torch == 1.2.0
 transformers == 2.9.1
-
-# scripts
-
+```
+#### scripts
+```
+conda create -n DPL python==3.6
+pip install torch==1.2.0
 pip install -e requirements.txt
-
 ```
 
 
 ### Example use
 
-Download prepared shaped data for the FewRel task here and place the data in the ```data/``` directory: https://drive.google.com/drive/folders/1tEuhAukhvwhW_7_tO-kG1plql2rSyp84?usp=sharing  
+Download prepared shaped SemEval 2014 task4 dataset and our auxiliary dataset in the ```dataset/``` directory: https://drive.google.com/file/d/1jYlkuBLxdQfk746o07E-ryagQ_qJ6zAU/view?usp=sharing  
+```
+dataset
+└── Biaffine
+    └── glove
+        ├── Laptops
+        └── Restaurants
+```
+
+Download prepared pre-trained model in the ```pre_model/``` directory: https://drive.google.com/file/d/1UdXFD88YaE9aGr1zaR7uN4X8wphmcabY/view?usp=sharing
+These models are published by [Rietzler](https://github.com/deepopinion/domain-adapted-atsc). You can also download them from Rietzler's url: [Laptops](https://drive.google.com/file/d/1I2hOyi120Fwn2cApfVwjaOw782IGjWS8/view) & [Restaurants](https://drive.google.com/file/d/1DmVrhKQx74p1U5c7oq6qCTVxGIpgvp1c/view).
+```
+pre_model
+├── laptop
+│   ├── added_tokens.json
+│   ├── config.json
+│   ├── pytorch_model.bin
+│   ├── special_tokens_map.json
+│   └── vocab.txt
+└── rest
+    ├── added_tokens.json
+    ├── config.json
+    ├── pytorch_model.bin
+    ├── special_tokens_map.json
+    └── vocab.txt
+```
+
+The entire file framework is as follows
+```
+.
+├── README.md
+├── __init__.py
+├── dataset
+├── experiment
+├── img
+├── layer
+├── loader.py
+├── main.py
+├── model.py
+├── pre_model
+├── requirements.txt
+├── train.py
+├── utils
+├── visual
+└── vocabulary
+```
 
 Run:
 ```
-bash run_fewrel.sh
+cd experiment
+bash run_resturant.sh
 ```
 
 

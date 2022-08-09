@@ -38,7 +38,7 @@ pre_train: 0
 pseudo_label: 1
 pseudo_weight: 0.5
 reset_pooling: True
-save_dir: experiment/log/Laptops/best_result/33
+save_dir: experiment/log/Laptops/best/33
 seed: 33
 sentence_weight: 0.1
 step_long: 2
@@ -1203,7 +1203,7 @@ sentence acc: 45.7278
 noise distribution: [0.2804043112560396, 0.20402175875495515, 0.515573938359604]
 Training ended with 30 epochs.
 the first of the best acc appeared at 20 epoch
-Loading best checkpoint from  experiment/log/Laptops/best_result/33/best_model.pt
+Loading best checkpoint from  experiment/log/Laptops/best/33/best_model.pt
 Evaluation Results: test_loss:0.24987787008285522, test_acc:81.9620253164557, test_f1:0.7858492800681208
 sentence acc: 48.7342
 noise distribution: [0.2747159757474581, 0.2140927071855935, 0.5111913220951367]
