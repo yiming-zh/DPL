@@ -13,6 +13,10 @@ Use the following commands to clone and install this package.
 
 ```
 # environment
+Ubuntu 20.04; cpu x86_64; 
+GPU 2080ti; cuda V10.1;
+
+# python environment
 python == 3.6.12
 torch == 1.2.0
 transformers == 2.9.1
