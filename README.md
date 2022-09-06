@@ -58,7 +58,7 @@ pre_model
     └── vocab.txt
 ```
 
-The entire file framework is as follows
+The final file list
 ```
 .
 ├── README.md
