@@ -29,7 +29,7 @@ pip install -e requirements.txt
 ```
 
 
-### Example use
+### Example
 
 Download prepared shaped SemEval 2014 task4 dataset and our auxiliary dataset in the ```dataset/``` directory: https://drive.google.com/file/d/1jYlkuBLxdQfk746o07E-ryagQ_qJ6zAU/view?usp=sharing  
 ```
