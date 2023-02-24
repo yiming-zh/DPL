@@ -23,9 +23,10 @@ transformers == 2.9.1
 ```
 #### scripts
 ```
-conda create -n DPL python==3.6
+conda create -n DPL python=3.6
+conda activate DPL
 pip install torch==1.2.0
-pip install -e requirements.txt
+pip install -r requirements.txt
 ```
 
 
