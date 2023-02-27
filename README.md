@@ -82,7 +82,7 @@ The final file list
 Run:
 ```
 cd experiment
-bash run_resturant.sh
+bash run_resturant.sh $gpu
 ```
 
 
